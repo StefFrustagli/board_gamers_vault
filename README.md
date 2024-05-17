@@ -122,9 +122,11 @@ EXPLAIN THE RELATIONSHIP BETWEEN THE MODELS
 
 The structure of our database was illustrated using an Entity-Relationship Diagram (ERD). This diagram shows how different entities within the system are related to each other and helps in understanding the data flow. 
 
-**ERD**:
-![ERD]()
-ADD IMAGE OF DIAGRAM
+**ERD**
+
+First draft:
+![ERD](https://i.ibb.co/3cMYNdK/my-screenshots-2024-05-17-at-09-40-10.png)
+
 
 **Models**
 
@@ -159,7 +161,7 @@ ADD IMAGE OF DIAGRAM
 
 
 Draft flowchart for apps organisation:
-![draft flowchart to organise apps](ht)
+![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
 The **applications** used are:
 
