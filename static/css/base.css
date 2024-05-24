@@ -1,44 +1,52 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background: url('/media/boardgame_shelf_banner.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555; 
-    font-family: 'Poppins';
+  background-size: cover;
+  height: calc(100vh - 164px);
+  color: #555;
+  font-family: "Poppins";
+}
 
+/* Header image */
+.header-image {
+  background: url("/media/boardgame_shelf_banner.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: calc(100vh - 164px);
+  color: #555;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
 /* from Bulma - framework similar to bootstrap */
 /* to ensure font awesome icons stay centred and have consistent size */
 .icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .logo-font {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /* logo only takes up as much space as the text requires */
 .main-logo-link {
-    width: fit-content;
+  width: fit-content;
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+  background: black;
+  color: white;
+  min-width: 260px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 .shop-now-button:hover,
@@ -47,8 +55,8 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+  background: #222;
+  color: white;
 }
 
 /* text-black class and border-black class similar to bootstrap colour helper classes */
@@ -56,11 +64,15 @@ body {
 /* CHECK: if current version has these classes  */
 
 .text-black {
-    color: #000 !important;
+  color: #000 !important;
 }
 
 .border-black {
-    border: 1px solid black !important;
+  border: 1px solid black !important;
+}
+
+.bg-black {
+  background: black !important;
 }
 
 /* -------------------------------- Media Queries */
@@ -74,15 +86,15 @@ body {
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-/* push body down to the bottom of the main page header */
-    .header-container {
-        padding-top: 164px;
-    }
+  .fixed-top-desktop-only {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+  /* push body down to the bottom of the main page header */
+  .header-container {
+    padding-top: 164px;
+  }
 }
