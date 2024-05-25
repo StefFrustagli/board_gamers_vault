@@ -5,6 +5,10 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -39,6 +43,7 @@ class Game(models.Model):
         ("heavily_used", "Heavily used"),
     ]
 
+    listing_id = models.CharField(max_length=100, unique=True, blank=True)
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     condition = models.CharField(max_length=15, choices=CONDITION_CHOICES)
