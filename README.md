@@ -112,7 +112,7 @@ Login page [Desktop and mobile]:
 
 **Board game description page** [Desktop and mobile]:
 
-![Wireframe created using Balsamiq - User Account page on desktop](https://i.ibb.co/TwL0B2M/my-screenshots-2024-05-15-at-18-12-43.png)
+![Wireframe created using Balsamiq - User Account page on desktop](media/game_description_desktop.png)
 
 ![Wireframe created using Balsamiq - User Account page on mobile](https://i.ibb.co/sqsjyx7/my-screenshots-2024-05-15-at-18-12-30.png)
 
