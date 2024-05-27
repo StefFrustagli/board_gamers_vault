@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- {% block page-header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %} -->
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            hello hello
+            {{ games_list }}
+
+        </div>
+    </div>
+</div>
+
+<!-- Debug print statement -->
+{% if games_list %}
+<p>Games list received successfully.</p>
+{% else %}
+<p>No games list received.</p>
+{% endif %}
+
+
+{% endblock %}
