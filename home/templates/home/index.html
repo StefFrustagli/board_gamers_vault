@@ -12,14 +12,14 @@
 {% block content %}
 <div class="container h-100">
     <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
+        <div class="header-title col-7 col-md-6 my-auto">
             <h1 class="display-4 logo-font text-black">
                 Sell & buy Board Games!
             </h1>
             <!-- Margin top and bottom -->
             <div class="my-5">
                 <h4>
-                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Board games on sale</a>
+                    <a href="{% url 'games_list' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Board games on sale</a>
                 </h4>
             </div>
         </div>

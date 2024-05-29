@@ -26,27 +26,23 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
                         {% if game.image %}
-                        <a href="">
+                        <a href="{% url 'game_detail' game.id %}">
                             <img class="card-img-top img-fluid" src="{{ game.image.url }}" alt="{{ game.title }}">
                         </a>
-                        <!-- {% else %}
-                        <a href="">
+                        {% else %}
+                        <a href="{% url 'game_detail' game.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.title }}">
                         </a>
-                        {% endif %} -->
+                        {% endif %}
                         <div class="card-body pb-0">
-                            <p class="mb-0">{{ game.title }}</p>
+                            <p class="lead mb-0 text-left">{{ game.title }}</p>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
                                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
                                     <p class="mb-0 text-left">Condition: {{ game.condition }}</p>
-                                    {% if game.category %}
                                     <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
-                                    {% else %}
-                                    <small class="text-muted">No Category</small>
-                                    {% endif %}
                                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                                 </div>
                             </div>

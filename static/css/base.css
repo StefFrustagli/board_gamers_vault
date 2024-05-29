@@ -9,9 +9,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.header-title {
+  margin-top: 17rem !important; /* can't find another way to make */
+}                               /* to make the header go down */
+
 /* Gamelist container */
 #gamelist-container {
-  margin-top: 15rem; 
+  margin-top: 10rem; /* Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -21,6 +25,22 @@ body {
   background-size: cover;
   height: calc(100vh - 164px);
   margin: 0;
+}
+
+/* List of games images */
+
+.image-container {
+  width: 300px; /* Set desired width */
+  height: 200px; /* Set desired height */
+  overflow: hidden; /* Hide overflow to ensure images fit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image covers the container */
 }
 
 /* from Bulma - framework similar to bootstrap */
@@ -111,4 +131,16 @@ body {
   .header-container {
     padding-top: 164px;
   }
+
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
 }
