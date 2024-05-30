@@ -96,7 +96,7 @@ body {
 }
 
 .bg-black {
-  background: black !important;
+  background: rgb(0, 0, 0) !important;
 }
 
 .overlay {
@@ -105,7 +105,7 @@ body {
   top: 0;
   left: 0;
   position:fixed;
-  background: rgba(176, 229, 176, 0.499);
+  background: rgb(246, 250, 246);
   z-index: -1; /* to make sure it sits behind all the content */
 }
 
