@@ -18,17 +18,20 @@ class Category(models.Model):
 # Add categories to the database
 # Category.objects.bulk_create(
 #     [
-#         Category(name="Role-playing game"),
+#         Category(name="Role-playing"),
 #         Category(name="Cooperatives"),
 #         Category(name="Bluffing"),
 #         Category(name="Area control"),
-#         Category(name="Drafting"),
-#         Category(name="Euro"),
-#         Category(name="Legacy"),
+#         Category(name="Placement"),
 #         Category(name="Memory"),
 #         Category(name="Miniatures"),
-#         Category(name="Wargame"),
+#         Category(name="War games"),
 #         Category(name="Worker placement"),
+#         Category(name="Strategy"),
+#         Category(name="Deck Building"),
+#         Category(name="City Building"),
+#         Category(name="Party Games"),
+#         Category(name="Storytelling"),
 #     ]
 # )
 

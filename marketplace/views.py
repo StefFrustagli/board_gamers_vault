@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Game
+from .models import Game, Category
 
 # Create your views here.
 
@@ -14,13 +14,20 @@ def games_list(request):
     # the data you retrieve from the database
     # in your view function
     query = None
+    categories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            games = games.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
                 messages.error(request, "Please enter a search criteria.")
-                return redirect(reverse("games"))
+                return redirect(reverse("games_list"))
 
             queries = Q(title__icontains=query) | Q(description__icontains=query)
             # i makes the case insensitive
@@ -31,6 +38,7 @@ def games_list(request):
         # dictionary (context) that you pass to the
         # template. The template uses this key
         "search_term": query,
+        "categories": categories,
     }
     return render(request, "marketplace/games_list.html", context)
 

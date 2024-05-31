@@ -10,7 +10,7 @@ body {
 }
 
 .header-title {
-  margin-top: 17rem !important; /* can't find another way to make */
+  margin-top: 30rem !important; /* can't find another way to make */
 }                               /* to make the header go down */
 
 /* Gamelist container */
@@ -21,9 +21,9 @@ body {
 
 /* Header image */
 .header-image {
-  background: url("/media/boardgame_shelf_banner.jpeg") no-repeat center center fixed;
-  background-size: cover;
-  height: calc(100vh - 164px);
+  background: url("/media/boardgame_shelf_banner_two.jpeg") no-repeat center center fixed;
+  /* background-size: cover; */
+  height: 12rem;
   margin: 0;
 }
 
