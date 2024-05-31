@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
-                                    <p class="mb-0 text-left">Condition: {{ game.condition }}</p>
+                                    <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
                                     <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
                                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                                 </div>

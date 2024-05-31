@@ -8,10 +8,10 @@
                 All Board Games
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'games_list' %}?category=price" class="dropdown-item">By Price</a>
-                <a href="{% url 'games_list' %}?category=condition" class="dropdown-item ">By Condition</a>
-                <a href="{% url 'games_list' %}?category=category" class="dropdown-item ">By Category</a>
-                <a href="{% url 'games_list' %}?category=price,condition,category" class="dropdown-item">All Board
+                <a href="{% url 'games_list' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'games_list' %}?sort=condition&direction=asc" class="dropdown-item ">By Condition</a>
+                <a href="{% url 'games_list' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'games_list' %}" class="dropdown-item">All Board
                     Games</a>
             </div>
         </li>
