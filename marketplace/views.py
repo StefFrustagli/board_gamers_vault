@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
+
 from .models import Game, Category
 
 # Create your views here.

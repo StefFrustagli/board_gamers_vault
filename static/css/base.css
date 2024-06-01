@@ -19,10 +19,15 @@ body {
   color: rgb(74, 79, 79);
 }
 
+#gamelist-detail {
+  margin-top: 15rem; /* Override existing margin-top */
+  color: rgb(74, 79, 79);
+}
+
 /* Header image */
 .header-image {
   background: url("/media/boardgame_shelf_banner_two.jpeg") no-repeat center center fixed;
-  /* background-size: cover; */
+  background-size: cover;
   height: 12rem;
   margin: 0;
 }

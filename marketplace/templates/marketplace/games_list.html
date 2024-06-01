@@ -41,8 +41,15 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
+                                    {% if game.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted"
+                                            href="{% url 'games_list' %}?category={{ game.category }}">
+                                            <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
+                                        </a>
+                                    </p>
+                                    {% endif %}
                                     <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
-                                    <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
                                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                                 </div>
                             </div>
