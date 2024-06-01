@@ -45,7 +45,8 @@
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted"
                                             href="{% url 'games_list' %}?category={{ game.category }}">
-                                            <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
+                                            <small class="text-muted"><i class="fas fa-play"></i> {{ game.category
+                                                }}</small>
                                         </a>
                                     </p>
                                     {% endif %}

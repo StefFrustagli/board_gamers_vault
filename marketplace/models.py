@@ -5,36 +5,30 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
+    CATEGORY_CHOICES = [
+        ("role_playing", "Role-playing"),
+        ("cooperatives", "Cooperatives"),
+        ("bluffing", "Bluffing"),
+        ("area_control", "Area control"),
+        ("placement", "Placement"),
+        ("memory", "Memory"),
+        ("miniatures", "Miniatures"),
+        ("war_games", "War games"),
+        ("worker_placement", "Worker placement"),
+        ("strategy", "Strategy"),
+        ("deck_building", "Deck Building"),
+        ("city_building", "City Building"),
+        ("party_games", "Party Games"),
+        ("storytelling", "Storytelling"),
+    ]
 
     class Meta:
         verbose_name_plural = 'Categories'
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
 
     def __str__(self):
         return self.name
-
-
-# Add categories to the database
-# Category.objects.bulk_create(
-#     [
-#         Category(name="Role-playing"),
-#         Category(name="Cooperatives"),
-#         Category(name="Bluffing"),
-#         Category(name="Area control"),
-#         Category(name="Placement"),
-#         Category(name="Memory"),
-#         Category(name="Miniatures"),
-#         Category(name="War games"),
-#         Category(name="Worker placement"),
-#         Category(name="Strategy"),
-#         Category(name="Deck Building"),
-#         Category(name="City Building"),
-#         Category(name="Party Games"),
-#         Category(name="Storytelling"),
-#     ]
-# )
-
 
 class Game(models.Model):
     CONDITION_CHOICES = [
@@ -42,7 +36,7 @@ class Game(models.Model):
         ("great", "Great"),
         ("good", "Good"),
         ("fair", "Fair"),
-        ("signs_of_times", "Signs of times"),
+        ("signs_of_time", "Signs of time"),
         ("heavily_used", "Heavily used"),
     ]
 

@@ -114,6 +114,12 @@ body {
   z-index: -1; /* to make sure it sits behind all the content */
 }
 
+/* Filter badges */
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
