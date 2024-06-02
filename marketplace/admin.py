@@ -1,12 +1,15 @@
 from django.contrib import admin
-from .models import Game
-from .models import Category
+from .models import Category, Game
+from django_summernote.admin import SummernoteModelAdmin
+
 
 # Register your models here.
 
-class GameAdmin(admin.ModelAdmin):
+@admin.register(Game)
+class GameAdmin(SummernoteModelAdmin):
+
     list_display = (
-        "listing_id",
+        "sku",
         "title",
         "price",
         "condition",
@@ -16,13 +19,14 @@ class GameAdmin(admin.ModelAdmin):
         "description",
         "seller_comment",
     )
+    search_fields = ["title"]
+    list_filter = ("seller",)
+    prepopulated_fields = {"sku": ("title",)}
+    summernote_fields = ("description", "seller_comment")
 
-    ordering = ('listing_id',)
 
-class CategoryAdmin(admin.ModelAdmin):   
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-    ) 
-    
-admin.site.register(Game, GameAdmin)
-admin.site.register(Category, CategoryAdmin)
+        "name",
+        )

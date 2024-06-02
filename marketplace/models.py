@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
 
 # Create your models here.
 
@@ -22,13 +23,34 @@ class Category(models.Model):
         ("storytelling", "Storytelling"),
     ]
 
-    class Meta:
-        verbose_name_plural = 'Categories'
+    # Add categories to the database
+    # Category.objects.bulk_create(
+    #     [
+    #         Category(name="Role-playing"),
+    #         Category(name="Cooperatives"),
+    #         Category(name="Bluffing"),
+    #         Category(name="Area control"),
+    #         Category(name="Placement"),
+    #         Category(name="Memory"),
+    #         Category(name="Miniatures"),
+    #         Category(name="War games"),
+    #         Category(name="Worker placement"),
+    #         Category(name="Strategy"),
+    #         Category(name="Deck Building"),
+    #         Category(name="City Building"),
+    #         Category(name="Party Games"),
+    #         Category(name="Storytelling"),
+    #     ]
+    # )
 
-    name = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    name = models.CharField(max_length=100, choices=CATEGORY_CHOICES, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.get_name_display()  # Display the human-readable value
+
 
 class Game(models.Model):
     CONDITION_CHOICES = [
@@ -40,7 +62,7 @@ class Game(models.Model):
         ("heavily_used", "Heavily used"),
     ]
 
-    listing_id = models.CharField(max_length=100, unique=True, blank=True)
+    sku = models.CharField(max_length=12, unique=True, blank=True)
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     condition = models.CharField(max_length=15, choices=CONDITION_CHOICES)
@@ -49,11 +71,17 @@ class Game(models.Model):
     )
     image = models.ImageField(upload_to="game_images/")
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    seller = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="games"
-    )
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name="games")
     description = models.TextField()
     seller_comment = models.TextField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.sku:
+            self.sku = self.generate_sku()
+        super(Game, self).save(*args, **kwargs)
+
+    def generate_sku(self):
+        return get_random_string(length=12)
 
     def __str__(self):
         return self.title
