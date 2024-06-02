@@ -17,6 +17,7 @@ def games_list(request):
     # in your view function
     query = None
     categories = None
+    conditions = None
     sort = None
     direction = None   
     no_games_message = None
@@ -46,6 +47,13 @@ def games_list(request):
                     "DEBUG: No games found for the selected category"
                 )  # Debugging print statement
 
+        if 'condition' in request.GET:
+            conditions = request.GET['condition'].split(',')
+            games = games.filter(condition__in=conditions)
+
+            if not games.exists():
+                no_games_message = "No games found for the selected condition."
+
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
@@ -64,6 +72,7 @@ def games_list(request):
         # template. The template uses this key
         "search_term": query,
         "current_categories": categories,
+        "current_conditions": conditions,
         "current_sorting": current_sorting,
         "no_games_message": no_games_message,
     }
