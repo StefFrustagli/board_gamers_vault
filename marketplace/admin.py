@@ -22,7 +22,7 @@ class GameAdmin(SummernoteModelAdmin):
     search_fields = ["title"]
     list_filter = ("seller",)
     prepopulated_fields = {"sku": ("title",)}
-    summernote_fields = ("description", "seller_comment")
+    summernote_fields = ("description")
 
 
 @admin.register(Category)

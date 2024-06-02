@@ -18,7 +18,8 @@ def games_list(request):
     query = None
     categories = None
     sort = None
-    direction = None    
+    direction = None   
+    no_games_message = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -39,6 +40,12 @@ def games_list(request):
             games = games.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+            if not games.exists():
+                no_games_message = "No games found for the selected category."  
+                print(
+                    "DEBUG: No games found for the selected category"
+                )  # Debugging print statement
+
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
@@ -58,6 +65,7 @@ def games_list(request):
         "search_term": query,
         "current_categories": categories,
         "current_sorting": current_sorting,
+        "no_games_message": no_games_message,
     }
     return render(request, "marketplace/games_list.html", context)
 

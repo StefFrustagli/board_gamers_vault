@@ -23,26 +23,6 @@ class Category(models.Model):
         ("storytelling", "Storytelling"),
     ]
 
-    # Add categories to the database
-    # Category.objects.bulk_create(
-    #     [
-    #         Category(name="Role-playing"),
-    #         Category(name="Cooperatives"),
-    #         Category(name="Bluffing"),
-    #         Category(name="Area control"),
-    #         Category(name="Placement"),
-    #         Category(name="Memory"),
-    #         Category(name="Miniatures"),
-    #         Category(name="War games"),
-    #         Category(name="Worker placement"),
-    #         Category(name="Strategy"),
-    #         Category(name="Deck Building"),
-    #         Category(name="City Building"),
-    #         Category(name="Party Games"),
-    #         Category(name="Storytelling"),
-    #     ]
-    # )
-
     class Meta:
         verbose_name_plural = "Categories"
 
@@ -62,7 +42,7 @@ class Game(models.Model):
         ("heavily_used", "Heavily used"),
     ]
 
-    sku = models.CharField(max_length=12, unique=True, blank=True)
+    sku = models.CharField(max_length=40, unique=True, blank=True)
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     condition = models.CharField(max_length=15, choices=CONDITION_CHOICES)
@@ -81,7 +61,7 @@ class Game(models.Model):
         super(Game, self).save(*args, **kwargs)
 
     def generate_sku(self):
-        return get_random_string(length=12)
+        return get_random_string(length=40)
 
     def __str__(self):
         return self.title
