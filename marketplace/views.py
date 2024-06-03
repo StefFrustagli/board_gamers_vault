@@ -26,10 +26,11 @@ def games_list(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                games = games.annotate(lower_name=Lower('name'))
-
+            if sortkey == 'title': # should I change this into title instead?
+                sortkey = 'lower_title'
+                games = games.annotate(lower_name=Lower('title'))
+            if sortkey == 'category':
+                sortkey = 'category__name'     
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
