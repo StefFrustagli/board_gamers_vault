@@ -65,3 +65,18 @@ class Game(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class SellerProfile(models.Model):
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="seller_profile"
+    )
+    standard_delivery_fee = models.DecimalField(
+        max_digits=10, decimal_places=2, default=5.00
+    )
+    free_delivery_threshold = models.DecimalField(
+        max_digits=10, decimal_places=2, default=50.00
+    )
+
+    def __str__(self):
+        return self.user.username
