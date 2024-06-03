@@ -45,12 +45,13 @@ INSTALLED_APPS = [
     # social account app creates callback URLs
     # when connecting via social media accounts
     "django.contrib.sites",
+    "django_summernote",
     "allauth",
     "allauth.account",  # allows basic user account functionalities
     "allauth.socialaccount",  # logging in via social media
     "home",
     "marketplace",
-    "django_summernote",
+    "bag",
 ]
 
 MIDDLEWARE = [
