@@ -10,6 +10,7 @@ def bag_contents(request):
     total = 0
     product_count = 0
     delivery = 0
+
     # Dictionary to keep track of delivery charges for each seller
     seller_delivery_charges = {}
 

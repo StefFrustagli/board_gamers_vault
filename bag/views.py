@@ -32,7 +32,6 @@ def add_to_bag(request, item_id):
 
     # Update the session's bag with the modified bag
     request.session["bag"] = bag
-    # Debug
-    print(request.session['bag'])
+
     # Redirect the user to the URL specified in the redirect_url
     return redirect(redirect_url)
