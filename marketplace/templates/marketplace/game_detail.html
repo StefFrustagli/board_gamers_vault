@@ -40,6 +40,40 @@
                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                     <p class="mt-3">Description: {{ game.description|safe }}</p>
                     <p class="mt-3">What the seller says: {{ game.seller_comment|safe }}</p>
+                    <!-- Form to add a product to the shopping bag -->
+                    <form class="form" action="{% url 'add_to_bag' game.id %}" method="POST">
+                        <!-- Django template tag to include the CSRF token for security -->
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <!-- Display the quantity label -->
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <!-- Input field to select the quantity of the product -->
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ game.id }}" id="id_qty_{{ game.id }}">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-12">
+                                <!-- Link to go back to the products page -->
+                                <a href="{% url 'games_list' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <!-- Icon for the button -->
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <!-- Submit button to add the product to the bag -->
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            </div>
+                            <!-- Hidden input to store the current page URL for redirection after form submission -->
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>

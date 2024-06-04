@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from marketplace.models import Game
+from marketplace.models import Game, SellerProfile
 
 def bag_contents(request):
     # Initialize variables to store bag items,
@@ -27,11 +27,16 @@ def bag_contents(request):
         # Get the seller of the game
         seller = game.seller
 
+        # seller profile associated with the user
+        seller_profile = seller.seller_profile
+
         # Check if the seller's delivery charge is already calculated
         if seller.id not in seller_delivery_charges:
             # Calculate delivery charge if the total is below the free delivery threshold
             if total < settings.FREE_DELIVERY_THRESHOLD:
-                seller_delivery_charges[seller.id] = seller.standard_delivery_fee
+                seller_delivery_charges[seller.id] = (
+                    seller_profile.standard_delivery_fee
+                )
             else:
                 seller_delivery_charges[seller.id] = 0
 
