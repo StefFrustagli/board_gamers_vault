@@ -52,6 +52,10 @@
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.game.price }}</p>
+                            <!-- Remove item from basket -->
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.game.id }}">
+                                <small>Remove</small>
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -99,4 +103,26 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        e.preventDefault(); // Prevent the default action of the link
+
+        var csrfToken = "{{ csrf_token }}"; // Get the CSRF token for the request
+        var itemId = $(this).attr('id').split('remove_')[1]; // Extract the item ID from the element's ID
+        var url = `/bag/remove/${itemId}/`; // Construct the URL for the remove view
+        var data = { 'csrfmiddlewaretoken': csrfToken }; // Create the data object for the POST request
+
+        // Make an AJAX POST request to remove the item
+        $.post(url, data)
+            .done(function () {
+                location.reload(); // Reload the page on successful request
+            });
+    })
+</script>
 {% endblock %}

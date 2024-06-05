@@ -35,6 +35,7 @@
                         <a class="text-muted" href="{% url 'games_list' %}?category={{ game.category.name }}">
                             <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
                         </a>
+                        <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
                     </p>
                     {% endif %}
                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
@@ -44,19 +45,44 @@
                     <form class="form" action="{% url 'add_to_bag' game.id %}" method="POST">
                         <!-- Django template tag to include the CSRF token for security -->
                         {% csrf_token %}
+
+                        <!-- Quantity selection commented out -->
+                      <!-- 
                         <div class="form-row">
                             <div class="col-12">
-                                <!-- Display the quantity label -->
+                        
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
-                                        <!-- Input field to select the quantity of the product -->
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ game.id }}" id="id_qty_{{ game.id }}">
+                                        <div class="input-group-prepend">
+                                            
+                                            <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ game.id }}"
+                                                id="decrement-qty_{{ game.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        
+                                        <input class="form-control qty_input" type="number" 
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ game.id }}" 
+                                            id="id_qty_{{ game.id }}">
+                                        
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ game.id }}"
+                                                id="increment-qty_{{ game.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    
+                            </div> 
+                            -->
+
                             <div class="col-12">
                                 <!-- Link to go back to the products page -->
                                 <a href="{% url 'games_list' %}" class="btn btn-outline-black rounded-0 mt-5">

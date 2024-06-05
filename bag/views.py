@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -11,8 +12,8 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """Add a quantity of the specified product to the shopping bag"""
 
-    # Retrieve the quantity from the POST data and convert it to an integer
-    quantity = int(request.POST.get("quantity"))
+    # Quantity always one as unique item
+    quantity = 1
 
     # Retrieve the redirect URL from the POST data,
     # which indicates where to go after adding the item to the bag
@@ -35,3 +36,21 @@ def add_to_bag(request, item_id):
 
     # Redirect the user to the URL specified in the redirect_url
     return redirect(redirect_url)
+
+def remove_from_bag(request, item_id):
+    """
+    Remove the item from the shopping bag.
+
+    This function removes an item from the shopping bag stored in the session.
+    """
+
+    try:
+        bag = request.session.get("bag", {})
+        bag.pop(item_id, None)  # Remove the item from the bag by its ID
+
+        request.session["bag"] = bag
+        
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
