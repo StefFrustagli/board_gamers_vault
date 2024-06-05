@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
+
+from marketplace.models import Game
 
 # Create your views here.
 
@@ -12,6 +15,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """Add a quantity of the specified product to the shopping bag"""
 
+    game = Game.objects.get(pk=item_id)
     # Quantity always one as unique item
     quantity = 1
 
@@ -25,11 +29,13 @@ def add_to_bag(request, item_id):
 
     # Check if the item is already in the bag
     if item_id in list(bag.keys()):
-        # If it is, increment the quantity by the amount specified
-        bag[item_id] += quantity
-        # If it's not, add it with the specified quantity
+        # If it is, display a message indicating so
+        messages.info(request, f"{game.title} is already in your bag.")
     else:
+        # If it's not, add it with the specified quantity
         bag[item_id] = quantity
+        # Display a success message to the user indicating the item has been added to the bag
+        messages.success(request, f"Added {game.title} to your bag")
 
     # Update the session's bag with the modified bag
     request.session["bag"] = bag
@@ -49,7 +55,7 @@ def remove_from_bag(request, item_id):
         bag.pop(item_id, None)  # Remove the item from the bag by its ID
 
         request.session["bag"] = bag
-        
+
         return HttpResponse(status=200)
 
     except Exception as e:

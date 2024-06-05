@@ -151,7 +151,26 @@
 
     <main>
         {% if messages %}
-        <div class="message-container"></div>
+        <!-- Container for displaying messages -->
+            <div class="message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                        <!-- Include an error toast if the message level is 40 (error) -->
+                            {% include 'includes/toasts/toast_error.html' %}
+                        {% elif level == 30 %}
+                        <!-- Include a warning toast if the message level is 30 (warning) -->
+                            {% include 'includes/toasts/toast_warning.html' %}
+                        {% elif level == 25 %}
+                        <!-- Include a success toast if the message level is 25 (success) -->
+                            {% include 'includes/toasts/toast_success.html' %}
+                        {% else %}
+                        <!-- Include an info toast for any other message level -->
+                            {% include 'includes/toasts/toast_info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
         {% endif %}
 
         <!-- additional header -->
@@ -164,6 +183,10 @@
 
         <!-- js that we want to load at the end of the body-->
         {% block postloadjs %}
+        <script type="text/javascript">
+            // Show all elements with the class 'toast' as Bootstrap toasts
+            $('.toast').toast('show');
+        </script>    
         {% endblock %}
     </main>
     <footer>
