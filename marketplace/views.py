@@ -44,9 +44,6 @@ def games_list(request):
 
             if not games.exists():
                 no_games_message = "No games found for the selected category."  
-                print(
-                    "DEBUG: No games found for the selected category"
-                )  # Debugging print statement
 
         if 'condition' in request.GET:
             conditions = request.GET['condition'].split(',')
