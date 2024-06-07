@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     "marketplace",
     "bag",
     "checkout",
+
+    # Other
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -67,12 +70,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'board_gamers_vault.urls'
 
+CRISPY_TEMPLATES_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [ # where Django should look for templates
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        "DIRS": [  # Dirs where Django should look for templates
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates", "allauth"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -83,6 +88,12 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "bag.contexts.bag_contents",
+            ],
+            "builtins": [
+                # Enables crispy forms tags
+                "crispy_forms.templatetags.crispy_forms_tags",
+                # Enables crispy forms field tags
+                "crispy_forms.templatetags.crispy_forms_field",
             ],
         },
     },
