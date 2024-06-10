@@ -153,3 +153,16 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }} <!-- Executes any scripts from parent blocks -->
+
+    <!-- Injects the Stripe public key into the template as a JSON script -->
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+
+    <!-- Injects the client secret into the template as a JSON script -->
+    {{ client_secret|json_script:"id_client_secret" }}
+
+    <!-- Loads the Stripe Elements JavaScript file -->
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
