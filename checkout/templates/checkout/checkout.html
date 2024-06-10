@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -27,7 +26,7 @@
 
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted">Order Summary ({{ game_count }})</p>
+            <p class="text-muted">Order Summary</p>
             <div class="row">
                 <div class="col-7 offset-2">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -40,10 +39,10 @@
             <div class="row">
                 <div class="col-2 mb-1">
                     <a href="{% url 'game_detail' item.game.id %}">
-                        {% if item.product.image %}
-                        <img class="w-100" src="{{ item.game.image.url }}" alt="{{ game.name }}">
+                        {% if item.game.image %}
+                        <img class="w-100" src="{{ item.game.image.url }}" alt="{{ game.title }}">
                         {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.name }}">
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.title }}">
                         {% endif %}
                     </a>
                 </div>
@@ -52,7 +51,7 @@
                     <p class="my-0 small text-muted">Qty: {{ game.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="my-0 small text-muted">${{ item.game.price | calc_subtotal:item.quantity }}</p>
+                    <p class="my-0 small text-muted">£{{ item.game.price }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -64,9 +63,9 @@
                     <p class="my-0">Grand Total:</p>
                 </div>
                 <div class="col-3">
-                    <p class="my-0">${{ total | floatformat:2 }}</p>
-                    <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                    <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    <p class="my-0">£{{ total | floatformat:2 }}</p>
+                    <p class="my-0">£{{ delivery | floatformat:2 }}</p>
+                    <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
                 </div>
             </div>
         </div>
@@ -76,18 +75,36 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <div class="mb-2">
                     {{ order_form.full_name | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.email | as_crispy_field }}
+                    </div>
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    <div class="mb-2">
                     {{ order_form.phone_number | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.country | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.postcode | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.town_or_city | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.street_address1 | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.street_address2 | as_crispy_field }}
+                    </div>
+                    <div class="mb-2">
                     {{ order_form.county | as_crispy_field }}
+                    </div>
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
