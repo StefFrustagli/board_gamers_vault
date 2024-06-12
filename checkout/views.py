@@ -31,6 +31,9 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_TEST_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_TEST_SECRET_KEY
 
+    # Initialize intent to None to handle both GET and POST requests
+    intent = None
+
     # Set the Stripe API key
     stripe.api_key = stripe_secret_key
 
@@ -104,6 +107,7 @@ def checkout(request):
 
         # Stripe API key
         stripe.api_key = stripe_secret_key
+
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,

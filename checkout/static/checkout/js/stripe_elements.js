@@ -59,33 +59,41 @@ card.addEventListener("change", function (event) {
 const form = document.getElementById('payment-form');
 
 form.addEventListener('submit', async function(ev) {
-    ev.preventDefault();
-    card.update({ 'disabled': true });
-    $('#submit-button').attr('disabled', true);
+  ev.preventDefault();
+  card.update({ disabled: true });
+  $("#submit-button").attr("disabled", true);
+  // Toggles the visibility of the payment form with a fade effect over 100 milliseconds
+  $("#payment-form").fadeToggle(100);
+  // Toggles the visibility of the loading overlay with a fade effect over 100 milliseconds
+  $("#loading-overlay").fadeToggle(100);
 
-    try {
-        const result = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: card,
-            }
-        });
+  try {
+    const result = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: card,
+      },
+    });
 
-        if (result.error) {
-            const errorDiv = document.getElementById('card-errors');
-            errorDiv.textContent = result.error.message;
-            card.update({ 'disabled': false });
-            $('#submit-button').attr('disabled', false);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
-            }
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        // Handle error gracefully, show a message to the user or log it
-        const errorDiv = document.getElementById('card-errors');
-        errorDiv.textContent = 'An error occurred. Please try again later.';
-        card.update({ 'disabled': false });
-        $('#submit-button').attr('disabled', false);
+    if (result.error) {
+      const errorDiv = document.getElementById("card-errors");
+      errorDiv.textContent = result.error.message;
+      card.update({ disabled: false });
+      $("#submit-button").attr("disabled", false);
+    } else {
+      if (result.paymentIntent.status === "succeeded") {
+        form.submit();
+      }
     }
+  } catch (error) {
+    console.error("Error:", error);
+    // Handle error gracefully, show a message to the user or log it
+    const errorDiv = document.getElementById("card-errors");
+    errorDiv.textContent = "An error occurred. Please try again later.";
+    // Toggles the visibility of the payment form with a fade effect over 100 milliseconds
+    $("#payment-form").fadeToggle(100);
+    // Toggles the visibility of the loading overlay with a fade effect over 100 milliseconds
+    $("#loading-overlay").fadeToggle(100);
+    card.update({ disabled: false });
+    $("#submit-button").attr("disabled", false);
+  }
 });

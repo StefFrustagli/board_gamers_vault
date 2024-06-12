@@ -128,4 +128,4 @@ class OrderLineItem(models.Model):
         Returns:
             str: A formatted string with the SKU and order number.
         """
-        return f"SKU {self.product.sku} on order {self.order.order_number}"
+        return f"SKU {self.game.sku} on order {self.order.order_number}"
