@@ -10,6 +10,7 @@ from bag.contexts import bag_contents
 
 import stripe
 
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def checkout(request):
     """
@@ -26,9 +27,12 @@ def checkout(request):
     Returns:
         HttpResponse: The HTTP response object with the rendered checkout template.
     """
-    # Retrieve Stripe keys from settings
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    # Retrieve Stripe TEST keys from settings
+    stripe_public_key = settings.STRIPE_TEST_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_TEST_SECRET_KEY
+
+    # Set the Stripe API key
+    stripe.api_key = stripe_secret_key
 
     if request.method == "POST":
         # Get the shopping bag from the session
@@ -97,6 +101,8 @@ def checkout(request):
         current_bag = bag_contents(request)
         total = current_bag["grand_total"]
         stripe_total = round(total * 100)
+
+        # Stripe API key
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
