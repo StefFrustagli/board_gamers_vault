@@ -101,6 +101,10 @@ class OrderLineItem(models.Model):
     game = models.ForeignKey(
         Game, null=False, blank=False, on_delete=models.CASCADE
     )
+
+    # Quantity 1
+    quantity = models.PositiveIntegerField(default=1)
+
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, blank=False, editable=False
     )
@@ -114,7 +118,7 @@ class OrderLineItem(models.Model):
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.game.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

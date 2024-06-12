@@ -7,8 +7,8 @@
 */
 
 // Load Stripe public key and client secret from hidden elements in the template
-const stripePublicKey = $('#id_stripe_public_key').text().trim();
-const clientSecret = $('#id_client_secret').text().trim();
+const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+const clientSecret = $('#id_client_secret').text().slice(1, -1);
 
 // Initialize Stripe with the public key
 const stripe = Stripe(stripePublicKey);
