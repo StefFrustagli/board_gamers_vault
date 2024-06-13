@@ -206,6 +206,7 @@ STRIPE_LIVE_PUBLIC_KEY = os.getenv("STRIPE_LIVE_PUBLIC_KEY", "")
 STRIPE_LIVE_SECRET_KEY = os.getenv("STRIPE_LIVE_SECRET_KEY", "")
 STRIPE_TEST_SECRET_KEY = os.getenv("STRIPE_TEST_SECRET_KEY", "")
 STRIPE_TEST_PUBLIC_KEY = os.getenv("STRIPE_TEST_PUBLIC_KEY", "")
+STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
 
 # Use test keys by default, switch to live keys in production
 STRIPE_PUBLIC_KEY = STRIPE_TEST_PUBLIC_KEY
