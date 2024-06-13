@@ -58,32 +58,76 @@ card.addEventListener("change", function (event) {
 // Handle form submit
 const form = document.getElementById('payment-form');
 
-form.addEventListener('submit', async function(ev) {
+form.addEventListener("submit", async function (ev) {
   ev.preventDefault();
   card.update({ disabled: true });
   $("#submit-button").attr("disabled", true);
-  // Toggles the visibility of the payment form with a fade effect over 100 milliseconds
+  // Toggles the visibility of the payment form with fade effect 
   $("#payment-form").fadeToggle(100);
-  // Toggles the visibility of the loading overlay with a fade effect over 100 milliseconds
+  // Toggles the visibility of the loading overlay with fade effect 
   $("#loading-overlay").fadeToggle(100);
 
-  try {
-    const result = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: card,
-      },
-    });
+  // const saveInfo = Boolean($("#id-save-info").attr("checked"));
+  const saveInfo = $("#id-save-info").is(":checked"); 
+  // From using {% csrf_token %} in the form
+  const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+  const postData = {
+    csrfmiddlewaretoken: csrfToken,
+    client_secret: clientSecret,
+    save_info: saveInfo,
+  };
+  const url = "/checkout/cache_checkout_data/";
 
-    if (result.error) {
-      const errorDiv = document.getElementById("card-errors");
-      errorDiv.textContent = result.error.message;
-      card.update({ disabled: false });
-      $("#submit-button").attr("disabled", false);
-    } else {
-      if (result.paymentIntent.status === "succeeded") {
-        form.submit();
-      }
-    }
+  try {
+    $.post(url, postData)
+      .done(async function () {
+        const result = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: card,
+            billing_details: {
+              name: $.trim(form.full_name.value),
+              phone: $.trim(form.phone_number.value),
+              email: $.trim(form.email.value),
+              address: {
+                line1: $.trim(form.street_address1.value),
+                line2: $.trim(form.street_address2.value),
+                city: $.trim(form.town_or_city.value),
+                country: $.trim(form.country.value),
+                state: $.trim(form.county.value),
+              },
+            },
+          },
+          shipping: {
+            name: $.trim(form.full_name.value),
+            phone: $.trim(form.phone_number.value),
+            address: {
+              line1: $.trim(form.street_address1.value),
+              line2: $.trim(form.street_address2.value),
+              city: $.trim(form.town_or_city.value),
+              country: $.trim(form.country.value),
+              postal_code: $.trim(form.postcode.value),
+              state: $.trim(form.county.value),
+            },
+          },
+        });
+
+        if (result.error) {
+          const errorDiv = document.getElementById("card-errors");
+          errorDiv.textContent = result.error.message;
+          card.update({ disabled: false });
+          $("#submit-button").attr("disabled", false);
+          $("#payment-form").fadeToggle(100); // ENSURING SPINNER STOPS
+          $("#loading-overlay").fadeToggle(100); // ENSURING SPINNER STOPS
+        } else {
+          if (result.paymentIntent.status === "succeeded") {
+            form.submit();
+          }
+        }
+      })
+      .fail(function () {
+        // Handle failure in caching checkout data
+        location.reload();
+      });
   } catch (error) {
     console.error("Error:", error);
     // Handle error gracefully, show a message to the user or log it
