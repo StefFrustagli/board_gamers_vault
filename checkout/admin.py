@@ -25,6 +25,8 @@ class OrderAdmin(admin.ModelAdmin):
         "delivery_cost",
         "order_total",
         "grand_total",
+        "original_bag",
+        "stripe_pid"
     )  # Make certain fields read-only
 
     # Fields to be displayed in the admin form
@@ -43,6 +45,8 @@ class OrderAdmin(admin.ModelAdmin):
         "delivery_cost",
         "order_total",
         "grand_total",
+        "original_bag",
+        "stripe_pid",
     )
 
     # Fields to be displayed in the admin list view
