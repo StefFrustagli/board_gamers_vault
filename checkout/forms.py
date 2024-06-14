@@ -34,12 +34,11 @@ class OrderForm(forms.ModelForm):
             "full_name": "Full Name",
             "email": "Email Address",
             "phone_number": "Phone Number",
-            "country": "Country",
             "postcode": "Postal Code",
             "town_or_city": "Town or City",
             "street_address1": "Street Address 1",
             "street_address2": "Street Address 2",
-            "county": "County",
+            "county": "County, State or Locality",
         }
 
         # Set autofocus on the full_name field
@@ -47,14 +46,13 @@ class OrderForm(forms.ModelForm):
 
         # Iterate over all form fields to add custom attributes
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f"{placeholders[field]} *"
-            else:
-                placeholder = placeholders[field]
-
-            # Add placeholder text and CSS class to each field's widget
-            self.fields[field].widget.attrs["placeholder"] = placeholder
+            if field != 'country':        
+                if self.fields[field].required:
+                    placeholder = f"{placeholders[field]} *"
+                else:
+                    placeholder = placeholders[field]
+                # Add placeholder text and CSS class to each field's widget
+                self.fields[field].widget.attrs["placeholder"] = placeholder
             self.fields[field].widget.attrs["class"] = "stripe-style-input"
-
             # Remove the default label for each field
             self.fields[field].label = False
