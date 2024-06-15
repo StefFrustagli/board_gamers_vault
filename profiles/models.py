@@ -16,8 +16,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        default=None,
-        null=True,  # Add null=True temporarily
     )
     avatar = models.ImageField(upload_to="avatars/", null=True, blank=True)
     default_town_or_city = models.CharField(max_length=40, null=True, blank=True)

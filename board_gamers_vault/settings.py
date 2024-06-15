@@ -15,11 +15,11 @@ import os
 import dj_database_url
 from dotenv import load_dotenv
 
-if os.path.isfile("env.py"):
-    import env
-
 # Load environment variables from .env file
 load_dotenv()
+
+if os.path.isfile("env.py"):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,6 +143,7 @@ WSGI_APPLICATION = 'board_gamers_vault.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 CSRF_TRUSTED_ORIGINS = [
