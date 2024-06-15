@@ -8,13 +8,14 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from marketplace.models import Game
 from bag.contexts import bag_contents
+# from django.contrib.auth.decorators import login_required
 
 import stripe
 import json
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
+# @login_required
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -38,6 +39,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+# @login_required
 def checkout(request):
     """
     Handle the checkout process.
