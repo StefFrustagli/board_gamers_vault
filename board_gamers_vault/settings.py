@@ -37,6 +37,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "8000-steffrustag-boardgamers-wgstn1wvdge.ws-eu114.gitpod.io",
     "127.0.0.1",
+    ".herokuapp.com"
 ]
 
 
