@@ -1,1 +1,1 @@
-web: gunicorn the-boardgame-shelf.wsgi
+web: gunicorn board_gamers_vault.wsgi
