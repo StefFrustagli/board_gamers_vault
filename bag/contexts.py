@@ -28,19 +28,25 @@ def bag_contents(request):
         # Get the seller of the game
         seller = game.seller
 
-        # seller profile associated with the user
-        seller_profile = seller.seller_profile
+        # Check if the seller has a seller_profile
+        if hasattr(seller, "seller_profile"):
+            seller_profile = seller.seller_profile
+        else:
+            # Handle the case where the seller does not have a seller_profile
+            # For example, set a default value or log an error
+            seller_profile = None
+            print(f"Seller {seller.id} does not have a seller_profile.")
 
         # Check if the seller's delivery charge is already calculated
         if seller.id not in seller_delivery_charges:
             # Calculate delivery charge if the total is below the free delivery threshold
             if total < settings.FREE_DELIVERY_THRESHOLD:
                 seller_delivery_charges[seller.id] = (
-                    seller_profile.standard_delivery_fee
+                    seller_profile.standard_delivery_fee if seller_profile else 0
                 )
             else:
                 seller_delivery_charges[seller.id] = 0
-
+                
         # Add the item details to the bag_items list
         bag_items.append(
             {

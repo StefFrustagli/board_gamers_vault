@@ -18,12 +18,14 @@ class UserProfile(models.Model):
         on_delete=models.CASCADE,
     )
     avatar = models.ImageField(upload_to="avatars/", null=True, blank=True)
-    default_town_or_city = models.CharField(max_length=40, null=True, blank=True)
+    default_town_or_city = models.CharField(max_length=25, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     games_for_sale = models.ManyToManyField(
-        Game, related_name="games_for_sale", blank=True
+        Game, related_name="games_for_sale_by_user", blank=True
     )
-    games_owned = models.ManyToManyField(Game, related_name="games_owned", blank=True)
+    games_owned = models.ManyToManyField(
+        Game, related_name="games_owned_by_user", blank=True
+    )
     # orders = models.ManyToManyField(
     #     "checkout.Order", related_name="user_orders", blank=True
     # )
