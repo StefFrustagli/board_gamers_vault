@@ -32,6 +32,7 @@ class OrderAdmin(admin.ModelAdmin):
     # Fields to be displayed in the admin form
     fields = (
         "order_number",
+        "user_profile",
         "date",
         "full_name",
         "email",

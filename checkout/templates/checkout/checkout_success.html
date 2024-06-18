@@ -193,12 +193,21 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
+            <!-- {% if from_profile %} -->
+            <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
+            <!-- {% else %} -->
             <a href="{% url 'games_list' %}" class="btn btn-black rounded-0 my-2">
                 <span class="icon mr-2">
                     <i class="fa-solid fa-dice"></i>
                 </span>
-                <span class="text-uppercase">Now find your next game!</span>
+                <span class="text-uppercase">Find your next game!</span>
             </a>
+            <!-- {% endif %} -->
         </div>
 
     </div>
