@@ -10,6 +10,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* margins for input buttons, etc. */
+button, input, optgroup, select, textarea {
+    margin: 0.2rem !important;
+}
+
 .header-title {
   margin-top: 30rem !important; /* can't find another way to make */
 }                               /* to make the header go down */
