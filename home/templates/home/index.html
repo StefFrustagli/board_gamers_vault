@@ -2,28 +2,29 @@
 {% load static %}
 
 {% block page-header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
-    <div class="row h-100">
-        <div class="header-title col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                Sell & buy Board Games!
-            </h1>
-            <!-- Margin top and bottom -->
-            <div class="my-5">
-                <h4>
-                    <a href="{% url 'games_list' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Board games on sale</a>
-                </h4>
+<div class="container h-100 d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-8">
+            <div class="bg-white header-title text-center">
+                <h1 class="display-4 logo-font text-black">
+                    Sell & Buy Board Games!
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'games_list' %}"
+                            class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Board games on sale</a>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
