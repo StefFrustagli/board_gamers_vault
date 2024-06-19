@@ -107,3 +107,33 @@ def add_game(request):
     }
 
     return render(request, template, context)
+
+
+def edit_game(request, game_id):
+    """Edit a product"""
+    game = get_object_or_404(Game, pk=game_id)
+
+    if request.method == "POST":
+        form = GameForm(request.POST, request.FILES, instance=game)
+        if form.is_valid():
+            game = form.save()
+            messages.success(request, "Product successfully updated!")
+            return redirect(reverse("game_detail", args=[game.id]))
+     # If form is invalid, continue to render the form with error messages
+    else:
+        form = GameForm(instance=game)
+        messages.info(request, f"You are editing {game.title}")
+
+    # This else block ensures that when the form is invalid during editing, the error message is set correctly
+    if not form.is_valid() and request.method == "POST":
+        messages.error(
+            request, "Failed to update game. Please ensure the form is valid."
+        )
+
+    template = "marketplace/edit_game.html"
+    context = {
+        "form": form,
+        "game": game,
+    }
+
+    return render(request, template, context)
