@@ -89,7 +89,18 @@ def game_detail(request, game_id):
 
 def add_game(request):
     """Add a product to the store"""
-    form = GameForm()
+    if request.method == 'POST':
+        form = GameForm(request.POST, request.FILES)
+        if form.is_valid():
+            game = form.save()  # Save the form data to a variable
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_game'))
+        else:
+            messages.error(request, 'Failed to add product. ' 
+                                    'Please ensure the form is valid.')
+    else:    
+        form = GameForm()
+
     template = "marketplace/add_game.html"
     context = {
         "form": form,

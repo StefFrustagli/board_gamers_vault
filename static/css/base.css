@@ -15,6 +15,11 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+/* Error messages */
+.help-block {
+  color: #bb414d;
+}
+
 .header-title {
   margin-top: 30rem !important; /* can't find another way to make */
 }                               /* to make the header go down */
