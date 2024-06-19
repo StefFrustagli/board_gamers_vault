@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Game, Category
+from .forms import GameForm
 
 # Create your views here.
 
@@ -84,3 +85,14 @@ def game_detail(request, game_id):
         "game": game,
     }
     return render(request, "marketplace/game_detail.html", context)
+
+
+def add_game(request):
+    """Add a product to the store"""
+    form = GameForm()
+    template = "marketplace/add_game.html"
+    context = {
+        "form": form,
+    }
+
+    return render(request, template, context)

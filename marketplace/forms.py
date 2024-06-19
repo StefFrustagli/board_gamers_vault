@@ -20,7 +20,7 @@ class GameForm(forms.ModelForm):
         categories = Category.objects.all()
 
         # Create a list of tuples with category id and name
-        name = [(c.id, c.name()) for c in categories]
+        name = [(c.id, c.name) for c in categories]
 
         # Set the category field choices to the retrieved categories
         self.fields["category"].choices = name
