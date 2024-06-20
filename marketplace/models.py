@@ -49,7 +49,7 @@ class Game(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, related_name="games"
     )
-    image = models.ImageField(upload_to="game_images/")
+    image = models.ImageField(upload_to="game_images/", blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name="games")
     description = models.TextField()

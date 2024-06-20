@@ -71,7 +71,7 @@
                         </a>
                         {% else %}
                         <a href="{% url 'game_detail' game.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.title }}">
+                            <img class="card-img-top img-fluid" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">

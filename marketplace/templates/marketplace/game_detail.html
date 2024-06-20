@@ -20,8 +20,8 @@
                         <img class="card-img-top img-fluid" src="{{ game.image.url }}" alt="{{ game.title }}">
                     </a>
                     {% else %}
-                    <a href="{{ game.image.url }}">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.title }}">
+                    <a href="#">
+                        <img class="card-img-top img-fluid" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
                     </a>
                     {% endif %}
                 </div>
