@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Game, Category
 
 
@@ -8,6 +9,8 @@ class GameForm(forms.ModelForm):
     class Meta:
         model = Game
         fields = "__all__"  # Use all fields from the Game model
+
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         """

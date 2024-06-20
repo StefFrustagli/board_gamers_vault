@@ -101,7 +101,7 @@ def add_game(request):
         if form.is_valid():
             game = form.save()  # Save the form data to a variable
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('game_detail', args=[game>id]))
+            return redirect(reverse('game_detail', args=[game.id]))
         else:
             messages.error(request, 'Failed to add product. ' 
                                     'Please ensure the form is valid.')
@@ -164,4 +164,4 @@ def delete_game(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     game.delete()
     messages.success(request, 'Game deleted!')
-    return redirect(reverse('games'))
+    return redirect(reverse('games_list'))
