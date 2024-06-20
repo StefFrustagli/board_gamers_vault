@@ -91,6 +91,13 @@
                                     {% endif %}
                                     <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
                                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
+                                    <!-- Edit and delete functionality -->
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_game' game.id %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>

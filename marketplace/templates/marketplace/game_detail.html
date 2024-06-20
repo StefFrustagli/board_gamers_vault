@@ -41,6 +41,12 @@
                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                     <p class="mt-3">Description: {{ game.description|safe }}</p>
                     <p class="mt-3">What the seller says: {{ game.seller_comment|safe }}</p>
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_game' game.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a>
+                    </small>
+                    {% endif %}
                     <!-- Form to add a product to the shopping bag -->
                     <form class="form" action="{% url 'add_to_bag' game.id %}" method="POST">
                         <!-- Django template tag to include the CSRF token for security -->
