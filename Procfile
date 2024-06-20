@@ -1,1 +1,1 @@
-web: gunicorn board_gamers_vault.wsgi
+web: gunicorn board_gamers_vault.wsgi:application

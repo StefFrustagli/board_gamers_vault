@@ -26,12 +26,12 @@ button, input, optgroup, select, textarea {
 
 /* Gamelist container */
 #gamelist-container {
-  margin-top: 10rem; /* Override existing margin-top */
+  margin-top: 2rem; /* Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
 #gamelist-detail {
-  margin-top: 15rem; /* Override existing margin-top */
+  margin-top: 2rem; /* Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -52,11 +52,13 @@ button, input, optgroup, select, textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .image-container img {
-  width: 100%;
+  width: 50%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
+  display: inline-block;
 }
 
 /* from Bulma - framework similar to bootstrap */
@@ -335,16 +337,24 @@ input[name='q']::placeholder {
     padding-top: 164px;
   }
 
+  .nav-link {
+    padding: 0.3rem 1rem;
+  }
+
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
+  body {
+   height: calc(100vh - 116px);
+  }
 
-    body {
-        height: calc(100vh - 116px);
-    }
+  .header-container {
+    padding-top: 116px;
+  }
+  
+  .nav-link {
+    padding: 0 !important;
+  }
 }
 

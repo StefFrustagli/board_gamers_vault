@@ -145,13 +145,15 @@ WSGI_APPLICATION = 'board_gamers_vault.wsgi.application'
 #     }
 # }
 
-DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+DATABASES = {
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
-    "https://*.herokuapp.com",
-    "http://127.0.0.1:8000",
-    "https://*.gitpod.io",
+    ".codeanyapp.com",
+    ".herokuapp.com",
+    "127.0.0.1",
+    ".gitpod.io",
 ]
 
 # Password validation
