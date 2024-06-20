@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -87,8 +88,14 @@ def game_detail(request, game_id):
     return render(request, "marketplace/game_detail.html", context)
 
 
+@login_required
 def add_game(request):
     """Add a product to the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins and game owners ' 
+                                'can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = GameForm(request.POST, request.FILES)
         if form.is_valid():
@@ -109,8 +116,14 @@ def add_game(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_game(request, game_id):
     """Edit a product"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only admins and game owners " 
+                                "can do that.")
+        return redirect(reverse("home"))
+
     game = get_object_or_404(Game, pk=game_id)
 
     if request.method == "POST":
@@ -119,12 +132,13 @@ def edit_game(request, game_id):
             game = form.save()
             messages.success(request, "Product successfully updated!")
             return redirect(reverse("game_detail", args=[game.id]))
-     # If form is invalid, continue to render the form with error messages
+    # If form is invalid, continue to render the form with error messages
     else:
         form = GameForm(instance=game)
         messages.info(request, f"You are editing {game.title}")
 
-    # This else block ensures that when the form is invalid during editing, the error message is set correctly
+    # This else block ensures that when the form is invalid during editing, 
+    # the error message is set correctly
     if not form.is_valid() and request.method == "POST":
         messages.error(
             request, "Failed to update game. Please ensure the form is valid."
@@ -139,8 +153,14 @@ def edit_game(request, game_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_game(request, game_id):
     """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only admins and game owners " 
+                                "can do that.")
+        return redirect(reverse("home"))
+
     game = get_object_or_404(Game, pk=game_id)
     game.delete()
     messages.success(request, 'Game deleted!')
