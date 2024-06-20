@@ -154,6 +154,7 @@ CSRF_TRUSTED_ORIGINS = [
     ".herokuapp.com",
     "127.0.0.1",
     ".gitpod.io",
+    "localhost"
 ]
 
 # Password validation
