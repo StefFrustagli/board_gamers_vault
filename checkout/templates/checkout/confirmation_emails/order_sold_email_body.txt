@@ -1,0 +1,27 @@
+Hello {{ order.seller }},
+
+We are pleased to inform you that the following game has been sold and is ready for dispatch to the buyer's address. Please find the order details below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Buyer: {{ order.full_name }}
+
+Order Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Shipping Address:
+{{ order.street_address1 }}
+{{ order.street_address2 }}
+{{ order.town_or_city }}, {{ order.postcode }}
+{{ order.country }}
+
+Buyer's Phone Number: {{ order.phone_number }}
+
+Please ensure that the game is dispatched promptly and in accordance with our shipping guidelines. If you have any questions or need further assistance, feel free to contact us at {{ contact_email }}.
+
+Thank you for your cooperation!
+
+Best regards,
+
+The Boardgame Shelf Team
