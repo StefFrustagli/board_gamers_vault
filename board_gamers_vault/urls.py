@@ -32,7 +32,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Handling custom error pages
-handler404 = "narcissism_website.views.handler404"
-handler500 = "narcissism_website.views.handler500"
-handler403 = "narcissism_website.views.handler403"
-handler405 = "narcissism_website.views.handler405"
+handler404 = "board_gamers_vault.views.handler404"
+handler500 = "board_gamers_vault.views.handler500"
+handler403 = "board_gamers_vault.views.handler403"
+handler405 = "board_gamers_vault.views.handler405"
