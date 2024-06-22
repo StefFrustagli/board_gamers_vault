@@ -13,7 +13,7 @@
 <div class="overlay"></div>
 <div id="gamelist-container" class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-2">
+        <div class="col text-center mt-4">
             <h2 class="logo-font">Board Games on sale</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'games_list' %}?category={{ c.name }}">
@@ -61,7 +61,7 @@
                         </p>
                     </div>
             </div>
-            <div class="row">
+            <div class="row py-4">
                 {% for game in games_list %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
@@ -129,7 +129,7 @@
     </div>
 </div>
 <div class="btt-button shadow-sm rounded-0 border border-black">
-    <a class="btt-link d-flex h-100">
+    <a class="btt-link bg-white d-flex  h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
 </div>

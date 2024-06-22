@@ -1,13 +1,42 @@
-html {
+html, body {
   height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background: url('/media/boardgameshelf-betterquality.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: calc(100vh - 164px);
   color: #555;
   font-family: "Poppins", sans-serif;
+}
+
+.main {
+  flex: 1;
+}
+/* Footer  */
+
+footer {
+    background-color: #4C2527;
+    color: #fff;
+}
+
+footer h5 {
+    font-weight: 700;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #aaa;
+}
+
+footer .fab {
+    font-size: 1.5rem;
 }
 
 /* margins for input buttons, etc. */
@@ -21,8 +50,8 @@ button, input, optgroup, select, textarea {
 }
 
 .header-title {
-  margin-top: 30rem !important; /* can't find another way to make */
-}                               /* to make the header go down */
+  margin-top: 30rem !important; /* push the header down */
+}                              
 
 /* Gamelist container */
 #gamelist-container {
@@ -127,7 +156,8 @@ button, input, optgroup, select, textarea {
 }
 
 .bg-black {
-  background: rgb(0, 0, 0) !important;
+  /* background: rgb(0, 0, 0) !important; */
+  background-color: #4C2527;
 }
 
 .overlay {
@@ -356,5 +386,7 @@ input[name='q']::placeholder {
   .nav-link {
     padding: 0 !important;
   }
+
+  
 }
 
