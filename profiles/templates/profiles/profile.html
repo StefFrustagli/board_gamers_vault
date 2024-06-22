@@ -15,11 +15,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">My Profile</h2>
+            <h2 class="logo-font mb-4">{{ user.username }}'s Profile</h1></h2>
             <hr>
         </div>
     </div>
@@ -67,10 +68,10 @@
                                     </td>
                                     <td>{{ order.date }}</td>
                                     <td>
-                                        <ul class="list-unstyled">
+                                        <ul class="list-unstyled item-quantity">
                                             {% for item in order.lineitems.all %}
                                             <li class="small">
-                                                {{ item.game.name }} x{{ item.quantity }}
+                                                {{ item.game.name }} x {{ item.quantity }}
                                             </li>
                                             {% endfor %}
                                         </ul>

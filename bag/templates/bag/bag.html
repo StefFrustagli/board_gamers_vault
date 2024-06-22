@@ -46,7 +46,6 @@
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.game.title }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.game.sku|upper }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.game.price }}</p>
@@ -66,14 +65,8 @@
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h6>Delivery is included in the product price</h6>
                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                            {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
-                                You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong>
-                                more!
-                            </p>
-                            {% endif %}
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +88,7 @@
                 </table>
             </div>
             {% else %}
-            <p class="lead mb-5">Your bag is empty.</p>
+            <p class="lead mb-5">Your bag is empty!</p>
             <a href="{% url 'games_list' %}" class="btn btn-outline-black rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>

@@ -9,7 +9,7 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    """Display the user's profile."""
+    """Display and update the user's profile."""
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == "POST":
@@ -17,16 +17,50 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile updated successfully")
+    else:
+        form = UserProfileForm(instance=profile)
 
-    form = UserProfileForm(instance=profile)
     orders = profile.orders_linked.all()
 
     template = "profiles/profile.html"
-    context = {"form": form,
-                "orders": orders, 
-                "on_profile_page": True}
+    context = {
+        "user": request.user,  # Provide user object for displaying user's name dynamically
+        "form": form,
+        "orders": orders,
+        "on_profile_page": True,
+    }
 
     return render(request, template, context)
+
+
+# @login_required
+# def profile(request):
+#     """Display the user's profile."""
+#     profile = get_object_or_404(UserProfile, user=request.user)
+
+#     if request.method == "POST":
+#         form = UserProfileForm(request.POST, instance=profile)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, "Profile updated successfully")
+
+#     form = UserProfileForm(instance=profile)
+#     orders = profile.orders_linked.all()
+
+#     template = "profiles/profile.html"
+#     context = {"form": form,
+#                 "orders": orders,
+#                 "on_profile_page": True}
+
+#     return render(request, template, context)
+
+
+# def profile_view(request):
+#     user = request.user  # if logged-in user
+#     context = {
+#         "user": user,
+#     }
+#     return render(request, "profile.html", context)
 
 
 def order_history(request, order_number):

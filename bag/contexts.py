@@ -9,10 +9,11 @@ def bag_contents(request):
     bag_items = []
     total = 0
     product_count = 0
+    # Delivery will be included in the product price
     delivery = 0
 
     # Dictionary to keep track of delivery charges for each seller
-    seller_delivery_charges = {}
+    # seller_delivery_charges = {}
 
     # Get the shopping bag from the session
     bag = request.session.get("bag", {})
@@ -38,14 +39,14 @@ def bag_contents(request):
             print(f"Seller {seller.id} does not have a seller_profile.")
 
         # Check if the seller's delivery charge is already calculated
-        if seller.id not in seller_delivery_charges:
+        # if seller.id not in seller_delivery_charges:
             # Calculate delivery charge if the total is below the free delivery threshold
-            if total < settings.FREE_DELIVERY_THRESHOLD:
-                seller_delivery_charges[seller.id] = (
-                    seller_profile.standard_delivery_fee if seller_profile else 0
-                )
-            else:
-                seller_delivery_charges[seller.id] = 0
+            # if total < settings.FREE_DELIVERY_THRESHOLD:
+            #     seller_delivery_charges[seller.id] = (
+            #         seller_profile.standard_delivery_fee if seller_profile else 0
+            #     )
+            # else:
+            #     seller_delivery_charges[seller.id] = 0
                 
         # Add the item details to the bag_items list
         bag_items.append(
@@ -57,11 +58,11 @@ def bag_contents(request):
         )
 
     # Sum up the delivery charges from all sellers
-    for charge in seller_delivery_charges.values():
-        delivery += charge
+    # for charge in seller_delivery_charges.values():
+    #     delivery += charge
 
     # Calculate the grand total including delivery
-    grand_total = delivery + total
+    grand_total = total
 
     context = {
         "bag_items": bag_items,

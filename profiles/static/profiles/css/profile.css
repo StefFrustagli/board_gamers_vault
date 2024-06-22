@@ -3,6 +3,10 @@
     overflow-y: auto;
 }
 
+.item-quantity {
+    text-align: center;
+}
+
 #profile-update-form .form-control {
     color: #000;
 }
