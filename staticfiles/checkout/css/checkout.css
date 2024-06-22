@@ -1,0 +1,97 @@
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 50px;
+  width: 80%;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+}
+
+/* Select fields */
+
+select,
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option[value=""]{
+    color: #aab7c3 !important;
+}
+
+/* Form */
+
+/* Margin between form elements */
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Padding and margin to fieldsets */
+form fieldset {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+}
+
+form legend {
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Padding to the form itself */
+form#payment-form {
+    padding: 1rem;
+}
+
+/* The loading-overlay class styles the overlay that covers the entire screen */
+#loading-overlay {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 162, 184, .85);
+    /* Ensures the overlay is on top of all other elements */
+    z-index: 9999; 
+}
+
+/* The loading-spinner class centers the spinner within the overlay */
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
