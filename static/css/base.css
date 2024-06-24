@@ -44,6 +44,14 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+/* Mailchimp */
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  width: 600px;
+  color: #000;
+}
+
 /* Error messages */
 .help-block {
   color: #bb414d;
@@ -376,7 +384,9 @@ input[name='q']::placeholder {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
   body {
-   height: calc(100vh - 116px);
+    height: calc(100vh - 116px);
+    display: flex;
+    flex-direction: column;
   }
 
   .header-container {
