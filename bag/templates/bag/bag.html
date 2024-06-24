@@ -39,7 +39,8 @@
                     <tr>
                         <td class="p-3 w-25">
                             {% if item.game.image %}
-                            <img class="img-fluid rounded" src="{{ item.game.image.url }} alt=" {{ item.product.name }}">
+                            <img class="img-fluid rounded" src="{{ item.game.image.url }} alt=" {{ item.product.name
+                                }}">
                             {% else %}
                             <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.game.title }}">
                             {% endif %}

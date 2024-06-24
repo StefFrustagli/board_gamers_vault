@@ -45,6 +45,7 @@ class Game(models.Model):
     sku = models.CharField(max_length=40, unique=True, blank=True)
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    is_available = models.BooleanField(default=True)
     condition = models.CharField(max_length=15, choices=CONDITION_CHOICES)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, related_name="games"
@@ -65,6 +66,14 @@ class Game(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def availability_status(self):
+        return "Available" if self.is_available else "Not Available"
+
+    def mark_as_purchased(self):
+        self.is_available = False
+        self.save()
 
 
 class SellerProfile(models.Model):

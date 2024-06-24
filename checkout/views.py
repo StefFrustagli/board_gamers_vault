@@ -10,12 +10,14 @@ from marketplace.models import Game
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
+
 # from django.contrib.auth.decorators import login_required
 
 import stripe
 import json
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
 
 # @login_required
 @require_POST
@@ -46,9 +48,9 @@ def checkout(request):
     """
     Handle the checkout process.
 
-    This view handles the rendering of the checkout page, ensuring that the user 
-    has items in their bag before proceeding. If the bag is empty, an error message 
-    is displayed, and the user is redirected to the products page. Otherwise, an 
+    This view handles the rendering of the checkout page, ensuring that the user
+    has items in their bag before proceeding. If the bag is empty, an error message
+    is displayed, and the user is redirected to the products page. Otherwise, an
     order form is created and rendered on the checkout page.
 
     Args:
@@ -157,18 +159,17 @@ def checkout(request):
                 )
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
-        else: # Create an empty order form
+        else:  # Create an empty order form
             order_form = OrderForm()
-        
 
     # Warn the user if the Stripe public key is missing TO BE REMOVED
     if not stripe_public_key:
         messages.warning(
-            request, 
+            request,
             (
-                'Stripe public key is missing. '
-                'Did you forget to set it in your environment?'
-                )
+                "Stripe public key is missing. "
+                "Did you forget to set it in your environment?"
+            ),
         )
 
     # Template to be rendered
@@ -183,11 +184,12 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts.
 
-    This view handles the rendering of the checkout success page, 
+    This view handles the rendering of the checkout success page,
     displays a success message, and clears the shopping bag from the session.
 
     Args:
@@ -195,10 +197,10 @@ def checkout_success(request, order_number):
         order_number (str): Order number of the successfully processed order.
 
     Returns:
-        HttpResponse: 
+        HttpResponse:
         The HTTP response object with the rendered checkout success template.
     """
-    save_info = request.session.get('save_info')
+    save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
@@ -222,16 +224,19 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
+    messages.success(
+        request,
+        f"Order successfully processed! \
         Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        email will be sent to {order.email}.",
+    )
 
-    if 'bag' in request.session:
-        del request.session['bag']
+    if "bag" in request.session:
+        del request.session["bag"]
 
-    template = 'checkout/checkout_success.html'
+    template = "checkout/checkout_success.html"
     context = {
-        'order': order,
+        "order": order,
     }
 
     return render(request, template, context)

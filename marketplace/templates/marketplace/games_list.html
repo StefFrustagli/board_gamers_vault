@@ -81,6 +81,17 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
+                                    <!-- Check availability -->
+                                    <p class="{% if game.is_available %}text-success{% else %}text-danger{% endif %}">
+                                    {{ game.availability_status }}
+                                    </p>
+                                    {% if game.is_available %}
+                                    <a href="{% url 'game_detail' game.id %}">
+                                    <button>Details</button>
+                                    </a>
+                                    {% else %}
+                                    <button disabled>Not Available</button>
+                                    {% endif %}
                                     {% if game.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted"

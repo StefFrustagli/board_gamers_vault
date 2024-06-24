@@ -4,7 +4,6 @@ from django.contrib import messages
 
 from marketplace.models import Game
 
-# Create your views here.
 
 def view_bag(request):
     """A view that renders the bag contents page"""
@@ -16,9 +15,16 @@ def add_to_bag(request, item_id):
     """Add a quantity of the specified product to the shopping bag"""
 
     game = get_object_or_404(Game, pk=item_id)
-    
+
     # Quantity always one as unique item
     quantity = 1
+
+    # Check if the game is available
+    if not game.is_available:
+        messages.error(request, f"{game.title} is not available anymore.")
+        return redirect(
+            request.META.get("HTTP_REFERER", "marketplace/")
+        )  # Redirect back to the previous page or shop page
 
     # Retrieve the redirect URL from the POST data,
     # which indicates where to go after adding the item to the bag
