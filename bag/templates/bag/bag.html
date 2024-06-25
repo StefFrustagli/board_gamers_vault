@@ -28,7 +28,7 @@
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Product Info</th>
-                            <th scope="col"></th>
+                            <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
@@ -39,10 +39,11 @@
                     <tr>
                         <td class="p-3 w-25">
                             {% if item.game.image %}
-                            <img class="img-fluid rounded" src="{{ item.game.image.url }} alt=" {{ item.product.name
-                                }}">
+                            <img class="img-fluid rounded" src="{{ item.game.image.url }}" 
+                                alt="{{ item.product.name }}">
                             {% else %}
-                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.game.title }}">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" 
+                                alt="{{ item.game.title }}">
                             {% endif %}
                         </td>
                         <td class="py-3">
@@ -66,7 +67,7 @@
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery is included in the product price</h6>
+                            <h6>Delivery is included in product price</h6>
                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                         </td>
                     </tr>
