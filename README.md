@@ -130,13 +130,13 @@ EXPLAIN THE RELATIONSHIP BETWEEN THE MODELS
 
 The structure of our database was illustrated using an Entity-Relationship Diagram (ERD). This diagram shows how different entities within the system are related to each other and helps in understanding the data flow. 
 
-**ERD**
+**Entity-relationship diagrams (ERD)**
 
 First draft:
 ![ERD](https://i.ibb.co/3cMYNdK/my-screenshots-2024-05-17-at-09-40-10.png)
 
 
-**Models**
+**Models** for the first draft:
 
 1. **User Profile**: 
    - This model extends Django's built-in User model to include additional fields like a profile picture, contact information.
@@ -171,30 +171,54 @@ First draft:
 Draft flowchart for apps organisation:
 ![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
-Current flowchart for apps organisation: DA aggiungere
+Current flowchart for apps organisation: 
+
+DA AGGIUNGERE VERSIONE AGGIORNATA
+
+The project is organized into several Django applications, trying to keep functionalities tidy and separated. As this is my second project with Django, I have decided to follow a similar structure to the one used in Boutique Ado walkthrough with Code Institute. 
 
 The **applications** used are:
 
-1. Main app: board_gamers_vault 
+- Main app: **board_gamers_vault**
 
-This is the main app that contains project-level settings, URLs, and any global templates and static files.
+  This is the main application of the project, responsible for:
+  - Project-level settings
+  - URL routing
+  - Global templates
+  - Static files
 
-2. Home 
+- **Home**
 
-3. Marketplace 
+  This application manages the homepage and other static content pages, providing users with information about the platform, including contact information, about us, and other informational sections. This will be further developped in the future. 
 
-This app handles all functionalities related to the e-commerce store, including models for games, user profiles, seller accounts and basket items.
+- **Marketplace**
 
-4. Bag
+  The Marketplace application handles all functionalities related to the e-commerce store, including:
 
+  - Models for games
+  - User profiles
+  - Seller accounts
+  - Basket items
+  
+  This is where users can browse, search, and purchase board games. Sellers can manage their products, and all e-commerce-related operations are conducted here.
 
+- **Bag**
 
-5. Checkout 
+    The Bag application manages the shopping cart functionality, allowing users to add, remove, and view items they intend to purchase.
 
-4. Profiles
+- **Checkout**
 
-This app handles user authentication, registration, profile editing, and other user-related functionalities.
+  The Checkout application handles the order processing, payment, and order confirmation. It ensures a smooth transaction experience for users completing their purchases.
 
+- **Profiles**
+
+  The Profiles application is responsible for user authentication and profile management. It includes functionalities for:
+
+  - User registration
+  - User login/logout
+  - Profile editing
+  - Viewing order history
+  - Other user-related activities
 
 
 ## User Experience
