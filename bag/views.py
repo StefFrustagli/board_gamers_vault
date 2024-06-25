@@ -1,16 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib import messages
 
 from marketplace.models import Game
 
-
+@login_required
 def view_bag(request):
     """A view that renders the bag contents page"""
 
     return render(request, "bag/bag.html")
 
 
+@login_required
 def add_to_bag(request, item_id):
     """Add a quantity of the specified product to the shopping bag"""
 
@@ -28,7 +30,7 @@ def add_to_bag(request, item_id):
 
     # Retrieve the redirect URL from the POST data,
     # which indicates where to go after adding the item to the bag
-    redirect_url = request.POST.get("redirect_url")
+    redirect_url = request.POST.get("redirect_url", "/marketplace/")
 
     # Get the current shopping bag from the session,
     # or initialize an empty dictionary if it doesn't exist
@@ -50,6 +52,8 @@ def add_to_bag(request, item_id):
     # Redirect the user to the URL specified in the redirect_url
     return redirect(redirect_url)
 
+
+@login_required
 def remove_from_bag(request, item_id):
     """
     This function removes an item from the shopping bag stored in the session.

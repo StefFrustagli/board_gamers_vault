@@ -24,7 +24,7 @@ def profile(request):
 
     template = "profiles/profile.html"
     context = {
-        "user": request.user,  # Provide user object for displaying user's name dynamically
+        "user": request.user,  # Provide user object for displaying user's name 
         "form": form,
         "orders": orders,
         "on_profile_page": True,
@@ -63,6 +63,7 @@ def profile(request):
 #     return render(request, "profile.html", context)
 
 
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 

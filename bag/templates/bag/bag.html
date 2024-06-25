@@ -37,7 +37,7 @@
 
                     {% for item in bag_items %}
                     <tr>
-                        <td class="p-3 w-25">
+                        <td class="pr-3 py-3 w-25">
                             {% if item.game.image %}
                             <img class="img-fluid rounded" src="{{ item.game.image.url }}" 
                                 alt="{{ item.product.name }}">
@@ -58,7 +58,7 @@
                         <td class="py-3">
                             <p class="my-0">£{{ item.game.price }}</p>
                             <!-- Remove item from basket -->
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.game.id }}">
+                            <a class="remove-item text-danger" id="remove_{{ item.game.id }}">
                                 <small>Remove</small>
                             </a>
                         </td>
