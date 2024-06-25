@@ -35,6 +35,7 @@
     {% block corejs %}
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/c752518e32.js" crossorigin="anonymous"></script>
+
     <!-- jQuery, JavaScript: Separate Popper and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
@@ -45,8 +46,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
+
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
+
     <!-- Mailchimp -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
@@ -56,12 +59,20 @@
 
     {% block extra_js %}
     {% endblock %}
+
+    <title>The Boardgame Shelf {% block extra_title %}{% endblock %}</title>
+
+    <!-- Meta tags for search engines -->
     <meta name="description"
         content="Join our boardgame marketplace to buy and sell second-hand board games. Find your favorite board games at the board games bazaar.">
     <meta name="keywords"
         content="Boardgame shelf, Boardgame marketplace, Second-hand board games, Buy board games, Sell board games, Used board games, Board games bazaar">
-</head>
-<title>The Boardgame Shelf {% block extra_title %}{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
 
 </head>
 
