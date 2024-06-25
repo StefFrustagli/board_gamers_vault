@@ -1,20 +1,28 @@
-# The Board Games Vault
+# The Boardgames Shelf
 
 Developer: Stefania Frustagli
 
 ## Website Overview
 
+Welcome to my board game marketplace! This e-commerce platform is designed to connect board game enthusiasts looking to buy and sell used board games. Whether you’re clearing out your collection or searching for that rare gem, this site provides a user-friendly experience to meet your needs.
 
+Sellers can list their board games, complete with details and images, and specify their location, making it easier for buyers to find games available nearby. My goal is to foster a community of gamers who can trade, sell, and discover new games with ease. 
 
-#### Why a Board Games Vault?
+#### Why The Boardgame Shelf?
 
-IT DOESNT LOOK LIKE THERE IS A DECENT WEBSITE WHERE TO SELL USED BOARD GAMES AND create a catalogue of board games owned.  SO I DECIDED TO CREATE AN E-COMMERCE TO ALLOW USERS TO SELL THEIR OWN BOARD GAMES. 
-SELLERS CAN ADD THEIR LOCATION SO THAT BUYERS CAN SEE IF THE TRANSACTION IS POSSIBLE.
-A future development will allow users to create their own database, public or private, where to catalogue the games they owe, the games they want to sell, the games they wish to buy, the games they played and reviewing games.
+The idea for this application stemmed from a clear gap in the market. There isn’t a dedicated, comprehensive website where board game enthusiasts can easily buy and sell used board games while managing their collections. Current platforms are fragmented and often lack the specific features needed by the board gaming community. By creating this e-commerce site, I aim to provide a centralized solution. 
 
-View the live project [here]().
+My long term plan is to enable users to:
+- Sell Used Board Games: list pre-owned games for sale;
+- Discover Nearby Sellers: find games from sellers in a certain area;
+- Catalogue Collections: in future updates, users will be able to create and manage databases of the games they own, want to sell, wish to buy, and have played;
+- Review and Share: write reviews and share the gaming experiences with the community.
 
-## Table of Contents DA MODIFICARE
+I would like to create a vibrant marketplace and community for board game lovers, making it easier to buy, sell, and manage board games in one place.
+
+View the live project [here](https://the-boardgame-shelf-e0153506acf8.herokuapp.com/).
+
+## Table of Contents 
 
 - [Website Overview](#website-overview)
 - [Project background](#project-background)
@@ -163,29 +171,88 @@ First draft:
 Draft flowchart for apps organisation:
 ![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
+Current flowchart for apps organisation: DA aggiungere
+
 The **applications** used are:
 
 1. Main app: board_gamers_vault 
 
 This is the main app that contains project-level settings, URLs, and any global templates and static files.
 
-2. Store App
+2. Home 
+
+3. Marketplace 
 
 This app handles all functionalities related to the e-commerce store, including models for games, user profiles, seller accounts and basket items.
 
-3. User Management App
+4. Bag
+
+
+
+5. Checkout 
+
+4. Profiles
 
 This app handles user authentication, registration, profile editing, and other user-related functionalities.
 
+
+
 ## User Experience
 
-#### Ideal users: DA FINIRE
+#### Ideal users: 
 
-- Board game shopper: someone who wants to buy or sell a pre-owned board game.
+- Board Game Shopper: 
+  
+  A board game enthusiast looking to expand their collection with pre-owned games or find rare and out-of-print titles. This user values affordability and the opportunity to discover unique games from other collectors.
+  Needs:
+  - A wide selection of pre-owned board games.
+  - Detailed product information including price, condition, and images.
+  - Trustworthy seller information to ensure secure transactions.
+  - Convenient search and filter options to easily find specific games.
+  - An easy-to-use shopping cart and checkout process.
+  - Order confirmation and tracking capabilities.
+  Options to save favorite games and receive notifications on game availability.
+
+- Board Game Seller
+
+  A board game collector or enthusiast looking to downsize their collection, make room for new games, or simply pass on games they no longer play. This user values a straightforward and efficient platform to list and sell their games.
+  
+  Needs:
+  - An intuitive interface for listing and managing board games for sale.
+  - Tools to add detailed descriptions, prices, and images of the games.
+  - Visibility to potential buyers, including search optimization.
+  - Easy communication with buyers to arrange sales and handle inquiries.
+  - Features to update, edit, or remove listings as needed.
+  - Sales management tools to keep track of inventory and transactions.
+
+- Board Game Collector (more suitable with future features)
+  
+  An avid board game collector who likes to keep track of their collection, wishlist, and games they've played. This user appreciates a platform that helps them organize and showcase their collection.
+  
+  Needs:
+  - A personalized database to catalogue owned games, games for sale, and games on their wishlist.
+  - The ability to mark and review games they've played.
+  - Options to make their collection public or private.
+  - Social features to connect with other collectors and share reviews and recommendations.
+
+- Casual Board Gamer
+  
+  Someone who enjoys playing board games occasionally and is looking for specific titles to enhance their game nights. This user prefers a simple, hassle-free buying experience.
+  
+  Needs:
+  - Easy navigation and search functionality to quickly find games.
+  - Clear and concise product information.
+  - Affordable pricing and options for gently used games.
+  - An uncomplicated checkout process.
+  - Reliable delivery.
 
 #### As a developer, I expect:
 
-DA AGGIUNGERE
+- User-Centric Design:
+  - To focus on creating intuitive, accessible, and visually appealing interfaces that enhance user engagement and satisfaction.  
+  - To create a user feedback mechanisms to gather insights and make data-driven improvements to the platform.
+- Performance and Security:
+  - To adhere to security best practices to protect user data and prevent vulnerabilities, maintaining user trust.
 
 ### User Stories
 
@@ -331,7 +398,7 @@ The error pages simply provide the user with a link back to the homepage and inf
 
 ### Future Features and general aspects left to implement
 
-TO BE ADDED
+Future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews, creating a comprehensive hub for all things board games.
 
 ## Technologies used
 
@@ -342,7 +409,6 @@ TO BE ADDED
 ### Frameworks and Libraries
 
 - [Bootstrap:](https://getbootstrap.com/) Bootstrap CSS Framework used for styling and to build responsive web pages;
-- [Cloudinary:](https://cloudinary.com/) Used to store all blog images and uploaded images;
 - [Django:](https://www.djangoproject.com/) Main Python framework used in the development;
 - [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html) Used for authentication and account registration;
 - [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/) Used to simplify the rendering of Django forms.
