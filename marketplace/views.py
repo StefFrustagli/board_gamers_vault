@@ -91,10 +91,10 @@ def game_detail(request, game_id):
 @login_required
 def add_game(request):
     """Add a product to the store"""
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only admins and game owners ' 
-                                'can do that.')
-        return redirect(reverse('home'))
+    # if not request.user.is_superuser:
+    #     messages.error(request, 'Sorry, only admins and game owners ' 
+    #                             'can do that.')
+    #     return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = GameForm(request.POST, request.FILES)
