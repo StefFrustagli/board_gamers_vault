@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/login/?next=/bag/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?sort=condition&amp;direction=asc</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?sort=category&amp;direction=asc</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=storytelling</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=party_games</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=city_building</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=deck_building</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=strategy</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=worker_placement</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=war_games</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=miniatures</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=memory</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=placement</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=area_control</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=bluffing</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=cooperatives</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=role_playing</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?category=storytelling,party_games,city_building,deck_building,strategy,worker_placement,war_games,miniatures,memory,placement,area_control,bluffing,cooperatives,role_playing</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=as_new</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=great</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=good</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=fair</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=signs_of_time</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=heavily_used</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/?condition=as_new,great,good,fair,signs_of_time,heavily_used</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/login/?next=/marketplace/add/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/signup/?next=%2Fbag%2F</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/3/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/4/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/7/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/2/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/9/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/5/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/marketplace/1/</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/signup/?next=%2Fmarketplace%2Fadd%2F</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/login/?next=%2Fbag%2F</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-boardgame-shelf-e0153506acf8.herokuapp.com/accounts/login/?next=%2Fmarketplace%2Fadd%2F</loc>
+  <lastmod>2024-06-26T18:03:31+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

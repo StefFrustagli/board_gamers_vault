@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://the-boardgame-shelf-e0153506acf8.herokuapp.com/sitemap.xml
