@@ -3,11 +3,12 @@ html, body {
 }
 
 body {
+  height: 100%;
   display: flex;
   flex-direction: column;
   background: url('/media/boardgameshelf-betterquality.jpeg') no-repeat center center fixed;
   background-size: cover;
-  height: calc(100vh - 164px);
+  /* height: calc(100vh - 164px); */
   color: #555;
   font-family: "Poppins", sans-serif;
 }
@@ -16,7 +17,6 @@ body {
   flex: 1;
 }
 /* Footer  */
-
 footer {
     background-color: #4C2527;
     color: #fff;
@@ -45,6 +45,10 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+#about-page {
+  color: #4C2527;
+}
+
 /* Mailchimp */
 #mc_embed_signup {
   background: #fff;
@@ -59,19 +63,11 @@ button, input, optgroup, select, textarea {
 }
 
 .header-title {
-  margin-top: 30rem !important; /* push the header down */
+  margin-top: 20rem !important; /* push the header down */
+  margin-bottom: 15rem;
 }                              
 
-/* Gamelist container */
-#gamelist-container {
-  margin-top: 2rem; /* Override existing margin-top */
-  color: rgb(74, 79, 79);
-}
 
-#gamelist-detail {
-  margin-top: 2rem; /* Override existing margin-top */
-  color: rgb(74, 79, 79);
-}
 
 /* Header image */
 .header-image {
@@ -111,6 +107,7 @@ button, input, optgroup, select, textarea {
 
 .logo-font {
   text-transform: uppercase;
+  padding: 1.3rem;
 }
 
 /* logo only takes up as much space as the text requires */
@@ -119,9 +116,11 @@ button, input, optgroup, select, textarea {
 }
 
 .shop-now-button {
-  background: black;
+  background: #4C2527 ;
   color: white;
   min-width: 260px;
+  margin-bottom: 0.6rem;
+  border-radius: 15px;
 }
 
 .btn-black {
@@ -157,7 +156,7 @@ button, input, optgroup, select, textarea {
 /* CHECK: if current version has these classes  */
 
 .text-black {
-  color: #000 !important;
+  color: #785555 !important;
 }
 
 .border-black {
@@ -200,6 +199,17 @@ a.category-badge > span.badge:hover {
 
 input[name='q']::placeholder {
     color: #aab7c4;
+}
+
+/* Gamelist container */
+#gamelist-container {
+  margin-top: 2rem; /* Override existing margin-top */
+  color: rgb(74, 79, 79);
+}
+
+#gamelist-detail {
+  margin-top: 2rem; /* Override existing margin-top */
+  color: rgb(74, 79, 79);
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -385,7 +395,8 @@ input[name='q']::placeholder {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
   body {
-    height: calc(100vh - 116px);
+    height: 100%;
+    /* height: calc(100vh - 116px); */
     display: flex;
     flex-direction: column;
   }

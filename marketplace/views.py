@@ -13,7 +13,7 @@ from .forms import GameForm
 
 def games_list(request):
     """A view to show all products, including sorting and search queries"""
-    games = Game.objects.all()  # Fetch all games from the database
+    games = Game.objects.filter(is_available=True)  # Fetch all games from the database
     # 'games' is the name of the variable that holds
     # the data you retrieve from the database
     # in your view function
@@ -84,6 +84,7 @@ def game_detail(request, game_id):
     game = get_object_or_404(Game, id=game_id)  # primary key lookup
     context = {
         "game": game,
+        "availability_status": game.availability_status,
     }
     return render(request, "marketplace/game_detail.html", context)
 
@@ -92,13 +93,14 @@ def game_detail(request, game_id):
 def add_game(request):
     """Add a product to the store"""
     # if not request.user.is_superuser:
-    #     messages.error(request, 'Sorry, only admins and game owners ' 
+    #     messages.error(request, 'Sorry, only admins and game owners '
     #                             'can do that.')
     #     return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = GameForm(request.POST, request.FILES)
         if form.is_valid():
+            game.seller = request.user
             game = form.save()  # Save the form data to a variable
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('game_detail', args=[game.id]))
