@@ -10,7 +10,7 @@ Sellers can list their board games, complete with details and images, and specif
 
 #### Why The Boardgame Shelf?
 
-The idea for this application stemmed from a clear gap in the market. There isn’t a dedicated, comprehensive website where board game enthusiasts can easily buy and sell used board games while managing their collections. Current platforms are fragmented and often lack the specific features needed by the board gaming community. By creating this e-commerce site, I aim to provide a centralized solution. 
+The idea for this application stemmed from a clear gap in the market. There isn’t a dedicated, comprehensive website where board game enthusiasts can easily buy and sell used board games while managing their collections. Current platforms are fragmented and often lack the specific features needed by the board gaming community. By creating this e-commerce site, I aim to provide a centralised solution. 
 
 My long term plan is to enable users to:
 - Sell Used Board Games: list pre-owned games for sale;
@@ -46,38 +46,98 @@ View the live project [here](https://the-boardgame-shelf-e0153506acf8.herokuapp.
 
 ## Project background
 
-### Agile Development
-
-The development process for this project followed Agile methodology, emphasizing continuous improvement throughout the development lifecycle.
-
-**Project Management**: I utilised GitHub Project boards to manage tasks, user stories, and project progression effectively.
-
-DA MODIFICARE
-
-**User Stories**: User stories were categorized in a Kanban Board into EPICs A, B, C, D, E, and F based on user types and content specificity. I prioritized user stories using the MoSCoW method, which categorizes requirements into Must have, Should have, Could have, and Won't have categories based on their importance and urgency.
-
-[Link to the GitHub Project board]()
-
-**Continuous Improvement**: Despite working solo on this project, I actively sought ways to enhance development processes and product quality. Regular retrospectives allowed me to reflect on past work, pinpoint areas for improvement, and brainstorm solutions.
-
 ### Problem Statement
 
-CREARE UNA LIBRERIA PER BOARD GAMERS PER AGGIUNGERE I LORO GIOCHI - ES. GOODREADS, ANOOBI
-E PERMETTERE LORO DI VENDERE I LORO GIOCHI
-
-I've noticed that among board gamers 'fanatic' collect board games is common and buy them is almost a compulsively act. And it is common for them to get rid of games they don't play anymore. Instead of using ebay, I wanted to create a specific place for this. And create a library of games.
-
-TO BE MODIFIED
+I've noticed that among board gamers, 'fanatic' collecting is common, and buying games is almost a compulsive act. It's also common for them to get rid of games they don't play anymore. Instead of using eBay, I wanted to create a specific place for buying and selling second-hand games and to create a library of board games. There isn’t a dedicated, comprehensive website where board game enthusiasts can easily buy and sell used board games while managing their collections. Current platforms are fragmented and often lack the specific features needed by the board gaming community.
 
 **Proposed solution**: 
+With the creation of this platform, I aim to fill this gap and provide a centralized solution. 
 
-### The design process: thinking through it
+### Business Organization
+The business organization concerning sales is currently in its draft stages and not fully defined yet. One model could be to operate similarly to eBay, initially taking a percentage of each sale. In the future, I may explore implementing a subscription-based mechanism.
+
+**Rationale**
+This decision to adopt a commission-based model akin to eBay reflects a practical approach I would like to adopt, aimed at  generating revenue from transactions while providing value to my users. This model could allow me to ensure sustainability as I grow. As I evolve, I may explore additional monetization strategies, such as subscription services, to offer enhanced features and benefits to the community of board game enthusiasts.
+
+#### Business goal
+
+My goal is to create a portal where board game players can sell their second-hand games and - this will be a future feature - manage their collections within a comprehensive database. Creating an intuitive, user-friendly, and visually appealing app is the primary objective.
+
+#### Strategies
+Some of the marketing strategies I plan to implement include:
+
+- **Search Engine Optimization (SEO)**: Optimizing the website content to rank higher in search engine results for relevant keywords.
+
+- **Content Marketing and Social Media Marketing**: Creating compelling online content on Instagram, Facebook, and TikTok. This includes engaging posts about games, captivating images of board games, coverage of conventions, and highlights of second-hand games available on the website.
+
+- **Design**: Emphasizing a visually appealing and functional design to enhance user experience.
+
+- **Social Media Marketing**: Focusing on organic growth strategies to build a community of board game enthusiasts.
+
+- **Email Marketing**: Utilizing email campaigns to inform users about new second-hand games available for sale and other updates.
+
+- **Collaborations and Affiliate Marketing**: Partnering with board game creators and exploring affiliate marketing opportunities to expand outreach and user engagement.
+
+#### Initial Budget
+In the beginning, I'll use low-cost marketing strategies. If things go well, I might invest more to grow the business into something bigger.
+
+### Marketing Strategy 
+Even though the website can be used by anyone who wants to sell board games, I have a specific market in mind: those who have large collections of board games, stay up-to-date with new releases, and buy games compulsively. As a regular at various board game clubs, I know that dedicated board game players and collectors currently lack a decent place to sell second-hand games, apart from Facebook groups. Moreover, they don’t have a platform to share and update their collections. My goal is to create a platform similar to Goodreads, but for board game enthusiasts.
+
+To start, I will focus on organic social media marketing, creating Social Media Accounts:
+- I will open Instagram, Facebook, and TikTok accounts to advertise the website;
+- I will start following all the board game pages I know.
+
+#### Users and relevant platforms
+
+My ideal users are mainly ‘nerds’ and geeky individuals, spanning various age groups, who use different social media platforms. Based on my experience and observations, marketing the website on Instagram, Facebook, and TikTok will effectively reach them.
+
+**Age Group (45-60 years)**:
+- Primarily use Facebook.
+- Strategy: Engage with Facebook groups and pages dedicated to board games.
+
+**Age Group (25-35 years)**:
+- Prefer Instagram. Facebook can be used as well.
+- Strategy: Use visually appealing content on Instagram and Facebook.
+
+**Age Group (25-35 years)**:
+- Prefer Instagram and TikTok.
+- Strategy: Create engaging short-form videos on TikTok to attract this demographic.
+
+By focusing my marketing efforts on these platforms and considering user behaviors, I aim to create a vibrant community of board game enthusiasts.
+
+#### Possible ideas tailored to each platform:
+
+1. **Instagram:**
+   - Showcasing high-quality images of popular board games along with brief descriptions and prices;
+   - Creating carousel posts featuring before-and-after images of well-loved board games being sold on the platform, highlighting the value of buying second-hand;
+   - Sharing user-generated content by reposting photos of customers enjoying board games purchased from the website. Encouraging users to tag the account and use a specific hashtag to be featured;
+   - Utilising Instagram Stories to announce new arrivals and share behind-the-scenes glimpses of the business;
+   - Collaborating with board game influencers or creators to reach a wider audience and gain credibility within the community.
+
+2. **Facebook:**
+   - Sharing informative and engaging blog posts or articles related to board games, such as "Top 10 Board Games to Play This Summer" or "How to Host the Ultimate Game Night";
+   - Hosting live Q&A sessions or virtual game nights where followers can interact with me/the team, discussing our favorite board games;
+   - Creating polls or quizzes related to board games to encourage interaction and foster a sense of community among your followers.
+
+3. **TikTok:**
+   - Creating short and catchy videos showcasing the process of listing a board game for sale on your website, including features like photos, descriptions, and pricing.
+   - Filming quick tutorials or tips on how to play popular board games, adding a link to the website where users can find those games for sale;
+   - Jumping on trending challenges or hashtags on TikTok and incorporate them into your content in a creative way that relates to board games;
+   - Collaborating with board game influencers or creators to reach a wider audience.
+
+
+
+
+
+### The design process
 
 
 
 ### Fonts
-Fonts used are TO BE ADDED 
-They were imported using Google fonts.
+
+The font used is called Poppins.
+It was imported using Google fonts.
 
 ### Colour palettes
 
@@ -278,6 +338,20 @@ The **applications** used are:
 - Performance and Security:
   - To adhere to security best practices to protect user data and prevent vulnerabilities, maintaining user trust.
 
+### Agile Development
+
+The development process for this project followed Agile methodology, emphasizing continuous improvement throughout the development lifecycle.
+
+**Project Management**: I utilised GitHub Project boards to manage tasks, user stories, and project progression effectively.
+
+DA MODIFICARE
+
+**User Stories**: User stories were categorized in a Kanban Board into EPICs A, B, C, D, E, and F based on user types and content specificity. I prioritized user stories using the MoSCoW method, which categorizes requirements into Must have, Should have, Could have, and Won't have categories based on their importance and urgency.
+
+[Link to the GitHub Project board]()
+
+**Continuous Improvement**: Despite working solo on this project, I actively sought ways to enhance development processes and product quality. Regular retrospectives allowed me to reflect on past work, pinpoint areas for improvement, and brainstorm solutions.
+
 ### User Stories
 
 **[EPIC A] View and navigation**
@@ -333,6 +407,9 @@ E2 - As a board game seller, I want the option to add one or more board games to
 E3 - As a board games seller, I want to edit/update availability of a product so that I can change product criteria, like price, descriptions and images.
 
 E4 - As a board games seller, I want to be able to delete a product so that I can specify that that product is no longer available for sale.
+
+
+
 
 ## Features
 
