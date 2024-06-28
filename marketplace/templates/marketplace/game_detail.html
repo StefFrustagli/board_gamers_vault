@@ -42,7 +42,7 @@
                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                     <p class="mt-3">Description: {{ game.description|safe }}</p>
                     <p class="mt-3">What the seller says: {{ game.seller_comment|safe }}</p>
-                    {% if request.user.is_superuser %}
+                    {% if game.seller == request.user %}
                     <small class="ml-3">
                         <a href="{% url 'edit_game' game.id %}">Edit</a> |
                         <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a>

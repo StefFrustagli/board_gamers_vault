@@ -225,6 +225,12 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    # Set is_available to False for each product in the order's line items
+    for line_item in order.lineitems.all():
+        game = line_item.game
+        game.is_available = False
+        game.save()
+
     messages.success(
         request,
         f"Order successfully processed! \
