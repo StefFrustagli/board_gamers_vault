@@ -37,6 +37,8 @@ class StripeWH_Handler:
         """
         Notify the seller that their game has been sold and can be dispatched.
         """
+        order_line_item.game.is_avalable = False
+        order_line_item.game.save()
         seller = order_line_item.game.seller
         seller_email = seller.email
 

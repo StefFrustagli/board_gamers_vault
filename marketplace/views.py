@@ -92,16 +92,12 @@ def game_detail(request, game_id):
 @login_required
 def add_game(request):
     """Add a product to the store"""
-    # if not request.user.is_superuser:
-    #     messages.error(request, 'Sorry, only admins and game owners '
-    #                             'can do that.')
-    #     return redirect(reverse('home'))
-
     if request.method == 'POST':
         form = GameForm(request.POST, request.FILES)
         if form.is_valid():
+            game = form.save(commit=False)  # Save the form data to a variable
             game.seller = request.user
-            game = form.save()  # Save the form data to a variable
+            game.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('game_detail', args=[game.id]))
         else:
@@ -121,9 +117,10 @@ def add_game(request):
 @login_required
 def edit_game(request, game_id):
     """Edit a product"""
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only admins and game owners " 
-                                "can do that.")
+
+    # Check if the logged-in user is the seller of the game
+    if game.seller != request.user:
+        messages.error(request, "Sorry, only the seller edit this game.")
         return redirect(reverse("home"))
 
     game = get_object_or_404(Game, pk=game_id)
@@ -139,7 +136,7 @@ def edit_game(request, game_id):
         form = GameForm(instance=game)
         messages.info(request, f"You are editing {game.title}")
 
-    # This else block ensures that when the form is invalid during editing, 
+    # This else block ensures that when the form is invalid during editing,
     # the error message is set correctly
     if not form.is_valid() and request.method == "POST":
         messages.error(

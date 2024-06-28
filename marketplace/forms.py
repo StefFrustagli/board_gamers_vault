@@ -8,9 +8,12 @@ class GameForm(forms.ModelForm):
 
     class Meta:
         model = Game
-        fields = "__all__"  # Use all fields from the Game model
+        # fields = "__all__"  # Use all fields from the Game model
+        exclude = ["seller"]
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label="Image", required=False, widget=CustomClearableFileInput
+    )
 
     def __init__(self, *args, **kwargs):
         """
@@ -27,7 +30,9 @@ class GameForm(forms.ModelForm):
 
         # Set the category field choices to the retrieved categories
         self.fields["category"].choices = name
-        
+
+        self.fields["price"].label = "Price (£)"
+
         # Add CSS classes to form fields for styling
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "border-black rounded-0"

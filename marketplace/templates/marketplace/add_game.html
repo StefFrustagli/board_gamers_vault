@@ -17,7 +17,6 @@
             <hr>
             <h2 class="logo-font mb-4">Boardgames Management</h2>
             <h5 class="text-muted">Add a game to sell</h5>
-            <hr>
             <h7 class="text-muted">Please make sure to include delivery costs in the product price</h7>
             <hr>
         </div>
@@ -27,26 +26,23 @@
         <div class="col-12 col-md-6">
             <form method="POST" action="{% url 'add_game' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.sku | as_crispy_field }}
-                {{ form.title | as_crispy_field }}
-                {{ form.price | as_crispy_field }}
-                {{ form.condition | as_crispy_field }}
-                {{ form.category | as_crispy_field }}
-                {{ form.description | as_crispy_field }}
-                {{ form.seller_comment | as_crispy_field }}
-                
-                {{ form.image | as_crispy_field }}
-
-                <!-- {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% endfor %}  -->
+                <!-- <p class="card-text">{{ form.sku | as_crispy_field }}</p> -->
+                <p class="card-text">{{ form.title | as_crispy_field }}</p>
+                <p class="card-text">{{ form.price | as_crispy_field }}</p>
+                <p class="text-muted">Leave this box ticked if your game is available:</p>
+                <p class="card-text">{{ form.is_available | as_crispy_field }}</p>
+                <p class="card-text">{{ form.condition | as_crispy_field }}</p>
+                <p class="card-text">{{ form.category | as_crispy_field }}</p>
+                <p class="card-text">{{ form.description | as_crispy_field }}</p>
+                <p class="card-text">{{ form.seller_comment | as_crispy_field }}</p>
+                <p class="card-text">{{ form.image | as_crispy_field }}</p>
+                <!-- To check for errors -->
+                {% if form.errors %}
+                {{ form.errors }}
+                {% endif %}
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'games_list' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Add Game</button>
+                    <a class="btn btn-outline-black" href="{% url 'games_list' %}">Cancel</a>
+                    <button class="btn btn-black" type="submit">Add Game</button>
                 </div>
             </form>
         </div>
