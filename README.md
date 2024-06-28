@@ -490,16 +490,33 @@ In the admin board, it is also possible to control users' permissions, deactivat
 The functionalities are still basic and will be improved in the future.
 
 #### Favicon
-TO BE ADDED
+The favicon was generated using [Microsoft Designer](https://designer.microsoft.com/image-creator). It features an image of a wizard in front of a suitcase containing a book and various dice, surrounded by numerous artifacts.
 
-![Favicon]()
+![Favicon](https://i.ibb.co/71tpgxz/wizard-logo.jpg)
+
+It was converted to a favicon using [favicon.io](https://favicon.io/favicon-converter/)
 
 #### Error pages
 The error pages simply provide the user with a link back to the homepage and inform them what type of error they encountered.
 
+#### Social media currently set up
+
+A Facebook page has been created for the application. This page will be used to share updates, engage with the community, and provide support to users.
+
+![Facebook page 1](https://i.ibb.co/MGPr5dW/fb1.png)
+
+![Facebook page 2](https://i.ibb.co/HHCSQ2w/fb2.png)
+
+![Facebook page 3](https://i.ibb.co/dW6qvg5/fb3.png)
+
+Find the FB page [here](https://www.facebook.com/profile.php?id=61561423170621).
+
+
 ### Future Features and general aspects left to implement
 
 Future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews, creating a comprehensive hub for all things board games.
+
+
 
 ## Technologies used
 
