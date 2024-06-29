@@ -9,3 +9,37 @@
     </div>
 </div>
 {% endblock %}
+
+{% block content %}
+<!-- About content -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <section class="col-md-6 custom-background text-white text-left card rounded-100 my-3 p-4">
+            <!-- Header with content -->
+            <header>
+                <h1>{{ about_page.title }}</h1>
+            </header>
+            <div>
+                <p>{{ about_page.content | safe }}</p>
+            </div>
+        </section>
+        <div class="col-md-6 border border-4 mb-4 mx-4 card rounded-100 feedback-form">
+            <!-- Form section -->
+            <section class="card my-4">
+                <!-- Feedback form message -->
+                <header class="text-center mb-4">
+                    <h1>Get in touch</h1>
+                    <p>Feel free to leave a message.</p>
+                </header>
+                <div class="text-center">
+                    <form method="post">
+                        {{ feedback_request | crispy }}
+                        {% csrf_token %}
+                        <button class="btn btn-form" type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock content %}

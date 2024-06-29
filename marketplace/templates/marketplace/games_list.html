@@ -14,7 +14,7 @@
 <div id="gamelist-container" class="container-fluid">
     <div class="row">
         <div class="col text-center mt-4">
-            <h2 class="logo-font">Board Games on sale</h2>
+            <h2 class="logo-font logo-on-sale">Board Games on sale</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'games_list' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.get_name_display }}</span>

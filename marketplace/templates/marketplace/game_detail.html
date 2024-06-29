@@ -13,8 +13,8 @@
 <div class="overlay"></div>
     <div id="gamelist-detail" class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-4">
+                <div class="image-container mx-auto my-5">
                     {% if game.image %}
                     <a href="{{ game.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid" src="{{ game.image.url }}" alt="{{ game.title }}">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
+                <div class="product-details-container mb-5 mt-4 mt-md-5">
                     <p class="mb-0">{{ game.title }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
                     {% if game.category %}
@@ -63,7 +63,7 @@
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
                                 <!-- Submit button to add the product to the bag -->
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                <input type="submit" class="btn btn-black text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <!-- Hidden input to store the current page URL for redirection after form submission -->
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">

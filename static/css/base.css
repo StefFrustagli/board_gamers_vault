@@ -49,6 +49,11 @@ button, input, optgroup, select, textarea {
   color: #4C2527;
 }
 
+.feedback-form {
+  margin-top: 10rem !important;
+  color: #785555;
+}
+
 /* Mailchimp */
 #mc_embed_signup {
   background: #fff;
@@ -124,21 +129,26 @@ button, input, optgroup, select, textarea {
 }
 
 .btn-black {
-  background: black;
+  background-color: #4C2527 !important; 
+  border-radius: 15px;
+  border-radius: 15px !important;
   color: white;
 }
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    color: #785555 !important;
+    border: 1px solid black !important;
+    border-radius: 15px !important;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
-    color: white !important;
+    background: white;
+    color: rgb(111, 46, 8) !important;
+    border: 2px solid rgb(111, 46, 8) !important;
+    border-radius: 15px !important;
 }
 
 .shop-now-button:hover,
@@ -147,8 +157,13 @@ button, input, optgroup, select, textarea {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #222;
-  color: white;
+  /* background: #222; */
+  background-color: rgb(111, 46, 8)!important; 
+  color: #ffffff;
+  border-radius: 15px !important;
+  font-weight: 500;
+  border: 2px solid #4C2527;
+  
 }
 
 /* text-black class and border-black class similar to bootstrap colour helper classes */
@@ -381,6 +396,17 @@ input[name='q']::placeholder {
     left: 0;
     z-index: 1030;
   }
+
+  .logo-on-sale {
+    padding-top: 6rem;
+    font-size: 2.3rem;
+  }
+
+
+#gamelist-detail {
+    margin-top: 9rem;
+}
+
   /* push body down to the bottom of the main page header */
   .header-container {
     padding-top: 164px;
