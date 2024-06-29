@@ -77,9 +77,17 @@ I performed Lighthouse tests using Chrome Dev tools in an incognito window.
 
 ## Manual testing
 
+Testing Stripe
+To test the checkout process use the Stripe test card details:
+
+
 ## User Stories completion
 
 To check User Stories completion, please refer to the [Kanban Board]().
+
+### Acceptance criteria testing
+
+DA AGGIUNGERE
 
 ## Automated testing
 The functionalities tested were:

@@ -35,9 +35,7 @@
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
         <a href="{% url 'add_game' %}" class="dropdown-item">Game Management</a>
-        {% endif %}
         <a href="" class="dropdown-item">My Profile</a>
         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}

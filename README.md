@@ -91,6 +91,9 @@ Some of the marketing strategies I plan to implement include:
 #### Initial Budget
 In the beginning, I'll use low-cost marketing strategies. If things go well, I might invest more to grow the business into something bigger.
 
+#### Name Process
+Choosing the right name was pretty tricky, and I considered a bunch of options like "Board Games Bazaar" and "The Board Games Vault." After doing some online research, I decided to go with "The Boardgame Shelf" since it seemed unique and there weren’t any other websites with that name.
+
 ### SEO Implementations
 
 #### SEO Keywords
@@ -117,7 +120,7 @@ BGG marketplace,
 Virtual flea board games market,
 Board game arena
 
-Selection: Keywords were selected based on their relevance and potential to attract board game enthusiasts. Even if some keywords were not strictly relevant, they were kept to ensure maximum visibility.
+Keywords were then selected based on their relevance and potential to attract board game enthusiasts. Even if some keywords were not strictly relevant, I decided to keep them to ensure maximum visibility.
 
 **Final Keyword List**: 
 
@@ -135,7 +138,7 @@ I think that these keywords cover a broad range of relevant search terms to ensu
 
 
 ### Marketing Strategy 
-Even though the website can be used by anyone who wants to sell board games, I have a specific market in mind: those who have large collections of board games, stay up-to-date with new releases and buy games compulsively. As a regular member at various board game clubs, I know that dedicated board game players and collectors currently lack a decent place to sell and buy second-hand games, apart from Facebook groups. Moreover, they don’t have a platform to share and update their collections. My goal here is to create a platform similar to Goodreads, but for board games, and attract all the board games enthusiasts.
+Even though the website can be used by anyone who wants to sell board games, I have a specific market in mind: those who have large collections of board games, stay up-to-date with new releases and buy games compulsively. As a regular member at various board game clubs, I know that dedicated board game players and collectors currently lack a decent place to sell and buy second-hand games, apart from Facebook groups and few other choices, not really that appealing. Moreover, they don’t have a platform to share and update their collections. My goal here is to create a platform similar to Goodreads/Anobii, but with board games, and attract all the board games enthusiasts.
 
 To start, I will focus on organic social media marketing, creating Social Media Accounts:
 - I will open Instagram, Facebook, and TikTok accounts to advertise the website;
@@ -144,6 +147,8 @@ To start, I will focus on organic social media marketing, creating Social Media 
 #### Users and relevant platforms
 
 My ideal users would mainly be ‘nerds’ and geeky individuals, spanning various age groups, who may use different social media platforms. Based on my experience and observations, marketing the website on Instagram, Facebook, and TikTok will effectively reach them.
+
+I have categorized the age groups as follows:
 
 **Age Group (45-60 years)**:
 - Primarily use Facebook.
@@ -180,23 +185,24 @@ By focusing my marketing efforts on these platforms and considering user behavio
    - Collaborating with board game influencers or creators to reach a wider audience.
 
 
-
-
-
 ### The design process
 
+The design aimed to be simple and reminiscent of a shelf, so I decided to utilise variations of brown to achieve this aesthetic. I think this choice of colors helps create a warm and inviting atmosphere, reminiscent of a classic game shelf.
+
+To enhance the visual appeal of the website, I used AI to generate several potential images that could create the right atmosphere. At the end, I opted for this image:
+
+![](https://i.ibb.co/VpfqcD9/boardgameshelf-betterquality.jpg)
 
 
-### Fonts
-
-The font used is called Poppins.
-It was imported using Google fonts.
+The image shows a massive shelf packed with tons of board games. It sets a cool, suggestive vibe, making you feel like you're stepping into a different fantasy world. It gives off strong fantasy vibes and fits perfectly as the background for both the homepage and the about page, making the whole experience more immersive for visitors.
 
 ### Colour palettes
 
-![Colour Palette]()
+![Colour Palette](https://i.ibb.co/5FBw0Xr/my-screenshots-2024-06-29-at-18-39-17.png)
 
+### Fonts
 
+The font used is called *Poppins* and it was imported using Google fonts.
 
 ### Wireframes
 
@@ -205,19 +211,6 @@ It was imported using Google fonts.
 ![Wireframe created using Balsamiq - Homepage on Desktop](https://i.ibb.co/LgY3Tb8/my-screenshots-2024-05-13-at-22-05-39.png)
 
 ![Wireframe created using Balsamiq - Homepage on Mobile](https://i.ibb.co/4Tj1tdN/my-screenshots-2024-05-13-at-22-05-28.png)
-
-
-About page [Desktop and mobile]:
-
-![Wireframe created using Balsamiq - About page]()
-
-Register page [Desktop and mobile]:
-
-![Wireframe created using Balsamiq - Register]()
-
-Login page [Desktop and mobile]:
-
-![Wireframe created using Balsamiq - Login]() .
   
 **Basket page** [Desktop and mobile]:
 
@@ -284,9 +277,8 @@ First draft:
 Draft flowchart for apps organisation:
 ![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
-Current flowchart for apps organisation: 
 
-DA AGGIUNGERE VERSIONE AGGIORNATA
+**Current flowchart for apps organisation** 
 
 The project is organized into several Django applications, trying to keep functionalities tidy and separated. As this is my second project with Django, I have decided to follow a similar structure to the one used in Boutique Ado walkthrough with Code Institute. 
 
@@ -302,7 +294,7 @@ The **applications** used are:
 
 - **Home**
 
-  This application manages the homepage and other static content pages, providing users with information about the platform, including contact information, about us, and other informational sections. This will be further developped in the future. 
+  This application manages the homepage, the About page and other static content pages, providing users with information about the platform, including contact information, about us, and other informational sections. This will be further developped in the future. 
 
 - **Marketplace**
 
@@ -397,11 +389,9 @@ The development process for this project followed Agile methodology, emphasizing
 
 **Project Management**: I utilised GitHub Project boards to manage tasks, user stories, and project progression effectively.
 
-DA MODIFICARE
-
 **User Stories**: User stories were categorized in a Kanban Board into EPICs A, B, C, D, E, and F based on user types and content specificity. I prioritized user stories using the MoSCoW method, which categorizes requirements into Must have, Should have, Could have, and Won't have categories based on their importance and urgency.
 
-[Link to the GitHub Project board]()
+[Link to the GitHub Project board](https://github.com/users/StefFrustagli/projects/3/views/1)
 
 **Continuous Improvement**: Despite working solo on this project, I actively sought ways to enhance development processes and product quality. Regular retrospectives allowed me to reflect on past work, pinpoint areas for improvement, and brainstorm solutions.
 
@@ -462,9 +452,21 @@ E3 - As a board games seller, I want to edit/update availability of a product so
 E4 - As a board games seller, I want to be able to delete a product so that I can specify that that product is no longer available for sale.
 
 
-
-
 ## Features
+
+### Functionalities Overview
+The app is currently in its early stages of development, with several functionalities yet to be implemented.
+
+Mainly it operates as a marketplace where registered users can buy and sell second-hand board games. Users can view available games, make purchases, and list their own games for sale.
+
+Payment Handling: Currently, payments are processed using Stripe by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when their game is sold, along with instructions to facilitate payment retrieval.
+
+#### Testing Stripe
+To test the checkout process use the Stripe test card details:
+
+Card number: 4242424242424242
+CVC: Any 3 digits
+Expiry: Any future date (eg. 04/24)
 
 ### Current Features
 
@@ -528,7 +530,7 @@ The logout page allows users to log out of their accounts. The user must confirm
 
 
 #### About page
-This page outlines the purpose of the website and my role as a creator. The purpose of my short presentation is to establish trust with the viewer and to explain the current state of the website in a clear and concise manner.
+This page outlines the purpose of the app. 
 
 ![About section explaining the purpose of the website](https://)
 
@@ -564,12 +566,26 @@ A Facebook page has been created for the application. This page will be used to 
 
 Find the FB page [here](https://www.facebook.com/profile.php?id=61561423170621).
 
+#### Mailchimp Newsletter
+
+To keep my users informed and engaged, I have set up a [Mailchimp](https://mailchimp.com/?_ga=2.244262146.682070205.1719697033-1477901815.1719697032&currency=GBP) newsletter. Subscribers will receive regular updates on new game listings, special promotions, and the latest developments in the app. This ensures that our community stays connected and always knows what's happening.
+
+The Mailchimp form is located in the footer and appears like this:
+
+![Mailchimp](https://i.ibb.co/b3jDMtv/my-screenshots-2024-06-29-at-22-50-47.png)
+
 
 ### Future Features and general aspects left to implement
+DA FINIRE
+Having an ambitious plan for the app, I intend to expand its capabilities in many ways. Future updates will aim to enable users to customize their profiles and showcase their game collections to other players. This will enhance user engagement and provide a personalized experience within the platform.
 
-Future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews, creating a comprehensive hub for all things board games.
+Specifically, future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews.
 
+Payment mechanism
 
+Subscription
+
+Style enhancement
 
 ## Technologies used
 
@@ -584,7 +600,8 @@ Future features will include personalized databases where users can catalogue th
 - [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html) Used for authentication and account registration;
 - [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/) Used to simplify the rendering of Django forms.
 - [Gunicorn:](https://gunicorn.org/) Python HTTP server, used as the Web Server to run Django on Heroku;
-- [Summernote:](https://github.com/summernote/django-summernote) To provide a WYSIWYG editor for customizing new blog content and add images.
+- [Summernote](https://github.com/summernote/django-summernote) was used to provide a WYSIWYG editor for customizing new blog content and add images.
+- [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering.
 
 ### Software and Web Applications
 
@@ -606,6 +623,9 @@ Future features will include personalized databases where users can catalogue th
 - [ChatGPT](https://chat.openai.com/) was used as helpful tool during the debugging process.
 - [Microsoft Designer](https://designer.microsoft.com/image-creator) was used to create images for the project.
 - [Favicon.io](https://favicon.io/favicon-converter/) was used to convert the chosen image into the favicon.
+- [Mailchimp](https://mailchimp.com) was used to set up the subscription newsletter.
+- [Amazon S3](https://aws.amazon.com/s3/) was used to store static files and images.
+- [Stripe](https://js.stripe.com/v3/) was used for secure payments (referenced in base.html).
 
 ## Modules imported
 
@@ -691,17 +711,96 @@ DATABASES = {
 ```
 8. Your project is now connected to the database and you can create database tables with Django's **migrate** command.
 
+### AWS Configuration
+
+Amazon Web Services S3 were used to store static files and images.
+
+Configuration:
+
+- Log on to AWS account on aws.amazon.com and create an account if necessary.
+- From the dashboard access the S3 services.
+- Create a new 'bucket', it is recommended to give this a name similar to your application to make it easy to remember and use, choose a region close to you, uncheck "Block all public access" and acknowledge that the bucket will be public.  
+Next, click on the new bucket to configure it.
+- Go to the properties tab and turn on static website hosting, fill in default values for index and error document settings - e.g. index.html and error.html and click on Save.
+- Go to the permissions tab and make 3 changes to configure the bucket :
+
+    - Step 1 Configure CORS : 
+        - Paste the following CORS configuration string :
+    	[ { "AllowedHeaders": ["Authorization"],
+                "AllowedMethods": ["GET"],
+                "AllowedOrigins": ["*"],
+                "ExposeHeaders": [] } ]
+
+    - Step 2 Generate Policy:
+        - Go to the bucket policy area, click on Edit and click on policy generator.  
+        - Choose S3 bucket policy from drop-down
+	    - Put asterisk in Principal field
+	    - Select get object from Actions drop-down
+	    - Copy ARN and paste into ARN box on the policy generator page
+	    - Click Add Statement
+	    - Click Generate Policy then copy the policy into the policy editor window
+        - Add /* to the end of the Resource key
+	    - Click Save
+
+    - Step 3 ACL :
+        - Go to the Access Control List area
+		- Set the list objects permission for everyone under the Public Access section and
+		check the box to confirm you want this permission setting
+
+- Create a user to access the bucket through IAM as follows :
+    - Return to the services menu on the dashboard and access the IAM area
+    - Create a group
+    - On the same page click on Policies, then Create Policy, go to JSON table and select Import Managed Policy
+    - Click on Import managed policy on rhs
+	- Search for S3 and select AmazonS3FullAccess and click on Import
+	- Go back and get the Bucket Policy ARN (generated when bucket was created)
+	- Change the Resource value from * to ARN bucket and its contents - e.g : 
+        "Resource": [
+                    "arn:aws:s3:::pf5-iomha-prints",  (sensitive)<br>
+                    "arn:aws:s3:::pf5-iomha-prints/*"
+                ]
+	- Click Next and then Review Policy
+	- Give the policy a name and click Create Policy
+    - Attach the policy to the group you created as follows : Go to groups, click on your group, go to the Permissions tab, click Add permissions and select Attach policies, select the policy created on previous step and click Attach permissions
+    - Create user to put into the group. Click Users on lhs, click Add User, assign name check the programmatic access checkbox, click on Next:Permissions.  Add user to group, click through to the end and click Create User.
+
+- Download and save the generated csv which contains the users access and secret access keys
+- Update the AWS section of the settings.py file - replace the bucket name and region with the values you set up in the previous steps :
+
+			if 'USE_AWS' in os.environ:
+				# Bucket Config
+				AWS_STORAGE_BUCKET_NAME = 'pf5-iomha-prints'    <------ bucket name and region
+				AWS_S3_REGION_NAME = 'eu-west-1'
+				AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+				AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+- Add the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY config vars to heroku using the values from the downloaded cvs
+- Add USE_AWS = True to the Heroku config vars
+- Remove the DISABLE_COLLECTSTATIC config var at this point from Heroku
+- The custom_storages.py file that is part of this project will tell Django to use S3 to store static and media files when collectstatic is run
+- The remaining AWS configuration settings needed are already configured in this projects settings.py file
+- Go to the S3 dashboard and create a folder called media in the new bucket.  Specify grant public-read access on the folder and tick the checkbox to confirm.
+
+### Stripe configuration
+
+- Log in to your Stripe account or create one if necessary.
+- Add STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY to the Heroku config vars, assign these variables values from your Stripe account dashboard.
+- Create a webhook endpoint for use with your applications.  On the stripe dashboard go to the Developers -> Webhooks area, click add endpoint, use the url of your Heroku application with '/checkout/wh/' tagged onto the end of the url string.  When configuring the endpoint, the events to register to listen to are payment_intent_succeeded and payment_intent_failed
+- Once the endpoint is set up get the signing secret for the webhooks and save this value as a Heroku config var called STRIPE_WH_SECRET.
+
 ## Credits
 
 ### Content
 
-TO BE ADDED
+- The background picture and favicon were generated using Microsoft Designer.
+- Board game pictures were sourced from eBay for testing purposes.
+- Board game descriptions were randomly taken from the internet to simulate what a user might use to describe their game. Some websites used were [BGG - Board Game Geek](https://boardgamegeek.com/) and Amazon UK.
 
 
 ### Code
 
-The code was mainly based on Code Institute's walkthrough TO BE ADDED
+The code was mainly based on Code Institute's walkthrough.
 
 ### Acknowledgment
 
-I am grateful to my mentor Brian Macharia for his suggestions and to my classmate Niclas for his precious support. A special thanks goes to the amazing tool that is ChatGPT: it helped me with the debugging process and whenever I got stuck.
+I am grateful to my mentor Brian Macharia and to Code Institute tutors for their help with the debugging process. A special thanks goes to the amazing tool that ChatGPT is: it helped me whenever I got stuck.

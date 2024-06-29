@@ -14,10 +14,10 @@
 <!-- About content -->
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <section class="col-md-6 custom-background text-white text-left card rounded-100 my-3 p-4">
+        <section id="about-textarea" class="col-md-6 custom-background text-white text-left card rounded-100 my-3 p-4">
             <!-- Header with content -->
             <header>
-                <h1>{{ about_page.title }}</h1>
+                <h1 class="text-black">{{ about_page.title }}</h1>
             </header>
             <div>
                 <p>{{ about_page.content | safe }}</p>

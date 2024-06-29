@@ -50,8 +50,12 @@ button, input, optgroup, select, textarea {
 }
 
 .feedback-form {
-  margin-top: 10rem !important;
+  margin-top: 3rem !important;
   color: #785555;
+}
+
+#about-textarea {
+  margin-top: 18rem !important;
 }
 
 /* Mailchimp */
@@ -237,6 +241,14 @@ input[name='q']::placeholder {
     height: 100px;
 }
 
+.management {
+  margin-top: 7rem;
+}
+
+.logo-font-management {
+  padding-left: 0rem !important;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -303,6 +315,12 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.allauth-form-inner-content {
+    margin-top: 8rem;
+    margin-left: 4rem;
+    padding-bottom: 5rem;
 }
 
 /* -------------------------------- Media Queries */
