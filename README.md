@@ -2,13 +2,23 @@
 
 Developer: Stefania Frustagli
 
-## Website Overview
+## App Overview
 
 Welcome to my board game marketplace! This e-commerce platform is designed to connect board game enthusiasts looking to buy and sell used board games. Whether you’re clearing out your collection or searching for that rare gem, this site provides a user-friendly experience to meet your needs.
 
 Sellers can list their board games, complete with details and images, and specify their location, making it easier for buyers to find games available nearby. My goal is to foster a community of gamers who can trade, sell, and discover new games with ease. 
 
-#### Why The Boardgame Shelf?
+#### Type of App: E-Commerce
+
+The app functions as an e-commerce platform where users can list and sell their second-hand board games. Each transaction involves a single payment for the purchased game.
+
+- **Business to Consumer (B2C)**: The app facilitates transactions directly between board game sellers (users) and buyers (customers).
+
+- **Product Type**: Physical product - users sell their own board games.
+
+- **Payment Model**: Single payment for each board game sold.
+
+### Why The Boardgame Shelf?
 
 The idea for this application stemmed from a clear gap in the market. There isn’t a dedicated, comprehensive website where board game enthusiasts can easily buy and sell used board games while managing their collections. Current platforms are fragmented and often lack the specific features needed by the board gaming community. By creating this e-commerce site, I aim to provide a centralised solution. 
 
@@ -81,8 +91,51 @@ Some of the marketing strategies I plan to implement include:
 #### Initial Budget
 In the beginning, I'll use low-cost marketing strategies. If things go well, I might invest more to grow the business into something bigger.
 
+### SEO Implementations
+
+#### SEO Keywords
+
+To optimize the website for search engines, common keywords related to board games were researched and utilized. I brainstormed several words with the intent to ensure that board game enthusiasts can find the website. The common words were identified using Google search engine results.
+
+The initial list of keywords included:
+
+Board game geek,
+Board game arena,
+Board games bazaar,
+Board games market,
+Board game catalogue,
+Sell your board games,
+Used board games,
+Buy board games,
+Popular board games,
+Board games geek,
+Second-hand board games,
+Sell your own game,
+Best way to sell board games in UK,
+Board game store near me,
+BGG marketplace,
+Virtual flea board games market,
+Board game arena
+
+Selection: Keywords were selected based on their relevance and potential to attract board game enthusiasts. Even if some keywords were not strictly relevant, they were kept to ensure maximum visibility.
+
+**Final Keyword List**: 
+
+- Boardgame marketplace
+- Board game shelf
+- Board game shop near me
+- Board game geek
+- Board games market
+- Second-hand board games
+- Sell board games
+- Used board games
+- Buy board games
+
+I think that these keywords cover a broad range of relevant search terms to ensure the site is visible to users searching for board games online.
+
+
 ### Marketing Strategy 
-Even though the website can be used by anyone who wants to sell board games, I have a specific market in mind: those who have large collections of board games, stay up-to-date with new releases, and buy games compulsively. As a regular at various board game clubs, I know that dedicated board game players and collectors currently lack a decent place to sell second-hand games, apart from Facebook groups. Moreover, they don’t have a platform to share and update their collections. My goal is to create a platform similar to Goodreads, but for board game enthusiasts.
+Even though the website can be used by anyone who wants to sell board games, I have a specific market in mind: those who have large collections of board games, stay up-to-date with new releases and buy games compulsively. As a regular member at various board game clubs, I know that dedicated board game players and collectors currently lack a decent place to sell and buy second-hand games, apart from Facebook groups. Moreover, they don’t have a platform to share and update their collections. My goal here is to create a platform similar to Goodreads, but for board games, and attract all the board games enthusiasts.
 
 To start, I will focus on organic social media marketing, creating Social Media Accounts:
 - I will open Instagram, Facebook, and TikTok accounts to advertise the website;
@@ -90,7 +143,7 @@ To start, I will focus on organic social media marketing, creating Social Media 
 
 #### Users and relevant platforms
 
-My ideal users are mainly ‘nerds’ and geeky individuals, spanning various age groups, who use different social media platforms. Based on my experience and observations, marketing the website on Instagram, Facebook, and TikTok will effectively reach them.
+My ideal users would mainly be ‘nerds’ and geeky individuals, spanning various age groups, who may use different social media platforms. Based on my experience and observations, marketing the website on Instagram, Facebook, and TikTok will effectively reach them.
 
 **Age Group (45-60 years)**:
 - Primarily use Facebook.
@@ -490,7 +543,7 @@ In the admin board, it is also possible to control users' permissions, deactivat
 The functionalities are still basic and will be improved in the future.
 
 #### Favicon
-The favicon was generated using [Microsoft Designer](https://designer.microsoft.com/image-creator). It features an image of a wizard in front of a suitcase containing a book and various dice, surrounded by numerous artifacts.
+The favicon was generated using [Microsoft Designer](https://designer.microsoft.com/image-creator). It features an image of a wizard about to cast a spell in front of a suitcase containing a book and various dice, surrounded by numerous objects and artifacts.
 
 ![Favicon](https://i.ibb.co/71tpgxz/wizard-logo.jpg)
 
@@ -551,6 +604,8 @@ Future features will include personalized databases where users can catalogue th
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 - [Table Convert](https://tableconvert.com/) was used to generate tables for the TESTING.md file.
 - [ChatGPT](https://chat.openai.com/) was used as helpful tool during the debugging process.
+- [Microsoft Designer](https://designer.microsoft.com/image-creator) was used to create images for the project.
+- [Favicon.io](https://favicon.io/favicon-converter/) was used to convert the chosen image into the favicon.
 
 ## Modules imported
 
