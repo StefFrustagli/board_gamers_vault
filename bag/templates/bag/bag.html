@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <h2 id="shopping-bag" class="logo-font mb-4">Shopping Bag</h2>
             <hr>
         </div>
     </div>
@@ -91,7 +91,7 @@
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty!</p>
-            <a href="{% url 'games_list' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <a href="{% url 'games_list' %}" id="shopping-button" class="btn btn-outline-black rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>

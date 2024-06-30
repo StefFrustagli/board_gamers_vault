@@ -45,6 +45,10 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+.custom-about {
+  margin-top: 3rem;
+}
+
 #about-page {
   color: #4C2527;
 }
@@ -56,6 +60,16 @@ button, input, optgroup, select, textarea {
 
 #about-textarea {
   margin-top: 18rem !important;
+}
+
+/* Shopping Bag */
+#shopping-bag {
+  margin-top: 5rem;
+  padding: 0;
+}
+
+#shopping-button {
+  margin-bottom: 3rem;
 }
 
 /* Mailchimp */
@@ -80,8 +94,6 @@ button, input, optgroup, select, textarea {
   margin-bottom: 15rem;
 }                              
 
-
-
 /* Header image */
 .header-image {
   background: url("/media/boardgame_shelf_banner_two.jpeg") no-repeat center center fixed;
@@ -91,7 +103,6 @@ button, input, optgroup, select, textarea {
 }
 
 /* List of games images */
-
 .image-container {
   width: 300px; /* Set desired width */
   height: 200px; /* Set desired height */
@@ -173,10 +184,6 @@ button, input, optgroup, select, textarea {
   border: 2px solid #4C2527;
   
 }
-
-/* text-black class and border-black class similar to bootstrap colour helper classes */
-/* that bootstrap doesn't seem to have */
-/* CHECK: if current version has these classes  */
 
 .text-black {
   color: #785555 !important;
@@ -473,5 +480,11 @@ input[name='q']::placeholder {
   .title-above {
     margin-top: 10rem !important;
   }
+
+  /* Shopping Bag */
+  #shopping-bag {
+  margin-top: 10rem;
+  padding: 0;
+}
     
 }
