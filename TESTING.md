@@ -158,26 +158,49 @@ Acceptance criteria:
 
 B1 - As a site user, I want to be able to easily register for an account so that I can have a personal account and view my profile.
 
+**Testing result**: Pass
+
+**Further comments**: None
 <br/>
 
 B2 - As a site user, I want to be able to easily login or logout so that I can access my account securely.
 
+**Testing result**: Pass
+
+**Further comments**: None
 <br/>
 
-B3 - As a site user, I want to be able to easily recover my password so that I can always recover access to my account.
+**B3** - As a site user, I want to be able to easily recover my password so that I can always recover access to my account.
 
+- [ ] Users can easily find the password recovery option on the website.
+- [ ] The password recovery process is user-friendly and well-guided.
+- [ ] Users receive clear instructions on how to reset their password via email.
+- [ ] The password recovery process is secure and protects user privacy.
+
+**Testing result**: Failed
+
+**Further comments**: This needs further implementations as it gives an error at the moment.
 <br/>
 
 B4 - As a site user, I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful. 
 
+**Testing result**: Pass
+
+**Further comments**: None
 <br/>
 
 B5 - As a site user, I want to be able to have a personalised user profile so that I can view my personal order history, order confirmations, and save my payment information. 
 
+**Testing result**: Pass
+
+**Further comments**: None
 <br/>
 
 B6 - As a site user, I want to have a public account that other users can access to see if I'm currently selling any games and my board games collection.
 
+**Testing result**: Pass
+
+**Further comments**: None
 <br/>
 
 **[EPIC C] Sorting and searching**
@@ -211,9 +234,10 @@ E3 - As a board games seller, I want to edit/update availability of a product so
 E4 - As a board games seller, I want to be able to delete a product so that I can specify that that product is no longer available for sale.
 
 
-DA AGGIUNGERE
+
 
 ## Automated testing
+DA AGGIUNGERE
 The functionalities tested were:
 - Comments and collaboration forms;
 - POST data and return of the correct response;
@@ -226,24 +250,22 @@ Below are the browsers that have been tested:
 - Safari Version 17.2.1
 
 ## Responsiveness 
-The website's responsiveness has been tested using Google Chrome Developer Tools. To ensure compatibility across different devices, various screen resolutions were simulated. Custom media queries were implemented to address issues with the iPad Pro and 5K iMac Pro displays.
-
+The website's responsiveness has been tested using Google Chrome Developer Tools. To ensure compatibility across different devices, various screen resolutions were simulated. Custom media queries were implemented to address issues with some screen dimensions.
 The website now displays responsively across a wide range of devices and screen sizes.
+
+## Stripe Testing
+
+To test the checkout process I have uses the Stripe test card details:
+
+    Card number: 4242424242424242
+    CVC: Any 3 digits
+    Expiry: Any future date (eg. 04/25)
+
+The test worked as expected.
 
 ## Bugs resolved
 
-- **Favicon not appearing on all pages**
 
-There was an issue with the favicon that displayed correctly on the homepage, but failed to render on other pages. This error was caused by the incorrect paths specified in the link tags.
-By incorporating ```[% static %]``` into the file paths, I made sure that the favicon files were correctly referenced, regardless of the URL.
-
-```
-<!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
-```
 
 ## Remaining bugs
 

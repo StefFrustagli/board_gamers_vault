@@ -96,6 +96,8 @@ Choosing the right name was pretty tricky, and I considered a bunch of options l
 
 ### SEO Implementations
 
+SEO enhancements included in the projects to improve search engine visibility and indexing include **SEO Keywords**,  **Sitemap** and **Robots.txt**.
+
 #### SEO Keywords
 
 To optimize the website for search engines, common keywords related to board games were researched and utilized. I brainstormed several words with the intent to ensure that board game enthusiasts can find the website. The common words were identified using Google search engine results.
@@ -135,6 +137,19 @@ Keywords were then selected based on their relevance and potential to attract bo
 - Buy board games
 
 I think that these keywords cover a broad range of relevant search terms to ensure the site is visible to users searching for board games online.
+
+#### Sitemap
+A sitemap.xml file has been added to the project. The sitemap helps search engines better understand the structure of your site and ensures that all important pages are indexed. It is automatically generated and includes all relevant URLs of the Django application.
+
+#### Robots.txt
+A robots.txt file has also been added to guide search engines on how to crawl the site. This file specifies which parts of the site should be crawled and which should not, helping to manage the load on the server and prevent sensitive or irrelevant pages from being indexed.
+
+The robots.txt file includes the following rules:
+
+    User-agent: *
+    Disallow: /accounts/
+    Disallow: /bag/
+    Sitemap: https://the-boardgame-shelf-e0153506acf8.herokuapp.com/sitemap.xml
 
 
 ### Marketing Strategy 
@@ -469,7 +484,7 @@ To test the checkout process use the Stripe test card details:
 
 Card number: 4242424242424242
 CVC: Any 3 digits
-Expiry: Any future date (eg. 04/24)
+Expiry: Any future date (eg. 04/25)
 
 ### Current Features
 
