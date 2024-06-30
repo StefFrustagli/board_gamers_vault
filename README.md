@@ -399,9 +399,9 @@ The development process for this project followed Agile methodology, emphasizing
 
 **[EPIC A] View and navigation**
 
-A1 - As a board games shopper, I want be able to view a list of products available to purchase so that I can select the ones I want.
+A1 - As a board games shopper, I want to be able to view a list of products available to purchase so that I can select the ones I want.
 
-A2 - As a board games shopper, I want be able to view individual product details so that I can identify the price, description, product condition and product image.
+A2 - As a board games shopper, I want to be able to view individual product details so that I can identify the price, description, product condition and product image.
 
 A3 - As a board games shopper, I want to be able to easily view the total of my purchases at any time so that I can keep track of my spending and avoid overspending.
 
@@ -462,6 +462,7 @@ Mainly it operates as a marketplace where registered users can buy and sell seco
 Payment Handling: Currently, payments are processed using Stripe by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when their game is sold, along with instructions to facilitate payment retrieval.
 
 #### Testing Stripe
+
 To test the checkout process use the Stripe test card details:
 
 Card number: 4242424242424242

@@ -85,7 +85,131 @@ To test the checkout process use the Stripe test card details:
 
 To check User Stories completion, please refer to the [Kanban Board]().
 
-### Acceptance criteria testing
+### User Stories - Acceptance Criteria testing
+
+**[EPIC A] View and navigation**
+
+**A1** - As a board games shopper, I want to be able to view a list of products available to purchase so that I can select the ones I want.
+
+Acceptance criteria:
+- [x] The user can access a page displaying a list of available products.
+- [x] The product list is well-organised and easy to navigate.
+- [x] Each product in the list includes essential information such as title, price, and image.
+
+**Testing result**: Pass
+
+**Further comments**: None
+
+<br/>
+
+**A2** - As a board games shopper, I want to be able to view individual product details so that I can identify the price, description, product condition and product image.
+
+- [x] Users can click on a product from the list to view its detailed information.
+- [x] The product detail page includes relevant information such as price, description, condition, and image.
+- [x] The product detail page layout is user-friendly and visually appealing.
+- [x] Users can easily navigate back to the product list or other parts of the website from the product detail page.
+
+**Testing result**: Pass
+
+**Further comments**: There is room for improvement in the layout and design of the product detail page.
+
+<br/>
+
+
+**A3** - As a board games shopper, I want to be able to easily view the total of my purchases at any time so that I can keep track of my spending and avoid overspending.
+
+- [x] Users can see the total amount of their purchases displayed prominently on the website.
+- [x] The total amount updates dynamically as users add or remove items from their shopping cart.
+- [x] The total amount is easily visible and accessible from any page of the website.
+- [x] Users can quickly understand their current spending status without any confusion.
+
+**Testing result**: Pass
+
+**Further comments**: None
+
+<br/>
+
+**A4** - As a board games shopper, I want to be able to access a 'search bar' so that I can see if the game I'm looking for is available.
+
+- [x] The search bar is prominently displayed and easily accessible from any page of the website.
+- [x] Users can enter keywords or phrases into the search bar to find specific products.
+- [x] The search functionality returns relevant results quickly and accurately.
+- [x] Users receive helpful feedback if no results are found or if there are any search errors.
+
+**Testing result**: Pass
+
+**Further comments**: None
+
+<br/>
+
+**A5** - As a board games shopper, I want to be able to filter products by various criteria (e.g., category, price, condition) so that I can easily find games that match my preferences.
+
+- [x] The user can access a page with filter options to refine product selection by category, price range, and condition.
+- [x] Filter options are prominently displayed and easy to locate on the product list page.
+- [x] Selecting a category filter updates the product list to display only products in the chosen category.
+
+**Testing result**: Pass
+
+**Further comments**: None
+
+<br/>
+
+**[EPIC B] Registration and user account**
+
+B1 - As a site user, I want to be able to easily register for an account so that I can have a personal account and view my profile.
+
+<br/>
+
+B2 - As a site user, I want to be able to easily login or logout so that I can access my account securely.
+
+<br/>
+
+B3 - As a site user, I want to be able to easily recover my password so that I can always recover access to my account.
+
+<br/>
+
+B4 - As a site user, I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful. 
+
+<br/>
+
+B5 - As a site user, I want to be able to have a personalised user profile so that I can view my personal order history, order confirmations, and save my payment information. 
+
+<br/>
+
+B6 - As a site user, I want to have a public account that other users can access to see if I'm currently selling any games and my board games collection.
+
+<br/>
+
+**[EPIC C] Sorting and searching**
+
+C1 - As a board games shopper, I want to be able to search for a product by name so that I can easily find a specific game I'd like to purchase.
+
+C2 - As a board games shopper, I want to be able to sort a specific game by name so that I can easily find the best-priced or in best-condition specific game available.
+
+C3 - As a board games shopper, I want to be able to easily see what I've searched for and the number of results so that I can quickly decide whether the product I want is available.
+
+C4 - As a board games shopper, I want to have convenient access to seller information so that I can feel confident about their credibility.
+
+**[EPIC D] Purchasing and checkout**
+
+D1 - As a board games shopper, I want to be able to easily select the item so that I can identify the total cost and the number of items I will receive.
+
+D2 - As a board games shopper, I want to be able to view the items in my bag so that I can make sure that my purchase is correct.
+
+D3 - As a board games shopper, I want to view an order confirmation after checkout so that I can verify that all is correct.
+
+D4 - As a board games shopper, I want to receive an email configuration after checking out so that I can keep the confirmation of what I've purchased for my records.
+
+**[EPIC E] - Sale admin and store management**
+
+E1 - As a board games seller, I want to easily navigate to my sale account from which I can organise the products I intend to sell.
+
+E2 - As a board game seller, I want the option to add one or more board games to sell so that I can sell more items at once.
+
+E3 - As a board games seller, I want to edit/update availability of a product so that I can change product criteria, like price, descriptions and images.
+
+E4 - As a board games seller, I want to be able to delete a product so that I can specify that that product is no longer available for sale.
+
 
 DA AGGIUNGERE
 
