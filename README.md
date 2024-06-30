@@ -200,6 +200,8 @@ The image shows a massive shelf packed with tons of board games. It sets a cool,
 
 ![Colour Palette](https://i.ibb.co/5FBw0Xr/my-screenshots-2024-06-29-at-18-39-17.png)
 
+This was created with [Coolors](https://coolors.co/).
+
 ### Fonts
 
 The font used is called *Poppins* and it was imported using Google fonts.
