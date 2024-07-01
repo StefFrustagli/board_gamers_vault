@@ -416,8 +416,16 @@ The test worked as expected.
 
 ## Bugs resolved
 
-DA AGGIUNGERE
+While working on this project, I encountered different bugs. Here are some of the bugs resolved:
+
+1. Game addition logic in add_game view
+
+This was a critical issue in the add_game view of marketplace/views.py. The logic for adding games did not properly validate form data before saving it to the database. This led to games being added even when form validation failed, resulting in inconsistent or incorrect data entries. This issue was addressed introducing conditional checks using form.is_valid() before calling form.save(), ensuring that game data is saved only when all required fields pass validation. Additionally, after a successful game addition, the view now redirects to a clean add_game form with a success message, enhancing user experience and clarity. Error messages are also displayed when validation fails, effectively notifying users of any issues preventing game additions. These changes collectively resolved the bug where games were erroneously added despite failing validation checks in the add_game view.
+
+2. Issue with email variable rendering in email confirmation template
+
+In the email confirmation template, the email variable was incorrectly split across lines, leading to improper rendering of the user's email address. The issue caused inconsistencies in how email addresses were displayed in confirmation emails, potentially confusing or misleading users. The fix involves ensuring that the email variable is correctly formatted and displayed within the template. 
 
 ## Remaining bugs
 
-There are no major issues that impact the website's functionalities. 
+While there are various aspects of the app that require attention, to the best of my knowledge, there are currently no significant issues affecting the app's functionalities.

@@ -122,12 +122,13 @@ def add_game(request):
 def edit_game(request, game_id):
     """Edit a product"""
 
+    # Retrieve the game object
+    game = get_object_or_404(Game, pk=game_id)
+
     # Check if the logged-in user is the seller of the game
     if game.seller != request.user:
         messages.error(request, "Sorry, only the seller edit this game.")
         return redirect(reverse("home"))
-
-    game = get_object_or_404(Game, pk=game_id)
 
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES, instance=game)

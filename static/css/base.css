@@ -49,6 +49,16 @@ button, input, optgroup, select, textarea {
   margin-top: 3rem;
 }
 
+.success-message {
+  margin-top: 8rem;
+  padding-left:0 !important;
+  padding-bottom: 0 !important;
+}
+
+.order-confirmation {
+  padding: 1rem;
+}
+
 #about-page {
   color: #4C2527;
 }
@@ -470,6 +480,10 @@ input[name='q']::placeholder {
   
   .nav-link {
     padding: 0 !important;
+  }
+
+  .success-message {
+    margin-top: 3rem;
   }
 
   

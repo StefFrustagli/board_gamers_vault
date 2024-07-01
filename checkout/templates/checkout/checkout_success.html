@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Thank you!</h2>
+            <h2 class="logo-font mb-4 success-message">Thank you!</h2>
             <hr>
-            <p class="text-black">Your order information is below.
+            <p class="text-black order-confirmation">Your order information is below. <br>
                 A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
@@ -192,16 +192,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-7 text-right">
+        <div class="col-12 col-lg-7 text-center pt-3 pb-5">
             
-            <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+            <a href="{% url 'profile' %}" class="btn btn-black my-2">
                 <span class="icon mr-2">
                     <i class="fas fa-angle-left"></i>
                 </span>
                 <span class="text-uppercase">Back to Profile</span>
             </a>
             
-            <a href="{% url 'games_list' %}" class="btn btn-black rounded-0 my-2">
+            <a href="{% url 'games_list' %}" class="btn btn-black my-2">
                 <span class="icon mr-2">
                     <i class="fa-solid fa-dice"></i>
                 </span>

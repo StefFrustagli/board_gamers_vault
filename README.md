@@ -476,17 +476,24 @@ The app is currently in its early stages of development, with several functional
 
 Mainly it operates as a marketplace where registered users can buy and sell second-hand board games. Users can view available games, make purchases, and list their own games for sale.
 
-Payment Handling: Currently, payments are processed using Stripe by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when their game is sold, along with instructions to facilitate payment retrieval.
+#### Payment Handling
+Currently, payments are processed using **Stripe** by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when their game is sold, along with instructions to facilitate payment retrieval.
 
-#### Testing Stripe
+Please note that this is a temporary solution. I am actively working on implementing a more automated system to handle multiple payments seamlessly.
 
-To test the checkout process use the Stripe test card details:
+    To test the checkout process use the Stripe test card details:
 
-Card number: 4242424242424242
-CVC: Any 3 digits
-Expiry: Any future date (eg. 04/25)
+    Card number: 4242424242424242
+    CVC: Any 3 digits
+    Expiry: Any future date (eg. 04/25)
+
 
 ### Current Features
+
+#### Homepage
+
+
+![Homepage]()
 
 
 #### Navbar
@@ -514,17 +521,21 @@ Log *here*."
 Below the navigation bar will also appear other notifications, such as sign out, edits and deletions of comments.
 
 Example:
-![Sign out confirmation message]()
+![Sign out confirmation message]())
 
 #### Footer
-On every page, the footer displays 
-ADD
-![Footer](https://)
+![Footer](https://i.ibb.co/qp0LxWN/my-screenshots-2024-07-01-at-15-52-59.png)
 
-#### Homepage
+The footer appears on every page of the application and includes essential information such as the app name, a brief description, social media links, a contact us section with an email link, a Privacy Policy link, and a Mailchimp subscription form for the newsletter.
 
 
-![Homepage]()
+##### GDPR
+The Privacy Policy is displayed within the footer on every page of the application.
+
+[Privacy Policy](https://www.termsfeed.com/live/2cfed02a-973b-42ae-a51c-23056d8b23e8)
+
+
+
 
 
 
@@ -594,16 +605,9 @@ The Mailchimp form is located in the footer and appears like this:
 
 
 ### Future Features and general aspects left to implement
-DA FINIRE
 Having an ambitious plan for the app, I intend to expand its capabilities in many ways. Future updates will aim to enable users to customize their profiles and showcase their game collections to other players. This will enhance user engagement and provide a personalized experience within the platform.
 
 Specifically, future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews.
-
-Payment mechanism
-
-Subscription
-
-Style enhancement
 
 ## Technologies used
 
@@ -648,7 +652,47 @@ Style enhancement
 
 ## Modules imported
 
-TO BE ADDED
+Certainly! Here's a list of the modules imported in the provided Python code snippets:
+
+### Modules Imported:
+
+1. **Django Modules:**
+   - `from django.conf import settings`
+   - `from django.http import HttpResponse`
+   - `from django.views.decorators.http import require_POST`
+   - `from django.views.decorators.csrf import csrf_exempt`
+   - `from django.core.mail.backends.smtp import EmailBackend`
+   - `from django.contrib import admin`
+   - `from django.shortcuts import render, get_object_or_404`
+   - `from django.contrib import messages`
+   - `from django.contrib.auth.decorators import login_required`
+   - `from django.db import models`
+   - `from django.db.models.signals import post_save`
+   - `from django.dispatch import receiver`
+   - `from django.urls import path`
+   - `from django.forms.widgets import ClearableFileInput`
+   - `from django.utils.translation import gettext_lazy as _`
+   - `from django import forms`
+   - `from django.apps import AppConfig`
+
+2. **Django Custom Imports:**
+   - `from .models import FeedbackRequest, About, Category, Game, SellerProfile, UserProfile`
+   - `from .widgets import CustomClearableFileInput`
+   - `from .forms import UserProfileForm, FeedbackRequest`
+   - `from . import views`
+   - `from checkout.models import Order`
+   - `from checkout.webhook_handler import StripeWH_Handler`
+
+3. **Third-Party Libraries:**
+   - `import stripe`
+   - `import smtplib`
+   - `import ssl`
+
+4. **Standard Python Modules:**
+   - `import os`
+   - `import sys`
+   - `from django.utils.crypto import get_random_string`
+
 
 ## Testing
 
@@ -670,7 +714,7 @@ Heroku was used to deploy the site. Here are the steps to deploy:
 10. First, add "python" and click save.
 11. Second, add "nodejs" and click save.
 
-The live site can be found here: [Narcissistic Website](https://narcissism-website-8191a44972de.herokuapp.com/) 
+The live site can be found here: [The Boardgame Shelf](https://the-boardgame-shelf-e0153506acf8.herokuapp.com/) 
 
 ### Cloning:
 
