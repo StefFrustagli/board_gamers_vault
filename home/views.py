@@ -7,7 +7,15 @@ from .forms import FeedbackRequest
 # Create your views here.
 
 def index(request):
-    """A view to return the index page"""
+    """
+    Render the index page.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered index page template.
+    """
 
     return render(request, "home/index.html")
 
@@ -19,11 +27,15 @@ def about_page(request):
     Retrieves the latest About page content and renders it along with
     the collaboration form.
 
+    If the request method is POST, processes the feedback form submission,
+    saves the feedback request, and displays a success message.
+
     Args:
         request (HttpRequest): The HTTP request object.
 
     Returns:
-        HttpResponse: The rendered About page template.
+        HttpResponse: The rendered About page template with About page content
+        and an empty feedback form.
     """
     if request.method == "POST":
         feedback_request = FeedbackRequest(data=request.POST)

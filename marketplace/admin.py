@@ -7,6 +7,12 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Game)
 class GameAdmin(SummernoteModelAdmin):
+    """
+    Admin interface options for the Game model.
+
+    Provides the ability to display, search, filter,
+    and edit fields for the Game model.
+    """
 
     list_display = (
         "sku",
@@ -27,6 +33,11 @@ class GameAdmin(SummernoteModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Admin interface options for the Category model.
+
+    Provides the ability to display fields for the Category model.
+    """
     list_display = (
         "name",
         )
@@ -34,6 +45,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(SellerProfile)
 class SellerProfileAdmin(admin.ModelAdmin):
+    """
+    Admin interface options for the SellerProfile model.
+
+    Provides the ability to display, search, filter, and edit fields
+    for the SellerProfile model.
+    """
     list_display = (
         "user",
         "standard_delivery_fee",

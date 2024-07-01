@@ -22,6 +22,18 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 @login_required
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data for processing payment.
+
+    This view modifies the Stripe PaymentIntent metadata with bag contents,
+    save_info preference, and username before processing the payment.
+
+    Args:
+        request (HttpRequest): The HTTP request object containing POST data.
+
+    Returns:
+        HttpResponse: HTTP response indicating success or error status.
+    """
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -48,16 +60,18 @@ def checkout(request):
     """
     Handle the checkout process.
 
-    This view handles the rendering of the checkout page, ensuring that the user
-    has items in their bag before proceeding. If the bag is empty, an error message
-    is displayed, and the user is redirected to the products page. Otherwise, an
-    order form is created and rendered on the checkout page.
+    This view handles the rendering of the checkout page,
+    ensuring that the user has items in their bag before proceeding.
+    If the bag is empty, an error message is displayed,
+    and the user is redirected to the products page.
+    Otherwise, an order form is created and rendered on the checkout page.
 
     Args:
         request (HttpRequest): The HTTP request object.
 
     Returns:
-        HttpResponse: The HTTP response object with the rendered checkout template.
+        HttpResponse: The HTTP response object with
+        the rendered checkout template.
     """
     # Retrieve Stripe TEST keys from settings
     stripe_public_key = settings.STRIPE_TEST_PUBLIC_KEY
@@ -107,7 +121,7 @@ def checkout(request):
                     )
                     order_line_item.save()
                 except Game.DoesNotExist:
-                    # Handle the case where a game is not found in the database
+                    # Handle the case where a game is not found
                     messages.error(
                         request,
                         (
@@ -121,7 +135,9 @@ def checkout(request):
 
             # Store the 'save_info' preference in the session
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            return redirect(reverse(
+                "checkout_success", args=[order.order_number]
+            ))
         else:
             # Handle the case where the order form is not valid
             messages.error(
@@ -162,7 +178,7 @@ def checkout(request):
         else:  # Create an empty order form
             order_form = OrderForm()
 
-    # Warn the user if the Stripe public key is missing TO BE REMOVED
+    # Warning if the Stripe public key is missing
     if not stripe_public_key:
         messages.warning(
             request,

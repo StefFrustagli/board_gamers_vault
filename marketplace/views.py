@@ -13,7 +13,8 @@ from .forms import GameForm
 
 def games_list(request):
     """A view to show all products, including sorting and search queries"""
-    games = Game.objects.filter(is_available=True)  # Fetch all games from the database
+    games = Game.objects.filter(is_available=True)
+    # Fetch all games from the database
     # 'games' is the name of the variable that holds
     # the data you retrieve from the database
     # in your view function
@@ -21,23 +22,23 @@ def games_list(request):
     categories = None
     conditions = None
     sort = None
-    direction = None   
+    direction = None
     no_games_message = None
 
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'title': 
+            if sortkey == 'title':
                 sortkey = 'lower_title'
                 games = games.annotate(lower_title=Lower('title'))
             if sortkey == 'category':
-                sortkey = 'category__name'     
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f"-{sortkey}"
-            games = games.order_by(sortkey)        
+            games = games.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -45,7 +46,7 @@ def games_list(request):
             categories = Category.objects.filter(name__in=categories)
 
             if not games.exists():
-                no_games_message = "No games found for the selected category."  
+                no_games_message = "No games found for the selected category."
 
         if 'condition' in request.GET:
             conditions = request.GET['condition'].split(',')
@@ -60,7 +61,10 @@ def games_list(request):
                 messages.error(request, "Please enter a search criteria.")
                 return redirect(reverse("games_list"))
 
-            queries = Q(title__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(title__icontains=query) |
+                Q(description__icontains=query)
+            )
             # i makes the case insensitive
             games = games.filter(queries)
 
@@ -101,9 +105,9 @@ def add_game(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('game_detail', args=[game.id]))
         else:
-            messages.error(request, 'Failed to add product. ' 
+            messages.error(request, 'Failed to add product. '
                                     'Please ensure the form is valid.')
-    else:    
+    else:
         form = GameForm()
 
     template = "marketplace/add_game.html"
@@ -156,7 +160,7 @@ def edit_game(request, game_id):
 def delete_game(request, game_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, only admins and game owners " 
+        messages.error(request, "Sorry, only admins and game owners "
                                 "can do that.")
         return redirect(reverse("home"))
 

@@ -1,11 +1,8 @@
 import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
 from django_countries.fields import CountryField
-
 from marketplace.models import Game
 from profiles.models import UserProfile
 
@@ -15,6 +12,10 @@ from profiles.models import UserProfile
 class Order(models.Model):
     """
     A model representing an order in the system.
+
+    This model captures details of an order placed by a user, including
+    personal information, delivery address, and order specifics such as
+    total cost and payment details.
     """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -45,7 +46,9 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
     )
     original_bag = models.TextField(null=False, blank=False, default="")
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default=""
+    )
 
     def _generate_order_number(self):
         """
@@ -66,14 +69,10 @@ class Order(models.Model):
         and updates the grand total.
         """
         self.order_total = (
-            self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
+            self.lineitems.aggregate(Sum("lineitem_total"))[
+                "lineitem_total__sum"
+            ] or 0
         )
-        # if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-        #     self.delivery_cost = (
-        #         self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-        #     )
-        # else:
-        #     self.delivery_cost = 0
 
         # Set delivery cost to zero
         self.delivery_cost = 0
@@ -107,6 +106,9 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     """
     A model representing an individual line item in an order.
+
+    This model captures details of a specific game ordered, including
+    the quantity and calculated total price for that line item.
     """
 
     order = models.ForeignKey(
@@ -116,7 +118,12 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE,
         related_name="lineitems",
     )
-    game = models.ForeignKey(Game, null=False, blank=False, on_delete=models.CASCADE)
+    game = models.ForeignKey(
+        Game,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+    )
 
     # Quantity 1
     quantity = models.PositiveIntegerField(default=1)

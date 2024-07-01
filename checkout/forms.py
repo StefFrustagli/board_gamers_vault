@@ -46,7 +46,7 @@ class OrderForm(forms.ModelForm):
 
         # Iterate over all form fields to add custom attributes
         for field in self.fields:
-            if field != 'country':        
+            if field != 'country':
                 if self.fields[field].required:
                     placeholder = f"{placeholders[field]} *"
                 else:

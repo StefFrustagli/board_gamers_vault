@@ -4,7 +4,9 @@ from .models import Game, Category
 
 
 class GameForm(forms.ModelForm):
-    """Form for creating and updating Game instances."""
+    """
+    Form for creating and updating Game instances.
+    """
 
     class Meta:
         model = Game
@@ -19,6 +21,10 @@ class GameForm(forms.ModelForm):
         """
         Initialize the form and dynamically populate category choices.
         Add CSS classes to form fields for consistent styling.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
         """
         super().__init__(*args, **kwargs)
 

@@ -5,7 +5,7 @@ urlpatterns = [
     # URL pattern for viewing the bag.
     # This pattern matches the root URL of the bag app
     # and maps it to the view_bag view.
-    # 'view_bag' can be used to refer to this URL pattern in templates and views.
+    # 'view_bag' can be used to refer to this URL in templates and views.
     path("", views.view_bag, name="view_bag"),
     # URL pattern for adding an item to the bag.
     # This pattern matches URLs of the form "add/<item_id>/"

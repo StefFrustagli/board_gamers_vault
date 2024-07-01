@@ -6,6 +6,15 @@ from django.utils.crypto import get_random_string
 
 
 class Category(models.Model):
+    """
+    Model representing a game category.
+
+    Attributes:
+        CATEGORY_CHOICES (list): List of tuples containing category
+        identifiers and human-readable names.
+        name (CharField): Name of the category, chosen from CATEGORY_CHOICES.
+    """
+
     CATEGORY_CHOICES = [
         ("role_playing", "Role-playing"),
         ("cooperatives", "Cooperatives"),
@@ -26,13 +35,35 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
-    name = models.CharField(max_length=100, choices=CATEGORY_CHOICES, unique=True)
+    name = models.CharField(
+        max_length=100, choices=CATEGORY_CHOICES, unique=True
+        )
 
     def __str__(self):
         return self.get_name_display()  # Display the human-readable value
 
 
 class Game(models.Model):
+    """
+    Model representing a game.
+
+    Attributes:
+        CONDITION_CHOICES (list): List of tuples containing condition
+        identifiers and human-readable names.
+        sku (CharField): Unique SKU for the game.
+        title (CharField): Title of the game.
+        price (DecimalField): Price of the game.
+        is_available (BooleanField): Availability status of the game.
+        condition (CharField): Condition of the game,
+        chosen from CONDITION_CHOICES.
+        category (ForeignKey): Category of the game,
+        linked to the Category model.
+        image (ImageField): Image of the game.
+        image_url (URLField): URL of the game's image.
+        seller (ForeignKey): Seller of the game, linked to the User model.
+        description (TextField): Description of the game.
+        seller_comment (TextField): Additional comments from the seller.
+    """
     CONDITION_CHOICES = [
         ("as_new", "As new"),
         ("great", "Great"),
@@ -52,7 +83,8 @@ class Game(models.Model):
     )
     image = models.ImageField(upload_to="game_images/", blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name="games")
+    seller = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="games")
     description = models.TextField()
     seller_comment = models.TextField(blank=True, null=True)
 
@@ -66,17 +98,37 @@ class Game(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     @property
     def availability_status(self):
+        """
+        Property to get the availability status of the game.
+
+        Returns:
+            str: 'Available' if the game is available,
+            otherwise 'Not Available'.
+        """
         return "Available" if self.is_available else "Not Available"
 
     def mark_as_purchased(self):
+        """
+        Mark the game as purchased by setting its availability to False.
+        """
         self.is_available = False
         self.save()
 
 
 class SellerProfile(models.Model):
+    """
+    Model representing a seller's profile.
+
+    Attributes:
+        user (OneToOneField): User associated with the seller profile.
+        standard_delivery_fee (DecimalField):
+        Standard delivery fee charged by the seller.
+        free_delivery_threshold (DecimalField):
+        Purchase amount threshold for free delivery.
+    """
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="seller_profile"
     )

@@ -2,20 +2,45 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib import messages
-
 from marketplace.models import Game
+
 
 @login_required
 def view_bag(request):
-    """A view that renders the bag contents page"""
+    """
+    Render the bag contents page.
 
+    This view requires the user to be logged in.
+    It fetches the current contents of the shopping bag
+    from the session and renders the 'bag/bag.html' template.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered bag contents page.
+    """
     return render(request, "bag/bag.html")
 
 
 @login_required
 def add_to_bag(request, item_id):
-    """Add a quantity of the specified product to the shopping bag"""
+    """
+    Add a specified game to the shopping bag.
 
+    This view requires the user to be logged in. It fetches the game using the
+    provided item ID, checks if it is available, and adds it to the shopping
+    bag stored in the session. If the game is already in the bag, it shows an
+    informational message.
+
+    Args:
+        request: The HTTP request object containing session and POST data.
+        item_id: The ID of the game to be added to the bag.
+
+    Returns:
+        HttpResponse: Redirects to the URL specified in the POST data or the
+        marketplace page if the redirect URL is not specified.
+    """
     game = get_object_or_404(Game, pk=item_id)
 
     # Quantity always one as unique item
@@ -56,10 +81,22 @@ def add_to_bag(request, item_id):
 @login_required
 def remove_from_bag(request, item_id):
     """
-    This function removes an item from the shopping bag stored in the session.
+    Remove a specified game from the shopping bag.
+    This view requires the user to be logged in.
+    It fetches the game using the provided item ID and removes
+    it from the shopping bag stored in the session.
+    If the removal is successful, it shows a success message.
+    If an error occurs, it shows an error message.
 
+    Args:
+        request: The HTTP request object containing session data.
+        item_id: The ID of the game to be removed from the bag.
+
+    Returns:
+        HttpResponse: An HTTP response with status 200
+        if the removal is successful,
+        or status 500 if an error occurs.
     """
-
     try:
         game = get_object_or_404(Game, pk=item_id)
         bag = request.session.get("bag", {})

@@ -644,6 +644,7 @@ Style enhancement
 - [Mailchimp](https://mailchimp.com) was used to set up the subscription newsletter.
 - [Amazon S3](https://aws.amazon.com/s3/) was used to store static files and images.
 - [Stripe](https://js.stripe.com/v3/) was used for secure payments (referenced in base.html).
+- [Sitemaps](https://www.xml-sitemaps.com/) was used for the Sitemap.
 
 ## Modules imported
 

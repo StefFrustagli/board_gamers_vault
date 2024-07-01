@@ -3,14 +3,25 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for creating and updating user profiles.
+
+    This form extends the Django ModelForm to customize fields and
+    widgets for the UserProfile model. It excludes the 'user' field
+    since it's automatically set based on the logged-in user.
+
+    Attributes:
+        Meta: Metadata class to specify the model and excluded fields.
+    """
     class Meta:
         model = UserProfile
         exclude = ("user",)
 
     def __init__(self, *args, **kwargs):
         """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        Initialize the form with placeholders, classes, and other
+        field attributes. Removes auto-generated labels and sets
+        autofocus on the first field.
         """
         super().__init__(*args, **kwargs)
         placeholders = {
