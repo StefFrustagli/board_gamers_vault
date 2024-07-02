@@ -45,6 +45,22 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+.game-title {
+  font-size: 2rem;
+}
+
+.details-list {
+  font-weight:600;
+}
+
+.game-category {
+  font-size: large;
+}
+
+.listing {
+  padding: 4px !important;
+}
+
 .custom-about {
   margin-top: 3rem;
 }

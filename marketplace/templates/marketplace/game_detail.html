@@ -28,20 +28,20 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-4 mt-md-5">
-                    <p class="mb-0">{{ game.title }}</p>
+                    <p class="mb-0 fs-2 font-weight-bold game-title">{{ game.title }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ game.price }}</p>
                     {% if game.category %}
-                    <p class="small mt-1 mb-0">
+                    <p class="small listing mt-1 mb-0">
                         <a class="text-muted" href="{% url 'games_list' %}?category={{ game.category.name }}">
-                            <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
+                            <small class="text-muted game-category"><i class="fas fa-play"></i> {{ game.category }}</small>
                         </a>
-                        <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
+                        <p class="mb-0 text-left"><span class="details-list">Condition:</span> {{ game.get_condition_display }}</p>
                     </p>
                     {% endif %}
 
-                    <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
-                    <p class="mt-3">Description: {{ game.description|safe }}</p>
-                    <p class="mt-3">What the seller says: {{ game.seller_comment|safe }}</p>
+                    <p class="mb-0 text-left"><span class="details-list">Seller:</span> {{ game.seller }}</p>
+                    <p class="mt-3"><span class="details-list">Description:</span> {{ game.description|safe }}</p>
+                    <p class="mt-3"><span class="details-list">What the seller says:</span> {{ game.seller_comment|safe }}</p>
                     {% if game.seller == request.user %}
                     <small class="ml-3">
                         <a href="{% url 'edit_game' game.id %}">Edit</a> |
