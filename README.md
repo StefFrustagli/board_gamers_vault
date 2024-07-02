@@ -249,8 +249,6 @@ The font used is called *Poppins* and it was imported using Google fonts.
 
 ### Data Model 
 
-EXPLAIN THE RELATIONSHIP BETWEEN THE MODELS
-
 The structure of our database was illustrated using an Entity-Relationship Diagram (ERD). This diagram shows how different entities within the system are related to each other and helps in understanding the data flow. 
 
 **Entity-relationship diagrams (ERD)**
@@ -643,6 +641,8 @@ In addition, it contains a link that leads to the Login page, if the user has al
 #### Sign in page
 The Sign in page allows registered users to sign into their account by entering their username and password. It also contains a link to the Register page, if the user hasn't created an account yet.
 ![Sign-in form](https://i.ibb.co/0q7YCH3/my-screenshots-2024-07-02-at-15-27-51.png)
+
+Also, users have the option of having their login information remembered, so they don't have to re-enter their login details each time they visit the website.
 
 #### Logout page
 The logout page allows users to log out of their accounts. The user must confirm their choice. They  can also cancel the action and return to the homepage.
