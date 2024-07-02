@@ -492,36 +492,64 @@ Please note that this is a temporary solution. I am actively working on implemen
 
 #### Homepage
 
+![Homepage](https://i.ibb.co/BjKyxz6/my-screenshots-2024-07-02-at-08-28-52.png)
 
-![Homepage]()
+On the homepage, users can quickly understand the website's purpose. At the top, there is a navbar featuring the website name on the left, a search bar in the center, and two icons on the right: "My Account" and "Shopping Basket". Below there is a mini banner saying "Sell and buy pre-owned board games".  In the middle of the screen, there are two prominent buttons that allow users to access the main actions of the website. These buttons are designed to guide users towards the most important features or sections. At the bottom, the footer contains various information related to the website, including contact details, legal information, and links to social media. Additionally, there is a newsletter subscription form for users who want to stay updated with the latest news and updates.
+
+The navbar, mini banner and footer are consistently displayed across all pages of the website.
+
+You can see the details of the homepage sections below:
+
+##### Navbar
+
+![Website navbar](https://i.ibb.co/X8NZKc5/my-screenshots-2024-07-02-at-08-30-40.png)
+
+The navbar features:
+
+- **Website name**:  located on the left side of the navbar, clicking on it returns users to the homepage, providing easy navigation back to the main page of the website.
+
+- **Search bar**: positioned in the center of the navbar, the search bar enables users to quickly search for specific items, content, or information within the website. It enhances user experience by allowing for efficient navigation and discovery of desired content.
+
+- **My Account**: this icon functions as a dropdown menu. For users who are not logged in, it offers options to "Login" or "Register". Once logged in, users see additional options such as "Logout", "My Profile", and "Boardgame Management". "My Profile" allows users to view and update their personal information, while "Boardgame Management" provides tools to manage their boardgame collection or listings.
+
+  The dropdown menu for not-logged-in users: 
+
+  ![My account dropdown menu for not-logged-in users](https://i.ibb.co/56j3YXj/my-screenshots-2024-07-02-at-15-27-31.png)
+
+  The dropdown menu for logged-in users:
+
+  ![My account dropdown menu for logged-in users](https://i.ibb.co/QFwVw10/my-screenshots-2024-07-02-at-17-18-11.png)
 
 
-#### Navbar
 
+- **Shopping Basket**: this icon indicates the user's shopping basket, allowing them to view and manage items they have added for purchase.
 
-![Website name]()
+  The shopping basket with items inside appears like this:
 
-The navigation links are: 
+    ![Shopping basket with items](https://i.ibb.co/dWdmd8z/my-screenshots-2024-07-02-at-17-21-56.png)
 
+Below, we can see the following dropdown menus and the About page link:
+    ![Dropdown menus and about page link](https://i.ibb.co/PN1RCmS/my-screenshots-2024-07-02-at-17-25-16.png)
 
+- **On Sale**: This category allows users to filter and view games that are currently discounted or part of special promotions. It's perfect for users looking for great deals and limited-time offers.
 
+- **Category**: This filter enables users to browse games based on specific board games types, such as Storytelling, Strategy, Placement, and more. It helps users quickly find games that match their interests and preferences.
 
+- **Condition**: This filter lets users sort games based on their condition, such as new, used, or refurbished. It provides flexibility for users who may be looking for budget-friendly options or collector's items.
 
+And a link to the About Page:
 
-#### Authentication and notification messages
-Users can see their log status below the navigation bar. The following message will appear to the right of the acreen if users are logged in:
+- **About the Team**: This link redirects users to the "About" page, where they can find detailed information about the website and the team behind it. It includes a welcome message and a feedback form for users to leave their comments and suggestions.
 
-"You are logged in as [username]" 
+##### Mini banner
 
-Otherwise, a message stating they are not logged in will apprear, with a link:
+![Mini banner](https://i.ibb.co/m4PNG2d/my-screenshots-2024-07-02-at-08-31-04.png)
 
-"You are not logged in.
-Log *here*."
+##### Homepage banner with two buttons
+In the middle of the page, a white banner appears with two buttons that allow to the two main pages of the website.
 
-Below the navigation bar will also appear other notifications, such as sign out, edits and deletions of comments.
+![Homepage banner](https://i.ibb.co/gwh7Mtr/my-screenshots-2024-07-02-at-08-59-10.png)
 
-Example:
-![Sign out confirmation message]())
 
 #### Footer
 ![Footer](https://i.ibb.co/qp0LxWN/my-screenshots-2024-07-01-at-15-52-59.png)
@@ -535,39 +563,101 @@ The Privacy Policy is displayed within the footer on every page of the applicati
 [Privacy Policy](https://www.termsfeed.com/live/2cfed02a-973b-42ae-a51c-23056d8b23e8)
 
 
+### "Board games on sale" Page
+
+![Board games on sale Page](https://i.ibb.co/bRhdmYm/my-screenshots-2024-07-02-at-09-13-47.png)
+
+It displays the list of available games with all the relevant infomation.
+
+Details diplayed with every game:
+
+![Details of game](https://i.ibb.co/T2ykmfY/my-screenshots-2024-07-02-at-13-21-44.png)
 
 
+Other elements in the page:
+- **Toggle Arrow Up**: Positioned at the bottom of the page, the toggle arrow up icon serves as a quick navigation tool for users to scroll back to the top of the page with a single click. It enhances user experience by providing a convenient way to navigate long pages without manual scrolling. ![Toggle Arrow Up](https://i.ibb.co/5vnHRnN/my-screenshots-2024-07-02-at-13-33-17.png)
+
+
+- **Display of Games** and **"Sort by" Bar**: This section of the website displays a collection of games, likely in a grid or list format, showcasing various titles, images, and possibly brief descriptions. Alongside or above this display, the "Sort by" bar offers users options to organize and filter the displayed games according to preferences such as price, popularity, release date, or genre. It provides users with flexibility and control over how they explore and browse the available games, ensuring a tailored browsing experience.
+![Display of Games and Sort by Bar](https://i.ibb.co/DGNd5HY/my-screenshots-2024-07-02-at-13-21-32.png)
+
+### "Boardgames Management" Page
+
+The "Sell Your Game" button redirects users to the "Boardgames Management" page. This page is also accessible via the "My Account" dropdown menu. The "Boardgames Management" page allows users to list their board games for sale, which will then appear in the "Board Games on Sale" list. To add a game, users need to provide the following information:
+
+- Title: the name of the board game.
+- Price: the selling price of the game.
+- Availability: availability status of the game.
+- Condition: the condition of the game (e.g., new, used, refurbished).
+- Category: game genre.
+- Description: a description of the game.
+
+![Sell your game Page - part 1](https://i.ibb.co/GtQgXGP/my-screenshots-2024-07-02-at-13-38-57.png)
+
+- Seller's Message: An optional message from the seller, providing additional information or personal notes about the game.
+- Image.
+
+![Sell your game Page - part 2](https://i.ibb.co/r0MJM99/my-screenshots-2024-07-02-at-13-39-07.png)
+
+This streamlined process ensures that sellers can easily and effectively manage their listings, making their games available to potential buyers on the platform.
+
+### "About" Page
+
+On the "About" page, users can find information about the website and the team. The page includes a welcome message and a feedback form for users to easily leave their feedback.
+
+![Welcome message](https://i.ibb.co/cwcj7J3/my-screenshots-2024-07-02-at-10-39-30.png)
+
+![Feedback Form](https://i.ibb.co/m9n22cQ/my-screenshots-2024-07-02-at-10-39-43.png)
+
+
+
+### "Shopping Bag" Page
+
+![Shopping bag page](https://i.ibb.co/4T4L3Hs/my-screenshots-2024-07-02-at-15-12-30.png)
+
+### "Checkout page" Page
+
+### "My profile" Page
+
+![My profile page](https://i.ibb.co/kXz9KRg/my-screenshots-2024-07-02-at-15-22-13.png)
+
+#### Authentication and notification messages
+
+In the navigation bar, where the shopping cart is, notifications, such as sign out, edits and deletions, will appear.
+
+Examples of messages:
+
+!["Added to the shopping bag" message](https://i.ibb.co/x2MD6dm/my-screenshots-2024-07-02-at-17-21-50.png)
+
+!["Successfully signed in" message](https://i.ibb.co/KG1Ky0N/my-screenshots-2024-07-02-at-17-17-58.png)
 
 
 
 #### Register page
 The Register page, which is visible to non-logged-in users, presents a registration form. The mandatory fields are 'Username' and 'Password' (to be entered twice), while the optional field is 'Email' address.
 
-![Register page]()
-In addition, it contains a link that leads to the Login page, if the user has already created an account.
+![Register page](https://i.ibb.co/j44QBXm/my-screenshots-2024-07-02-at-15-27-42.png)
+
+In addition, it contains a link that leads to the Login page, if the user has already created an account.  
 
 #### Sign in page
 The Sign in page allows registered users to sign into their account by entering their username and password. It also contains a link to the Register page, if the user hasn't created an account yet.
-![Sign-in form]()
-
-Also, users have the option of having their login information remembered, so they don't have to re-enter their login details each time they visit the website.
+![Sign-in form](https://i.ibb.co/0q7YCH3/my-screenshots-2024-07-02-at-15-27-51.png)
 
 #### Logout page
 The logout page allows users to log out of their accounts. The user must confirm their choice. They  can also cancel the action and return to the homepage.
 
-![Log out form]()
+![Log out form](https://i.ibb.co/7JkySHr/my-screenshots-2024-07-02-at-17-54-27.png)
 
+#### Password Reset
 
-#### About page
-This page outlines the purpose of the app. 
-
-![About section explaining the purpose of the website](https://)
+![Password reset](https://i.ibb.co/FhLjP47/my-screenshots-2024-07-02-at-15-27-59.png)
 
 
 #### Django admin board
 The admin board allows administrators to control the website. They can add topics and contents, edit the About section and authorise comments to be published.
 
-![Django Administrator Board]()
+![Django Administrator Board](https://i.ibb.co/tBMsMBW/my-screenshots-2024-07-02-at-10-45-41.png)
 
 In the admin board, it is also possible to control users' permissions, deactivate their accounts or make them admin users.
 
@@ -605,9 +695,13 @@ The Mailchimp form is located in the footer and appears like this:
 
 
 ### Future Features and general aspects left to implement
-Having an ambitious plan for the app, I intend to expand its capabilities in many ways. Future updates will aim to enable users to customize their profiles and showcase their game collections to other players. This will enhance user engagement and provide a personalized experience within the platform.
+Having an ambitious plan for the app, I intend to expand its capabilities in many ways. 
 
-Specifically, future features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews.
+First of all, in order to make the website professional and appealing, many aspects of the graphic will be improved. This current version should be considered a first draft, with much work still to be done.
+
+Future updates will focus on enabling users to customize their profiles and showcase their game collections to other players.
+
+Specifically, upcoming features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews.
 
 ## Technologies used
 
@@ -651,10 +745,6 @@ Specifically, future features will include personalized databases where users ca
 - [Sitemaps](https://www.xml-sitemaps.com/) was used for the Sitemap.
 
 ## Modules imported
-
-Certainly! Here's a list of the modules imported in the provided Python code snippets:
-
-### Modules Imported:
 
 1. **Django Modules:**
    - `from django.conf import settings`
@@ -700,7 +790,7 @@ Testing information can be found in [TESTING.md file](TESTING.md).
 
 ## Deployment
 
-Heroku was used to deploy the site. Here are the steps to deploy:
+**Heroku** was used to deploy the site. Here are the steps to deploy:
 
 1. Log in to Heroku.
 2. Click "Create a new app".
@@ -714,7 +804,7 @@ Heroku was used to deploy the site. Here are the steps to deploy:
 10. First, add "python" and click save.
 11. Second, add "nodejs" and click save.
 
-The live site can be found here: [The Boardgame Shelf](https://the-boardgame-shelf-e0153506acf8.herokuapp.com/) 
+The live site can be found here: [The Boardgame Shelf](https://the-boardgame-shelf-e0153506acf8.herokuapp.com/).
 
 ### Cloning:
 

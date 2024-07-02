@@ -160,12 +160,13 @@ def edit_game(request, game_id):
 @login_required
 def delete_game(request, game_id):
     """ Delete a product from the store """
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only admins and game owners "
+    game = get_object_or_404(Game, pk=game_id)
+
+    if game.seller != request.user:
+        messages.error(request, "Sorry, only game owners "
                                 "can do that.")
         return redirect(reverse("home"))
 
-    game = get_object_or_404(Game, pk=game_id)
     game.delete()
     messages.success(request, 'Game deleted!')
     return redirect(reverse('games_list'))
