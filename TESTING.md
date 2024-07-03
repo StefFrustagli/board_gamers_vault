@@ -24,49 +24,25 @@ I performed Lighthouse tests using Chrome Dev tools in an incognito window.
 
 - **Homepage**:
 
-    Initial results: 
+    Results: 
 
-    ![Homepage Lighthouse testing - initial results]()
+    ![Homepage Lighthouse testing - results](https://i.ibb.co/Q9KMqH1/my-screenshots-2024-07-02-at-20-43-30.png)
 
-    Current results:
 
-    ![Homepage Lighthouse - current testing results]()
+- **Board games on sale page**:
 
-    Changes made:
-
-- **Board on sale page**:
+    Results: 
+    
+    ![Board games on sale page Lighthouse testing - results](https://i.ibb.co/Q9KMqH1/my-screenshots-2024-07-02-at-20-43-30.png)
 
 - **About page**:    
-    Current results: 
-    ![Topic page Lighthouse testing - current results]()
+    Results: 
 
-   Changes made: 
-
+    ![About page Lighthouse testing - current results](https://i.ibb.co/1zCnc20/my-screenshots-2024-07-02-at-20-48-51.png)
 
 
-- **About page**:
 
-    Current results:
 
-    ![About page Lighthouse testing - current results]()
-
-- **Register page**:
-
-    Current results:
-
-    ![Register page Lighthouse Testing - current results]() 
-
-- **Login page**:
-
-    Current results:
-
-    ![Login page Lighthouse Testing - current results]()
-
-- **Logout page**:
-
-    Current results:
-
-    ![Logout page Lighthouse Testing - current results]()
 
 
 ## Manual testing
@@ -216,7 +192,7 @@ Acceptance criteria:
 
 **[EPIC B] Registration and user account**
 
-B1 - As a site user, I want to be able to easily register for an account so that I can have a personal account and view my profile.
+**B1** - As a site user, I want to be able to easily register for an account so that I can have a personal account and view my profile.
 
 - [x] Users can easily find the registration option on the website.
 - [x] The registration process is intuitive, with clear instructions and minimal steps.
@@ -228,7 +204,7 @@ B1 - As a site user, I want to be able to easily register for an account so that
 **Further comments**: None
 <br/>
 
-B2 - As a site user, I want to be able to easily login or logout so that I can access my account securely.
+**B2** - As a site user, I want to be able to easily login or logout so that I can access my account securely.
 
 - [x] The login and logout options are easily accessible from any page of the website.
 - [x] Users can securely log in using their registered email address and password.
@@ -252,7 +228,7 @@ B2 - As a site user, I want to be able to easily login or logout so that I can a
 **Further comments**: None.
 <br/>
 
-B4 - As a site user, I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful. 
+**B4** - As a site user, I want to be able to receive an email confirmation after registering so that I can verify that my account registration was successful. 
 
 - [x] Users receive a prompt email confirmation after successfully registering for an account.
 - [x] The email confirmation contains relevant information such as account details and verification instructions.
@@ -264,7 +240,7 @@ B4 - As a site user, I want to be able to receive an email confirmation after re
 **Further comments**: None
 <br/>
 
-B5 - As a site user, I want to be able to have a personalised user profile so that I can view my personal order history, order confirmations, and save my payment information. 
+**B5** - As a site user, I want to be able to have a personalised user profile so that I can view my personal order history, order confirmations, and save my payment information. 
 
 As a site user, I want to be able to have a personalised user profile so that I can view my personal order history, order confirmations, and save my payment information.
 
@@ -455,17 +431,13 @@ As a site user, I want to be able to have a personalised user profile so that I 
 
 
 ## Automated testing
-DA AGGIUNGERE
-The functionalities tested were:
-- Comments and collaboration forms;
-- POST data and return of the correct response;
-- Access to the topic page and the About page.
+Automated testing is not implemented at this stage.
 
 ## Browser Compatibility
 Below are the browsers that have been tested:
-- Chrome Version 123.0.6312.87
+- Chrome Version 126.0.6478.127
 - Firefox 118.0.2
-- Safari Version 17.2.1
+- Safari Version 17.5
 
 ## Responsiveness 
 The website's responsiveness has been tested using Google Chrome Developer Tools. To ensure compatibility across different devices, various screen resolutions were simulated. Custom media queries were implemented to address issues with some screen dimensions.
