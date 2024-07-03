@@ -45,8 +45,8 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
-.shop-button {
-  margin-bottom: 7rem;
+#shop-button {
+  margin-bottom: 5rem !important;
 }
 
 .game-title {
