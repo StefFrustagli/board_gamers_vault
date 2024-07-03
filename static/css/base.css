@@ -45,6 +45,10 @@ button, input, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+.shop-button {
+  margin-bottom: 7rem;
+}
+
 .game-title {
   font-size: 2rem;
 }
