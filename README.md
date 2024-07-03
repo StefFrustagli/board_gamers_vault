@@ -35,11 +35,12 @@ View the live project [here](https://the-boardgame-shelf-e0153506acf8.herokuapp.
 
 ## Table of Contents 
 
-- [Website Overview](#website-overview)
+- [Website Overview](#app-overview)
 - [Project background](#project-background)
-  - [Agile Development](#agile-development)
   - [Problem Statement](#problem-statement)
-  - [The Design Process](#the-design-process-thinking-through-it)
+  - [Marketing Strategy](#marketing-strategy)
+  - [Agile Development](#agile-development)
+  - [The Design Process](#the-design-process)
   - [Colour Palettes](#colour-palettes)
   - [Fonts](#fonts)
   - [Wireframes](#wireframes)
@@ -47,7 +48,7 @@ View the live project [here](https://the-boardgame-shelf-e0153506acf8.herokuapp.
 - [User Experience](#user-experience)
   - [Ideal Users](#ideal-users)
   - [User Stories](#user-stories-site-accessibility--functionality)
-- [Features and functionalities](#features-and-functionalities)
+- [Features and functionalities](#features)
   - [Current Features](#current-features)
   - [Future Features](#future-features-and-general-aspects-left-to-implement)
 - [Technologies used](#technologies-used)
