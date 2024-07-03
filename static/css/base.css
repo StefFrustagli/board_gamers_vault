@@ -65,6 +65,10 @@ button, input, optgroup, select, textarea {
   margin-top: 3rem;
 }
 
+.checkout {
+  margin-top: 5rem !important;
+}
+
 .success-message {
   margin-top: 8rem;
   padding-left:0 !important;

@@ -13,6 +13,7 @@ Sellers can list their board games, complete with details and images, and specif
 The app functions as an e-commerce platform where users can list and sell their second-hand board games. Each transaction involves a single payment for the purchased game.
 
 - **Business to Consumer (B2C)**: The app facilitates transactions directly between board game sellers (users) and buyers (customers).
+UPDATE: Currently, all transactions are managed by a super user using Stripe, and the proceeds are manually sent to sellers after the transaction. This is a temporary solution. The goal is to transition to a fully automated transaction system in the future, allowing direct transactions between board game sellers and buyers.
 
 - **Product Type**: Physical product - users sell their own board games.
 
@@ -206,7 +207,7 @@ The design aimed to be simple and reminiscent of a shelf, so I decided to utilis
 
 To enhance the visual appeal of the website, I used AI to generate several potential images that could create the right atmosphere. At the end, I opted for this image:
 
-![](https://i.ibb.co/VpfqcD9/boardgameshelf-betterquality.jpg)
+![Background image](https://i.ibb.co/VpfqcD9/boardgameshelf-betterquality.jpg)
 
 
 The image shows a massive shelf packed with tons of board games. It sets a cool, suggestive vibe, making you feel like you're stepping into a different fantasy world. It gives off strong fantasy vibes and fits perfectly as the background for both the homepage and the about page, making the whole experience more immersive for visitors.
@@ -253,7 +254,8 @@ The structure of our database was illustrated using an Entity-Relationship Diagr
 
 **Entity-relationship diagrams (ERD)**
 
-First draft:
+First draft (in the planning process):
+
 ![ERD](https://i.ibb.co/3cMYNdK/my-screenshots-2024-05-17-at-09-40-10.png)
 
 
@@ -290,6 +292,7 @@ First draft:
 
 
 Draft flowchart for apps organisation:
+
 ![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
 
@@ -466,7 +469,6 @@ E3 - As a board games seller, I want to edit/update availability of a product so
 
 E4 - As a board games seller, I want to be able to delete a product so that I can specify that that product is no longer available for sale.
 
-
 ## Features
 
 ### Functionalities Overview
@@ -475,9 +477,9 @@ The app is currently in its early stages of development, with several functional
 Mainly it operates as a marketplace where registered users can buy and sell second-hand board games. Users can view available games, make purchases, and list their own games for sale.
 
 #### Payment Handling
-Currently, payments are processed using **Stripe** by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when their game is sold, along with instructions to facilitate payment retrieval.
+Currently, payments are processed using **Stripe** by the superuser (myself). Upon a game being sold, money is received into the Stripe account and then transferred to the seller within 2 working days. Sellers are notified via email when a game is sold, along with instructions to facilitate payment retrieval. Similarly, buyers receive a confirmation email containing the order number and relevant contact information in case they encounter any issues.
 
-Please note that this is a temporary solution. I am actively working on implementing a more automated system to handle multiple payments seamlessly.
+Please note that this payment handling is a temporary solution. I am actively working on implementing a more automated system to handle multiple payments seamlessly.
 
     To test the checkout process use the Stripe test card details:
 
@@ -485,6 +487,9 @@ Please note that this is a temporary solution. I am actively working on implemen
     CVC: Any 3 digits
     Expiry: Any future date (eg. 04/25)
 
+#### Delivery and Shipping cost
+
+Shipping costs are currently handled by sellers and are included in the product price, so they are not calculated separately. At the moment, all transactions are conducted in British Pounds (GBP), as the market is primarily focused on the UK.
 
 ### Current Features
 
@@ -526,7 +531,7 @@ The navbar features:
 
     ![Shopping basket with items](https://i.ibb.co/dWdmd8z/my-screenshots-2024-07-02-at-17-21-56.png)
 
-Below, we can see the following dropdown menus and the About page link:
+At the bottom of the navbar, we can find the following dropdown menus and the About page link:
     ![Dropdown menus and about page link](https://i.ibb.co/PN1RCmS/my-screenshots-2024-07-02-at-17-25-16.png)
 
 - **On Sale**: This category allows users to filter and view games that are currently discounted or part of special promotions. It's perfect for users looking for great deals and limited-time offers.
@@ -534,8 +539,6 @@ Below, we can see the following dropdown menus and the About page link:
 - **Category**: This filter enables users to browse games based on specific board games types, such as Storytelling, Strategy, Placement, and more. It helps users quickly find games that match their interests and preferences.
 
 - **Condition**: This filter lets users sort games based on their condition, such as new, used, or refurbished. It provides flexibility for users who may be looking for budget-friendly options or collector's items.
-
-And a link to the About Page:
 
 - **About the Team**: This link redirects users to the "About" page, where they can find detailed information about the website and the team behind it. It includes a welcome message and a feedback form for users to leave their comments and suggestions.
 
@@ -571,6 +574,7 @@ Details diplayed with every game:
 
 ![Details of game](https://i.ibb.co/T2ykmfY/my-screenshots-2024-07-02-at-13-21-44.png)
 
+Sellers can only edit and delete their own games. They will see the "Edit" and "Delete" options for their listed games.
 
 Other elements in the page:
 - **Toggle Arrow Up**: Positioned at the bottom of the page, the toggle arrow up icon serves as a quick navigation tool for users to scroll back to the top of the page with a single click. It enhances user experience by providing a convenient way to navigate long pages without manual scrolling. ![Toggle Arrow Up](https://i.ibb.co/5vnHRnN/my-screenshots-2024-07-02-at-13-33-17.png)
@@ -607,17 +611,29 @@ On the "About" page, users can find information about the website and the team. 
 
 ![Feedback Form](https://i.ibb.co/m9n22cQ/my-screenshots-2024-07-02-at-10-39-43.png)
 
-
-
 ### "Shopping Bag" Page
 
 ![Shopping bag page](https://i.ibb.co/4T4L3Hs/my-screenshots-2024-07-02-at-15-12-30.png)
 
+In the shopping bag, buyers can view the products they intend to purchase along with all the relevant information.
+The product can be removed from the basket by clicking on "Remove". Clicking on Secure checkout, they can proceed with the purchase.
+
 ### "Checkout page" Page
+
+![Checkout page part 1](https://i.ibb.co/LPQSVsN/my-screenshots-2024-07-03-at-06-20-30.png)
+![Checkout page part 2](https://i.ibb.co/93Z4McC/my-screenshots-2024-07-03-at-06-20-46.png)
+![Checkout page part 3](https://i.ibb.co/yhCTLzS/my-screenshots-2024-07-03-at-06-20-53.png)
+
+The checkout page provides a seamless and secure process for completing purchases. Buyers can review their order details, enter card details information, and make payments through the secure payment gateway. Currently, all transactions are managed using Stripe.
+
+When a game has been purchased, it will disappear from the "Board Games on Sale" page.
 
 ### "My profile" Page
 
 ![My profile page](https://i.ibb.co/kXz9KRg/my-screenshots-2024-07-02-at-15-22-13.png)
+
+
+In "My Profile," users can access and customize some of their personal information (this feature will be improved in the future), as well as view their order history.
 
 #### Authentication and notification messages
 
@@ -629,10 +645,8 @@ Examples of messages:
 
 !["Successfully signed in" message](https://i.ibb.co/KG1Ky0N/my-screenshots-2024-07-02-at-17-17-58.png)
 
-
-
-#### Register page
-The Register page, which is visible to non-logged-in users, presents a registration form. The mandatory fields are 'Username' and 'Password' (to be entered twice), while the optional field is 'Email' address.
+#### Registration page
+The Registration page, which is visible to non-logged-in users, presents a registration form. The mandatory fields are 'Username' and 'Password' (to be entered twice), while the optional field is 'Email' address.
 
 ![Register page](https://i.ibb.co/j44QBXm/my-screenshots-2024-07-02-at-15-27-42.png)
 
@@ -640,6 +654,7 @@ In addition, it contains a link that leads to the Login page, if the user has al
 
 #### Sign in page
 The Sign in page allows registered users to sign into their account by entering their username and password. It also contains a link to the Register page, if the user hasn't created an account yet.
+
 ![Sign-in form](https://i.ibb.co/0q7YCH3/my-screenshots-2024-07-02-at-15-27-51.png)
 
 Also, users have the option of having their login information remembered, so they don't have to re-enter their login details each time they visit the website.
@@ -701,7 +716,9 @@ First of all, in order to make the website professional and appealing, many aspe
 
 Future updates will focus on enabling users to customize their profiles and showcase their game collections to other players.
 
-Specifically, upcoming features will include personalized databases where users can catalogue their collections, track their wish lists, log played games, and share reviews.
+Specifically, upcoming features will include personalized profiles where users can catalogue their collections, track their wish lists, log played games, and share reviews.
+
+The payment handling process will be improved and automated in the future.
 
 ## Technologies used
 
