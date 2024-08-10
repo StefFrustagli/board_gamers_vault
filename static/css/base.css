@@ -93,7 +93,8 @@ button, input, optgroup, select, textarea {
 }
 
 #about-textarea {
-  margin-top: 10rem !important;
+  margin-top: 15rem !important;
+  /* to make sure ipad pro about is visible */
 }
 
 #id_message {
@@ -521,6 +522,7 @@ input[name='q']::placeholder {
 
 /* CSS rules for screens between 1024px and 1366px */
 @media (min-width: 1024px) and (max-width: 1366px) {
+
   .title-above {
     margin-top: 10rem !important;
   }
