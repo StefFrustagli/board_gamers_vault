@@ -93,7 +93,13 @@ button, input, optgroup, select, textarea {
 }
 
 #about-textarea {
-  margin-top: 18rem !important;
+  margin-top: 10rem !important;
+}
+
+#id_message {
+  box-sizing: border-box !important;
+  width: 15rem;
+  resize: both;
 }
 
 /* Shopping Bag */
