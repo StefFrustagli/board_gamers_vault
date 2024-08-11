@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
     "8000-steffrustag-boardgamers-wgstn1wvdge.ws-eu114.gitpod.io",
     "127.0.0.1",
@@ -92,7 +92,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django.template.context_processors.debug",
+                "django.template.context_processors.debug",                
                 # required by allauth to access HTTP request object
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -121,6 +121,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+# Console backend to print emails to the console for development purposes
+# Uncomment the following line in production to send real emails
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Authentication either using eusername or email
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
@@ -264,7 +268,7 @@ STRIPE_SECRET_KEY = STRIPE_TEST_SECRET_KEY
 # Email settings
 if "DEVELOPMENT" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    DEFAULT_FROM_EMAIL = "theboardgameshelf@example.com"
+    DEFAULT_FROM_EMAIL = "theboardgameshelf123@example.com"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_USE_TLS = True
