@@ -41,7 +41,7 @@ footer .fab {
 }
 
 /* margins for input buttons, etc. */
-button, input, optgroup, select, textarea {
+button, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
@@ -144,9 +144,8 @@ button, input, optgroup, select, textarea {
 }
 
 /* List of games images */
-.image-container {
-  width: 300px; /* Set desired width */
-  height: 200px; /* Set desired height */
+.image-container { 
+  height: 250px; 
   overflow: hidden; /* Hide overflow to ensure images fit */
   display: flex;
   justify-content: center;
@@ -154,10 +153,14 @@ button, input, optgroup, select, textarea {
   text-align: center;
 }
 .image-container img {
-  width: 50%;
+  width: 40%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
   display: inline-block;
+}
+
+.product-details-container {
+  width: 21.5625rem;
 }
 
 /* from Bulma - framework similar to bootstrap */
@@ -272,6 +275,20 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/* Breakcrumb container  */
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb-item a {
+  color: #6c757d;
+}
+
+.breadcrumb-item.active { 
+  color: #4C2527;
+  font-weight: 500;
+}
+
 /* Gamelist container */
 #gamelist-container {
   margin-top: 2rem; /* Override existing margin-top */
@@ -279,7 +296,7 @@ input[name='q']::placeholder {
 }
 
 #gamelist-detail {
-  margin-top: 2rem; /* Override existing margin-top */
+  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -297,7 +314,7 @@ input[name='q']::placeholder {
   padding-left: 0rem !important;
 }
 
-/* ------------------------------- bootstrap toasts */
+/* --------- bootstrap toasts */
 
 .message-container {
     position: fixed;
@@ -365,22 +382,13 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+
+/* Allauth form formatting */
 .allauth-form-inner-content {
     margin-top: 8rem;
     margin-left: 4rem;
     padding-bottom: 5rem;
 }
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* Allauth form formatting */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -463,6 +471,15 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* ------------ MEDIA QUERIES */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
   .fixed-top-desktop-only {
@@ -483,9 +500,13 @@ input[name='q']::placeholder {
   }
 
   #gamelist-detail {
-    margin-top: 9rem;
+    margin-top: 3rem;
   }
 
+  #breadcrumb-container {
+    padding-top: 17rem;
+  }
+  
   /* push body down to the bottom of the main page header */
   .header-container {
     padding-top: 164px;
@@ -505,6 +526,10 @@ input[name='q']::placeholder {
     flex-direction: column;
   }
 
+  #breadcrumb-container {
+    padding-top: 13rem;
+  }
+
   .header-container {
     padding-top: 116px;
   }
@@ -517,7 +542,6 @@ input[name='q']::placeholder {
     margin-top: 3rem;
   }
 
-  
 }
 
 /* CSS rules for screens between 1024px and 1366px */
@@ -531,6 +555,5 @@ input[name='q']::placeholder {
   #shopping-bag {
   margin-top: 10rem;
   padding: 0;
-}
-    
+  } 
 }
