@@ -1,18 +1,128 @@
-html {
+html, body {
   height: 100%;
 }
 
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: url('/media/boardgameshelf-betterquality.jpeg') no-repeat center center fixed;
   background-size: cover;
-  height: calc(100vh - 164px);
+  /* height: calc(100vh - 164px); */
   color: #555;
   font-family: "Poppins", sans-serif;
 }
 
+.main {
+  flex: 1;
+}
+/* Footer  */
+footer {
+    background-color: #4C2527;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer h5 {
+    font-weight: 700;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #aaa;
+}
+
+footer .fab {
+    font-size: 1.5rem;
+}
+
 /* margins for input buttons, etc. */
-button, input, optgroup, select, textarea {
+button, optgroup, select, textarea {
     margin: 0.2rem !important;
+}
+
+#shop-button {
+  margin-bottom: 5rem !important;
+}
+
+.game-title {
+  font-size: 2rem;
+}
+
+.details-list {
+  font-weight:600;
+}
+
+.game-category {
+  font-size: large;
+}
+
+.listing {
+  padding: 4px !important;
+}
+
+.custom-about {
+  margin-top: 3rem;
+}
+
+.checkout {
+  margin-top: 5rem !important;
+}
+
+.success-message {
+  margin-top: 8rem;
+  padding-left:0 !important;
+  padding-bottom: 0 !important;
+}
+
+.order-confirmation {
+  padding: 1rem;
+}
+
+#about-page {
+  color: #4C2527;
+}
+
+.feedback-form {
+  margin-top: 3rem !important;
+  color: #785555;
+}
+
+#about-textarea {
+  margin-top: 15rem !important;
+  /* to make sure ipad pro about is visible */
+}
+
+#id_message {
+  box-sizing: border-box !important;
+  width: 15rem;
+  resize: both;
+}
+
+/* Shopping Bag */
+#shopping-bag {
+  margin-top: 5rem;
+  padding: 0;
+}
+
+#shopping-button {
+  margin-bottom: 3rem;
+}
+
+/* Mailchimp */
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  width: 600px;
+  color: #000;
+}
+
+#mc_embed_signup_scroll {
+  padding: 1rem;
 }
 
 /* Error messages */
@@ -21,19 +131,9 @@ button, input, optgroup, select, textarea {
 }
 
 .header-title {
-  margin-top: 30rem !important; /* can't find another way to make */
-}                               /* to make the header go down */
-
-/* Gamelist container */
-#gamelist-container {
-  margin-top: 2rem; /* Override existing margin-top */
-  color: rgb(74, 79, 79);
-}
-
-#gamelist-detail {
-  margin-top: 2rem; /* Override existing margin-top */
-  color: rgb(74, 79, 79);
-}
+  margin-top: 20rem !important; /* push the header down */
+  margin-bottom: 15rem;
+}                              
 
 /* Header image */
 .header-image {
@@ -44,10 +144,8 @@ button, input, optgroup, select, textarea {
 }
 
 /* List of games images */
-
-.image-container {
-  width: 300px; /* Set desired width */
-  height: 200px; /* Set desired height */
+.image-container { 
+  height: 250px; 
   overflow: hidden; /* Hide overflow to ensure images fit */
   display: flex;
   justify-content: center;
@@ -55,10 +153,14 @@ button, input, optgroup, select, textarea {
   text-align: center;
 }
 .image-container img {
-  width: 50%;
+  width: 40%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
   display: inline-block;
+}
+
+.product-details-container {
+  width: 21.5625rem;
 }
 
 /* from Bulma - framework similar to bootstrap */
@@ -73,6 +175,7 @@ button, input, optgroup, select, textarea {
 
 .logo-font {
   text-transform: uppercase;
+  padding: 1.3rem;
 }
 
 /* logo only takes up as much space as the text requires */
@@ -81,27 +184,34 @@ button, input, optgroup, select, textarea {
 }
 
 .shop-now-button {
-  background: black;
+  background: #4C2527 ;
   color: white;
   min-width: 260px;
+  margin-bottom: 0.6rem;
+  border-radius: 15px;
 }
 
 .btn-black {
-  background: black;
+  background-color: #4C2527 !important; 
+  border-radius: 15px;
+  border-radius: 15px !important;
   color: white;
 }
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    color: #785555 !important;
+    border: 1px solid rgb(111, 46, 8)  !important;
+    border-radius: 15px !important;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
-    color: white !important;
+    background: white;
+    color: rgb(111, 46, 8) !important;
+    border: 2px solid rgb(111, 46, 8) !important;
+    border-radius: 15px !important;
 }
 
 .shop-now-button:hover,
@@ -110,16 +220,17 @@ button, input, optgroup, select, textarea {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #222;
-  color: white;
+  /* background: #222; */
+  background-color: rgb(111, 46, 8)!important; 
+  color: #ffffff;
+  border-radius: 15px !important;
+  font-weight: 500;
+  border: 2px solid #4C2527;
+  
 }
 
-/* text-black class and border-black class similar to bootstrap colour helper classes */
-/* that bootstrap doesn't seem to have */
-/* CHECK: if current version has these classes  */
-
 .text-black {
-  color: #000 !important;
+  color: #785555 !important;
 }
 
 .border-black {
@@ -127,7 +238,8 @@ button, input, optgroup, select, textarea {
 }
 
 .bg-black {
-  background: rgb(0, 0, 0) !important;
+  /* background: rgb(0, 0, 0) !important; */
+  background-color: #4C2527;
 }
 
 .overlay {
@@ -163,7 +275,46 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-/* ------------------------------- bootstrap toasts */
+/* Breakcrumb container  */
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb-item a {
+  color: #6c757d;
+}
+
+.breadcrumb-item.active { 
+  color: #4C2527;
+  font-weight: 500;
+}
+
+/* Gamelist container */
+#gamelist-container {
+  margin-top: 2rem; /* Override existing margin-top */
+  color: rgb(74, 79, 79);
+}
+
+#gamelist-detail {
+  /* margin-top: 2rem;  Override existing margin-top */
+  color: rgb(74, 79, 79);
+}
+
+/* Textarea */
+#id_bio {
+    width: 300px;
+    height: 100px;
+}
+
+.management {
+  margin-top: 7rem;
+}
+
+.logo-font-management {
+  padding-left: 0rem !important;
+}
+
+/* --------- bootstrap toasts */
 
 .message-container {
     position: fixed;
@@ -231,16 +382,12 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
 /* Allauth form formatting */
+.allauth-form-inner-content {
+    margin-top: 8rem;
+    margin-left: 4rem;
+    padding-bottom: 5rem;
+}
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -323,6 +470,15 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* ------------ MEDIA QUERIES */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
   .fixed-top-desktop-only {
@@ -332,6 +488,24 @@ input[name='q']::placeholder {
     left: 0;
     z-index: 1030;
   }
+
+  .logo-on-sale {
+    padding-top: 6rem;
+    font-size: 2.3rem;
+  }
+
+  .title-above {
+    margin-top: 8rem;
+  }
+
+  #gamelist-detail {
+    margin-top: 3rem;
+  }
+
+  #breadcrumb-container {
+    padding-top: 17rem;
+  }
+  
   /* push body down to the bottom of the main page header */
   .header-container {
     padding-top: 164px;
@@ -346,7 +520,13 @@ input[name='q']::placeholder {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
   body {
-   height: calc(100vh - 116px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #breadcrumb-container {
+    padding-top: 13rem;
   }
 
   .header-container {
@@ -356,5 +536,23 @@ input[name='q']::placeholder {
   .nav-link {
     padding: 0 !important;
   }
+
+  .success-message {
+    margin-top: 3rem;
+  }
+
 }
 
+/* CSS rules for screens between 1024px and 1366px */
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+  .title-above {
+    margin-top: 10rem !important;
+  }
+
+  /* Shopping Bag */
+  #shopping-bag {
+  margin-top: 10rem;
+  padding: 0;
+  } 
+}

@@ -45,6 +45,10 @@ button, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+.textinput {
+  margin-bottom: 0.4rem;
+}
+
 #shop-button {
   margin-bottom: 5rem !important;
 }
@@ -175,7 +179,6 @@ button, optgroup, select, textarea {
 
 .logo-font {
   text-transform: uppercase;
-  padding: 1.3rem;
 }
 
 /* logo only takes up as much space as the text requires */
@@ -381,7 +384,6 @@ input[name='q']::placeholder {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 
 /* Allauth form formatting */
 .allauth-form-inner-content {
