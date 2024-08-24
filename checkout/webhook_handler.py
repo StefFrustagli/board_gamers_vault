@@ -25,16 +25,23 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """
-        Send a confirmation email to the customer after successful order placement.
-        This method attempts to send the email and logs any errors encountered.
+        Send a confirmation email to the customer 
+        after successful order placement.
+        This method attempts to send the email
+        and logs any errors encountered.
 
         Args:
-            order (Order): The Order instance for which the email is being sent.
+            order (Order): 
+            The Order instance for which the email is being sent.
         """
         try:
-            cust_email = order.email  # Get the customer's email from the order object.
+            cust_email = order.email  # Get customer's email from order
 
-            # Render the email subject and body using templates and order context.
+            # Debugging: Print out the customer's email
+            print(f"Customer Email: {cust_email}")
+
+            # Render the email subject and body 
+            # using templates and order context.
             subject = render_to_string(
                 "checkout/confirmation_emails/confirmation_email_subject.txt",
                 {"order": order},
@@ -100,7 +107,7 @@ class StripeWH_Handler:
             intent.metadata.save_info
         )  # Check if the user wants to save their info.
 
-        # Get the related Stripe Charge object for more details on the payment.
+        # Retrive payment and shipping details
         stripe_charge = stripe.Charge.retrieve(intent.latest_charge)
         billing_details = (
             stripe_charge.billing_details
@@ -132,12 +139,11 @@ class StripeWH_Handler:
                 profile.default_county = shipping_details.address.state
                 profile.save()  # Save the updated profile.
 
-        # Check if the order already exists in the database to prevent duplicates.
+        # Check if the order already exists in the database. Prevent duplicates
         order_exists = False
         order = None
-
         try:
-            # Try to find an order with the matching payment and shipping details.
+            # Try to find an order with the matching payment & shipping details
             order = Order.objects.get(
                 full_name__iexact=shipping_details.name,
                 email__iexact=billing_details.email,
@@ -157,7 +163,7 @@ class StripeWH_Handler:
             # If the order does not exist, we'll create a new one.
             pass
 
-        # If the order already exists, send the necessary notifications and return.
+        # If the order already exists, send the necessary notifications
         if order_exists:
             # Notify each seller associated with the order line items.
             for lineitem in order.lineitems.all():
@@ -165,7 +171,10 @@ class StripeWH_Handler:
             # Send confirmation email to the customer.
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    f"SUCCESS: Verified order already in database"
+                ),
                 status=200,
             )
 
@@ -173,7 +182,7 @@ class StripeWH_Handler:
         try:
             # Start a transaction to ensure order creation is atomic.
             with transaction.atomic():
-                # Create a new Order object with the shipping and payment details.
+                # Create a new Order object with the shipping & payment details
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     user_profile=profile,  # Set user profile if available.
@@ -190,11 +199,11 @@ class StripeWH_Handler:
                     grand_total=grand_total,
                 )
 
-                # Loop through each item in the bag to create order line items.
+                # Loop through each item in the bag to create order line items
                 for item_id, item_data in json.loads(bag).items():
                     game = Game.objects.get(id=item_id)
-                    if isinstance(item_data, int):  # Ensure the quantity is an integer.
-                        # Create a new OrderLineItem for each game in the order.
+                    if isinstance(item_data, int):  # quantity is integer
+                        # Create new OrderLineItem for each game in the order
                         order_line_item = OrderLineItem(
                             order=order,
                             game=game,
@@ -204,17 +213,26 @@ class StripeWH_Handler:
                         # Notify the seller about the sale of this game.
                         self.notify_seller(order_line_item)
 
-            # After successfully creating the order, send a confirmation email to the customer.
+            # After successfully creating the order,
+            # send a confirmation email to the customer.
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    f"SUCCESS: Created order in webhook"
+                ),
                 status=200,
             )
 
         except Exception as e:
-            # If an error occurs during order creation, delete the order and return an error response.
+            # If an error occurs during order creation,
+            # delete the order and return an error response.
             if order:
                 order.delete()
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | ERROR: {e}', status=500
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    f"ERROR: {e}"
+                ),
+                status=500,
             )

@@ -58,14 +58,8 @@ def bag_contents(request):
         # Get the seller of the game
         seller = game.seller
 
-        # Check if the seller has a seller_profile
-        if hasattr(seller, "seller_profile"):
-            seller_profile = seller.seller_profile
-        else:
-            # Handle the case where the seller does not have a seller_profile
-            # For example, set a default value or log an error
-            seller_profile = None
-            print(f"Seller {seller.id} does not have a seller_profile.")
+        # Ensure the seller has a SellerProfile, creating one if necessary
+        seller_profile, created = SellerProfile.objects.get_or_create(user=seller)
 
         # Add the item details to the bag_items list
         bag_items.append(
