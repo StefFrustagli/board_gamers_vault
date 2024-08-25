@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
     "8000-steffrustag-boardgamers-wgstn1wvdge.ws-eu114.gitpod.io",
     "127.0.0.1",
@@ -268,7 +268,9 @@ STRIPE_SECRET_KEY = STRIPE_TEST_SECRET_KEY
 # Email settings
 if "DEVELOPMENT" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    DEFAULT_FROM_EMAIL = "theboardgameshelf123@example.com"
+    DEFAULT_FROM_EMAIL = "theboardgameshelf2@example.com"
+    print("Development Email Setup:")
+    print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_USE_TLS = True
@@ -277,3 +279,9 @@ else:
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
+
+    # Debug: Print the email settings to confirm the values
+    print("Production Email Setup:")
+    print(f"EMAIL_HOST_USER: {EMAIL_HOST_USER}")
+    print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}") 
+    print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")

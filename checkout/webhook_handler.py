@@ -39,9 +39,8 @@ class StripeWH_Handler:
 
             # Debugging: Print out the customer's email
             print(f"Customer Email: {cust_email}")
-
             # Render the email subject and body 
-            # using templates and order context.
+            # using templates and order context
             subject = render_to_string(
                 "checkout/confirmation_emails/confirmation_email_subject.txt",
                 {"order": order},
@@ -52,7 +51,12 @@ class StripeWH_Handler:
             )
 
             # Send the email using Django's send_mail function.
-            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [cust_email]
+            )
         except Exception as e:
             # Log the error for debugging if sending email fails.
             print(f"Failed to send confirmation email: {e}")
