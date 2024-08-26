@@ -25,13 +25,13 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """
-        Send a confirmation email to the customer 
+        Send a confirmation email to the customer
         after successful order placement.
         This method attempts to send the email
         and logs any errors encountered.
 
         Args:
-            order (Order): 
+            order (Order):
             The Order instance for which the email is being sent.
         """
         try:
@@ -39,7 +39,7 @@ class StripeWH_Handler:
 
             # Debugging: Print out the customer's email
             print(f"Customer Email: {cust_email}")
-            # Render the email subject and body 
+            # Render the email subject and body
             # using templates and order context
             subject = render_to_string(
                 "checkout/confirmation_emails/confirmation_email_subject.txt",
@@ -51,12 +51,7 @@ class StripeWH_Handler:
             )
 
             # Send the email using Django's send_mail function.
-            send_mail(
-                subject,
-                body,
-                settings.DEFAULT_FROM_EMAIL,
-                [cust_email]
-            )
+            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
         except Exception as e:
             # Log the error for debugging if sending email fails.
             print(f"Failed to send confirmation email: {e}")
@@ -66,7 +61,8 @@ class StripeWH_Handler:
         Notify the seller that their game has been sold and can be dispatched.
 
         Args:
-            order_line_item (OrderLineItem): The line item representing the sold game.
+            order_line_item (OrderLineItem): 
+            The line item representing the sold game.
         """
         # Mark the game as unavailable after it has been sold.
         order_line_item.game.is_avalable = False
@@ -97,16 +93,21 @@ class StripeWH_Handler:
 
     def handle_payment_intent_succeeded(self, event):
         """
-        Handle the payment_intent.succeeded webhook from Stripe.
-        This method processes successful payment intents, checks for existing orders,
-        creates new orders if necessary, and sends emails to customers and sellers.
+        Handle the payment_intent.succeeded webhook from Stripe,
+        each time a user completes the payment process.
+        This method processes successful payment intents, 
+        checks for existing orders,
+        creates new orders if necessary, 
+        and sends emails to customers and sellers.
 
         Args:
             event (dict): The Stripe webhook event data.
         """
-        intent = event.data.object  # Extract payment intent object from event data.
+        # Extract payment intent object from event data.
+        intent = event.data.object
         pid = intent.id  # Get the Stripe Payment Intent ID.
-        bag = intent.metadata.bag  # Retrieve the shopping bag data from the metadata.
+        # Retrieve the shopping bag data from the metadata.
+        bag = intent.metadata.bag
         save_info = (
             intent.metadata.save_info
         )  # Check if the user wants to save their info.
@@ -116,7 +117,7 @@ class StripeWH_Handler:
         billing_details = (
             stripe_charge.billing_details
         )  # Billing details from the charge.
-        shipping_details = intent.shipping  # Shipping details from the payment intent.
+        shipping_details = intent.shipping  # Details from payment intent.
         grand_total = round(
             stripe_charge.amount / 100, 2
         )  # Calculate grand total from the charge amount.
@@ -126,7 +127,8 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-        # If the user is authenticated (not anonymous), update their profile with saved info.
+        # If the user is authenticated (not anonymous), 
+        # update their profile with saved info.
         profile = None
         username = intent.metadata.username
         if username != "AnonymousUser":
@@ -234,9 +236,6 @@ class StripeWH_Handler:
             if order:
                 order.delete()
             return HttpResponse(
-                content=(
-                    f'Webhook received: {event["type"]} | '
-                    f"ERROR: {e}"
-                ),
+                content=(f'Webhook received: {event["type"]} | ' f"ERROR: {e}"),
                 status=500,
             )

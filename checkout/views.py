@@ -76,10 +76,8 @@ def checkout(request):
     # Retrieve Stripe TEST keys from settings
     stripe_public_key = settings.STRIPE_TEST_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_TEST_SECRET_KEY
-
     # Initialize intent to None to handle both GET and POST requests
     intent = None
-
     # Set the Stripe API key
     stripe.api_key = stripe_secret_key
 
@@ -127,7 +125,7 @@ def checkout(request):
                         (
                             "One of the products in your bag wasn't found \
                             in our database. "
-                            "Please call us for assistance!"
+                            "Please email us for assistance."
                         ),
                     )
                     order.delete()  # Delete the order if a game is not found
@@ -251,10 +249,10 @@ def checkout_success(request, order_number):
     messages.success(
         request,
         f"Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.",
+        Your order number is {order_number}. \
+        A confirmation email will be sent to {order.email}.",
     )
-
+    # Delete user's shopping bag for the session
     if "bag" in request.session:
         del request.session["bag"]
 
