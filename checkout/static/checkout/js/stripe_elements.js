@@ -68,6 +68,7 @@ form.addEventListener("submit", async function (ev) {
   $("#loading-overlay").fadeToggle(100);
 
   // const saveInfo = Boolean($("#id-save-info").attr("checked"));
+  // better and more accurate way to checked if a checkbox is checked in jQuery
   const saveInfo = $("#id-save-info").is(":checked"); 
   // From using {% csrf_token %} in the form
   const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
@@ -123,8 +124,7 @@ form.addEventListener("submit", async function (ev) {
             form.submit();
           }
         }
-      })
-      .fail(function () {
+      }).fail(function () {
         // Handle failure in caching checkout data
         location.reload();
       });

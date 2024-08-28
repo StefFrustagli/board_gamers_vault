@@ -23,16 +23,21 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 @require_POST
 def cache_checkout_data(request):
     """
-    Cache checkout data for processing payment.
+    Store checkout-related data in Stripe's PaymentIntent metadata.
 
-    This view modifies the Stripe PaymentIntent metadata with bag contents,
-    save_info preference, and username before processing the payment.
+    This view is responsible for updating the Stripe PaymentIntent with
+    essential information before the payment is processed. The metadata
+    will store the contents of the user's shopping bag, their preference
+    to save shipping information, and the username of the current user.
 
     Args:
-        request (HttpRequest): The HTTP request object containing POST data.
+        request (HttpRequest): The HTTP request containing POST data,
+        including the client_secret, save_info preference, and shopping
+        bag data from the session.
 
     Returns:
-        HttpResponse: HTTP response indicating success or error status.
+        HttpResponse: A response with a 200 status code on success, or
+        a 400 status code with an error message if the operation fails.
     """
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]

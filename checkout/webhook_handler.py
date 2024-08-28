@@ -23,6 +23,22 @@ class StripeWH_Handler:
         """
         self.request = request
 
+    def handle_event(self, event):
+        """
+        Handle a generic/unknown/unexpected webhook event.
+        
+        Args:
+            event (dict): The Stripe webhook event data.
+        """
+        # Log the event type for debugging
+        print(f"Unhandled webhook received: {event['type']}")
+
+        # Return a generic response to acknowledge receipt of the event
+        return HttpResponse(
+            content=f'Unhandled webhook received: {event["type"]}',
+            status=200
+        )    
+
     def _send_confirmation_email(self, order):
         """
         Send a confirmation email to the customer
@@ -68,7 +84,8 @@ class StripeWH_Handler:
         order_line_item.game.is_avalable = False
         order_line_item.game.save()
 
-        seller = order_line_item.game.seller  # Get the seller associated with the game.
+        # Get the seller associated with the game.
+        seller = order_line_item.game.seller  
         seller_email = seller.email  # Retrieve the seller's email.
 
         # Render the email subject and body for notifying the seller.
@@ -105,6 +122,10 @@ class StripeWH_Handler:
         """
         # Extract payment intent object from event data.
         intent = event.data.object
+
+        # print statement to log the intent for debugging
+        print(intent)
+
         pid = intent.id  # Get the Stripe Payment Intent ID.
         # Retrieve the shopping bag data from the metadata.
         bag = intent.metadata.bag
@@ -112,7 +133,7 @@ class StripeWH_Handler:
             intent.metadata.save_info
         )  # Check if the user wants to save their info.
 
-        # Retrive payment and shipping details
+        # Retrieve payment and shipping details
         stripe_charge = stripe.Charge.retrieve(intent.latest_charge)
         billing_details = (
             stripe_charge.billing_details
@@ -122,12 +143,12 @@ class StripeWH_Handler:
             stripe_charge.amount / 100, 2
         )  # Calculate grand total from the charge amount.
 
-        # Clean any empty fields in the shipping address to avoid null issues.
+        # Clean any empty fields in the shipping address to avoid null issues
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
 
-        # If the user is authenticated (not anonymous), 
+        # If the user is authenticated (not anonymous),
         # update their profile with saved info.
         profile = None
         username = intent.metadata.username
@@ -222,6 +243,7 @@ class StripeWH_Handler:
             # After successfully creating the order,
             # send a confirmation email to the customer.
             self._send_confirmation_email(order)
+            # Return a success response to Stripe, including the event type
             return HttpResponse(
                 content=(
                     f'Webhook received: {event["type"]} | '
@@ -235,7 +257,18 @@ class StripeWH_Handler:
             # delete the order and return an error response.
             if order:
                 order.delete()
+            # print statement for logging the error
+            print(f"Error occurred: {e}")
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | ' f"ERROR: {e}"),
                 status=500,
             )
+
+    def handle_payment_intent_payment_failed(self, event):
+        """
+        Handle the payment_intent.payment_failed webhook from Stripe
+        """
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200
+        )
