@@ -30,9 +30,6 @@ class StripeWH_Handler:
         Args:
             event (dict): The Stripe webhook event data.
         """
-        # Log the event type for debugging
-        print(f"Unhandled webhook received: {event['type']}")
-
         # Return a generic response to acknowledge receipt of the event
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
@@ -122,7 +119,6 @@ class StripeWH_Handler:
         """
         # Extract payment intent object from event data.
         intent = event.data.object
-
         # print statement to log the intent for debugging
         print(intent)
 

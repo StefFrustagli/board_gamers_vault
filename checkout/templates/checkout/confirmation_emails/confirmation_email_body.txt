@@ -1,10 +1,17 @@
 Hello {{ order.full_name }}!
 
-This is a confirmation of your order at The Boardgame Shelf. Your order information is below:
+This is a confirmation of your order at The Boardgame Shelf. 
+
+Your order information is below:
 
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
-Seller: {{ order.seller }}
+
+{% for item in order.lineitems.all %}
+Seller: {{ item.game.seller.username }}
+Game Title: {{ item.game.title }}
+Price: £{{ item.game.price }}
+{% endfor %}
 
 Order Total: £{{ order.order_total }}
 Delivery: £{{ order.delivery_cost }}
