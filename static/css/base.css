@@ -6,7 +6,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url('/media/boardgameshelf-betterquality.jpeg') no-repeat center center fixed;
+  background: url('/media/boardgameshelf-betterquality-cut.jpeg') no-repeat center center fixed;
   background-size: cover;
   /* height: calc(100vh - 164px); */
   color: #555;
