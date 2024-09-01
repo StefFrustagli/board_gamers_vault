@@ -118,7 +118,12 @@ button, optgroup, select, textarea {
   background: #fff;
   clear: left;
   width: 600px;
-  color: #000;
+  color: #4C2527;
+}
+
+#mc_embed_signup .button {
+  color: #4C2527 !important;
+  border-radius: 10px !important;
 }
 
 #mc_embed_signup_scroll {
@@ -130,10 +135,21 @@ button, optgroup, select, textarea {
   color: #bb414d;
 }
 
+/* Homepage Display */
 .header-title {
   margin-top: 20rem !important; /* push the header down */
   margin-bottom: 15rem;
-}                              
+}
+
+.homepage-display-title {
+  padding-top: 1.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.homepage-display-buttons {
+  padding-bottom: 1.5rem;
+}
 
 /* Header image */
 .header-image {
@@ -152,6 +168,7 @@ button, optgroup, select, textarea {
   align-items: center;
   text-align: center;
 }
+
 .image-container img {
   width: 40%;
   height: auto;

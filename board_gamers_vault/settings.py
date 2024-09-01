@@ -269,8 +269,6 @@ STRIPE_SECRET_KEY = STRIPE_TEST_SECRET_KEY
 if "DEVELOPMENT" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     DEFAULT_FROM_EMAIL = "theboardgameshelf2@example.com"
-    print("Development Email Setup:")
-    print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_USE_TLS = True
