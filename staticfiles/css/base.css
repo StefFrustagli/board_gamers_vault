@@ -323,9 +323,9 @@ input[name='q']::placeholder {
     height: 100px;
 }
 
-.management {
+/* .management {
   margin-top: 7rem;
-}
+} */
 
 .logo-font-management {
   padding-left: 0rem !important;

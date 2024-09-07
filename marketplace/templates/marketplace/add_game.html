@@ -2,9 +2,17 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
+<div id="breadcrumb-container" class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col d-flex justify-content-center">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sell your game</li>
+                </ol>
+            </nav>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -14,10 +22,10 @@
 <div class="container">
     <div class="row management">
         <div class="col-12 col-md-6">
-            <h2 class="logo-font mb-4 logo-font-management">Boardgames Management</h2>
-            <h5 class="text-muted">Add a game to sell</h5>
-            <h7 class="text-muted">Please make sure to include delivery costs in the product price</h7>
-            <hr>
+            <h2 class="display-6 mb-4 logo-font-management">Sell your boardgame</h2>
+            <h5 class="lead text-muted mb-2">Add details about your game for sale</h5>
+            <h7 class="small text-muted mb-4">* Please make sure to include delivery costs in the product price.</h7>
+            <hr class="mb-4">
         </div>
     </div>
 

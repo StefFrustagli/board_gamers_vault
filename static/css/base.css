@@ -18,6 +18,11 @@ body {
 }
 /* Footer  */
 footer {
+    /* try to fix ipad issue   */
+    width: 100vw;
+    box-sizing: border-box;
+
+
     background-color: #4C2527;
     color: #fff;
     margin-top: auto;
@@ -336,9 +341,9 @@ input[name='q']::placeholder {
     height: 100px;
 }
 
-.management {
+/* .management {
   margin-top: 7rem;
-}
+} */
 
 .logo-font-management {
   padding-left: 0rem !important;
@@ -414,8 +419,9 @@ input[name='q']::placeholder {
 
 /* Allauth form formatting */
 .allauth-form-inner-content {
-    margin-top: 8rem;
-    margin-left: 4rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 5rem;
 }
 
@@ -442,7 +448,7 @@ input[name='q']::placeholder {
 	/* btn */
 	  display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
