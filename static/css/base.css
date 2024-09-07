@@ -40,6 +40,17 @@ footer .fab {
     font-size: 1.5rem;
 }
 
+/* Search field + button */
+.input-group-field {
+    flex: 1; /* Make the input field take up remaining space */
+    border: 1px solid #000; 
+    border-radius: 0; 
+}
+
+.input-group-append {
+  margin-left: 0.7rem;
+}
+
 /* margins for input buttons, etc. */
 button, optgroup, select, textarea {
     margin: 0.2rem !important;
@@ -310,7 +321,7 @@ input[name='q']::placeholder {
 
 /* Gamelist container */
 #gamelist-container {
-  margin-top: 2rem; /* Override existing margin-top */
+  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -509,7 +520,7 @@ input[name='q']::placeholder {
   }
 
   .logo-on-sale {
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
     font-size: 2.3rem;
   }
 
@@ -522,7 +533,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 17rem;
+    padding-top: 15rem;
   }
   
   /* push body down to the bottom of the main page header */
@@ -534,6 +545,9 @@ input[name='q']::placeholder {
     padding: 0.3rem 1rem;
   }
 
+  .product-container {
+    margin-bottom: 3rem;
+  }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -559,7 +573,6 @@ input[name='q']::placeholder {
   .success-message {
     margin-top: 3rem;
   }
-
 }
 
 /* CSS rules for screens between 1024px and 1366px */
@@ -574,4 +587,5 @@ input[name='q']::placeholder {
   margin-top: 10rem;
   padding: 0;
   } 
+
 }

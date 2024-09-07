@@ -308,7 +308,7 @@ input[name='q']::placeholder {
 
 /* Gamelist container */
 #gamelist-container {
-  margin-top: 2rem; /* Override existing margin-top */
+  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -507,7 +507,7 @@ input[name='q']::placeholder {
   }
 
   .logo-on-sale {
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
     font-size: 2.3rem;
   }
 
@@ -520,7 +520,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 17rem;
+    padding-top: 13rem;
   }
   
   /* push body down to the bottom of the main page header */

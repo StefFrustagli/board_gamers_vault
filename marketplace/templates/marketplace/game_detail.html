@@ -51,12 +51,16 @@
                     <p class="mb-0 text-left"><span class="details-list">Seller:</span> {{ game.seller }}</p>
                     <p class="mt-3"><span class="details-list">Description:</span> {{ game.description|safe }}</p>
                     <p class="mt-3"><span class="details-list">What the seller says:</span> {{ game.seller_comment|safe }}</p>
+                    
+                    <!-- Only show Edit/Delete options if the logged-in user is the seller -->
                     {% if game.seller == request.user %}
                     <small class="ml-3">
                         <a href="{% url 'edit_game' game.id %}">Edit</a> |
-                        <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a>
+                        <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a> |
+                        <a href="{% url 'add_game' %}">Add Another Game</a>
                     </small>
                     {% endif %}
+
                     <!-- Form to add a product to the shopping bag -->
                     <form class="form" action="{% url 'add_to_bag' game.id %}" method="POST">
                         <!-- Django template tag to include the CSRF token for security -->
