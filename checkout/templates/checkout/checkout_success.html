@@ -47,7 +47,7 @@
                 <h4 class="mb-3">Items Ordered</h4>
                 {% for item in order.lineitems.all %}
                 <div class="row mb-2">
-                    <div class="col-md-4 text-muted">{{ item.game.title }}</div>
+                    <div class="col-md-4 text-muted text-uppercase">{{ item.game.title }}</div>
                     <div class="col-md-8 text-md-right">{{ item.quantity }} @ £{{ item.game.price }} each</div>
                 </div>
                 {% endfor %}
@@ -97,17 +97,14 @@
                 <h4 class="mt-4 mb-3">Billing Information</h4>
                 <div class="billing-info">
                     <div class="row mb-2">
-                        <div class="col-md-4 text-muted">Order Total:</div>
-                        <div class="col-md-8 text-md-right">{{ order.order_total }}</div>
-                    </div>
-                    <div class="row mb-2">
                         <div class="col-md-4 text-muted">Delivery:</div>
-                        <div class="col-md-8 text-md-right">{{ order.delivery_cost }}</div>
+                        <div class="col-md-8 text-md-right">included in the game price</div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col-md-4 text-muted">Grand Total:</div>
-                        <div class="col-md-8 text-md-right">{{ order.grand_total }}</div>
+                        <div class="col-md-4 text-muted">Order Total:</div>
+                        <div class="col-md-8 text-md-right">£{{ order.order_total }}</div>
                     </div>
+
                 </div>
                 </div>
                 </div>
