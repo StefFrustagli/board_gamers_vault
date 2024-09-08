@@ -94,13 +94,18 @@ button, optgroup, select, textarea {
 }
 
 .success-message {
-  margin-top: 8rem;
+  margin-top: 1rem;
   padding-left:0 !important;
   padding-bottom: 0 !important;
 }
 
 .order-confirmation {
   padding: 1rem;
+}
+
+#order-confirmation-header {
+  margin-top: 4rem;
+
 }
 
 #about-page {

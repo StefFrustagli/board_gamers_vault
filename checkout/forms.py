@@ -29,16 +29,16 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
 
-        # Define placeholders for each form field
+        # Placeholders for each form field
         placeholders = {
-            "full_name": "Full Name",
-            "email": "Email Address",
-            "phone_number": "Phone Number",
-            "postcode": "Postal Code",
-            "town_or_city": "Town or City",
-            "street_address1": "Street Address 1",
-            "street_address2": "Street Address 2",
-            "county": "County, State or Locality",
+            "full_name": " Full Name",
+            "email": " Email Address",
+            "phone_number": " Phone Number",
+            "postcode": " Postal Code",
+            "town_or_city": " Town or City",
+            "street_address1": " Street Address 1",
+            "street_address2": " Street Address 2",
+            "county": " County, State or Locality",
         }
 
         # Set autofocus on the full_name field

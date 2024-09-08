@@ -28,7 +28,7 @@ class UserProfileForm(forms.ModelForm):
             "user": "User",
             "avatar": "Avatar",
             "default_town_or_city": "Town or city",
-            "bio": "About me",
+            "bio": " Favourite games",
             "games_for_sale": "Board Games I want to sell",
             "games_owned": "My collection",
         }
