@@ -22,9 +22,10 @@
 <div class="container">
     <div class="row management">
         <div class="col-12 col-md-6">
-            <h2 class="display-6 mb-4 logo-font-management">Sell your boardgame</h2>
+            <h2 class="display-6 mb-4 logo-font-management">Add your boardgame</h2>
             <h5 class="lead text-muted mb-2">Add details about your game for sale</h5>
             <h7 class="small text-muted mb-4">* Please make sure to include delivery costs in the product price.</h7>
+            <h7 class="small text-muted mb-4">** Please fill in all the fields.</h7>
             <hr class="mb-4">
         </div>
     </div>
@@ -33,20 +34,61 @@
         <div class="col-12 col-md-6">
             <form method="POST" action="{% url 'add_game' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                <!-- <p class="card-text">{{ form.sku | as_crispy_field }}</p> -->
-                <p class="card-text">{{ form.title | as_crispy_field }}</p>
-                <p class="card-text">{{ form.price | as_crispy_field }}</p>
-                <p class="text-muted">Leave this box ticked if your game is available:</p>
-                <p class="card-text">{{ form.is_available | as_crispy_field }}</p>
-                <p class="card-text">{{ form.condition | as_crispy_field }}</p>
-                <p class="card-text">{{ form.category | as_crispy_field }}</p>
-                <p class="card-text">{{ form.description | as_crispy_field }}</p>
-                <p class="card-text">{{ form.seller_comment | as_crispy_field }}</p>
-                <p class="card-text">{{ form.image | as_crispy_field }}</p>
+                <div class="form-group">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="form-group">
+                    {{ form.price.label_tag }}
+                    {{ form.price }}
+                </div>
+                <div class="form-group">
+                    {{ form.is_available.label_tag }}
+                    {{ form.is_available }}
+                    <small class="form-text text-muted">{{ form.is_available.help_text }}</small>
+                </div>
+                
+                <div class="form-group">
+                    {{ form.condition.label_tag }}
+                    {{ form.condition }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.category.label_tag }}
+                    {{ form.category }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.description.label_tag }}
+                    <br>
+                    {{ form.description }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.seller_comment | as_crispy_field }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                </div>
+
                 <!-- To check for errors -->
                 {% if form.errors %}
-                {{ form.errors }}
+                <div class="alert alert-danger">
+                    {% for field in form %}
+                    {% if field.errors %}
+                    <div class="form-error">
+                        <strong>{{ field.label }}:</strong>
+                        {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
                 {% endif %}
+
                 <div class="text-center mb-5">
                     <a class="btn btn-outline-black" href="{% url 'games_list' %}">Cancel</a>
                     <button class="btn btn-black" type="submit">Add Game</button>

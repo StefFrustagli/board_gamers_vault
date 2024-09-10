@@ -61,6 +61,11 @@ button, optgroup, select, textarea {
     margin: 0.2rem !important;
 }
 
+/* Button "Select image" */
+#btn-select-image {
+  background-color: #785555 !important;
+}
+
 .textinput {
   margin-bottom: 0.4rem;
 }

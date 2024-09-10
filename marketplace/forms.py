@@ -37,7 +37,14 @@ class GameForm(forms.ModelForm):
         # Set the category field choices to the retrieved categories
         self.fields["category"].choices = name
 
+        # Update labels and help text
         self.fields["price"].label = "Price (£)"
+        self.fields["description"].label = "Description:"
+        self.fields["seller_comment"].label = "Add your comment:"
+        self.fields["is_available"].label = "Available for Sale"
+        self.fields["is_available"].help_text = (
+            "Check this box to mark the game as available for sale."
+        )
 
         # Add CSS classes to form fields for styling
         for field_name, field in self.fields.items():
