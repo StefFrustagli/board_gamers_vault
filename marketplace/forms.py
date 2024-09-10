@@ -31,8 +31,8 @@ class GameForm(forms.ModelForm):
         # Retrieve all categories from the database
         categories = Category.objects.all()
 
-        # Create a list of tuples with category id and name
-        name = [(c.id, c.name) for c in categories]
+        # Create a list of tuples with category id and human-readable name
+        name = [(c.id, c.get_name_display()) for c in categories]
 
         # Set the category field choices to the retrieved categories
         self.fields["category"].choices = name
