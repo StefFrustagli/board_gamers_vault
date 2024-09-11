@@ -465,6 +465,11 @@ This was a critical issue in the add_game view of marketplace/views.py. The logi
 
 In the email confirmation template, the email variable was incorrectly split across lines, leading to improper rendering of the user's email address. The issue caused inconsistencies in how email addresses were displayed in confirmation emails, potentially confusing or misleading users. The fix involves ensuring that the email variable is correctly formatted and displayed within the template. 
 
+3. Authentication Issue: Gmail Password Reset & Heroku Update
+
+The authentication issue was caused by a Gmail password reset. I didn't realize that resetting the Gmail password would generate a new "app password," which needed to be updated in Heroku. The outdated app password in Heroku resulted in a 505 error, preventing new users from registering and logging in.
+After discovering the issue, I tried resetting the Gmail app password. However, the password reset didn't appear in my Gmail account even after completing the two-step verification process. Following some troubleshooting, I used a direct link to set up a new app password. Once I updated this new password in Heroku, the 505 error was resolved, and the authentication process worked smoothly for new user registrations and logins.
+
 ## Remaining bugs
 
 While there are various aspects of the app that require attention, to the best of my knowledge, there are currently no significant issues affecting the app's functionalities.
