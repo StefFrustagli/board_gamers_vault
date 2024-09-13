@@ -41,7 +41,7 @@
             <div class="row mt-1 mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <select id="sort-selector" class="custom-select custom-select-sm border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
                             </option>
@@ -75,15 +75,17 @@
                     <div class="card h-100 border-0">
                         {% if game.image %}
                         <a href="{% url 'game_detail' game.id %}">
-                            <img class="card-img-top img-fluid" src="{{ game.image.url }}" alt="{{ game.title }}">
+                            <img class="card-img-top img-fluid game-img-hover" src="{{ game.image.url }}" alt="{{ game.title }}">
                         </a>
                         {% else %}
                         <a href="{% url 'game_detail' game.id %}">
-                            <img class="card-img-top img-fluid" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
+                            <img class="card-img-top img-fluid game-img-hover" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <p class="lead mb-0 text-left">{{ game.title }}</p>
+                            <a href="{% url 'game_detail' game.id %}" class="text-decoration-none text-dark">
+                                <p class="lead mb-0 text-left game-title-hover text-uppercase">{{ game.title }}</p>
+                            </a>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
@@ -94,21 +96,17 @@
                                     {{ game.availability_status }}
                                     </p>
                                     {% if game.is_available %}
-                                    <a href="{% url 'game_detail' game.id %}">
-                                    <button>Details</button>
-                                    </a>
+                                                
+                                    <span class="badge badge-pill badge-info">{{ game.get_condition_display }}</span>
+                                    {% if game.category %}
+                                        <span class="badge badge-pill badge-secondary">{{ game.category }}</span>
+                                    {% endif %}
+
+                                    <a href="{% url 'game_detail' game.id %}" class="btn btn-outline-dark btn-sm w-100 mt-2">View Details</a>
                                     {% else %}
                                     <button disabled>Not Available</button>
                                     {% endif %}
-                                    {% if game.category %}
-                                    <p class="small mt-1 mb-0">
-                                        <a class="text-muted"
-                                            href="{% url 'games_list' %}?category={{ game.category.name }}">
-                                            <small class="text-muted"><i class="fas fa-play"></i> {{ game.category }}</small>
-                                        </a>
-                                    </p>
-                                    {% endif %}
-                                    <p class="mb-0 text-left">Condition: {{ game.get_condition_display }}</p>
+                                          
                                     <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                                     <!-- Edit and delete functionality -->
                                     {% if game.seller == request.user %}

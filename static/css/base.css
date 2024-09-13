@@ -236,6 +236,31 @@ button, optgroup, select, textarea {
   border-radius: 15px;
 }
 
+/* Sorting dropdown */
+.sort-select-wrapper {
+  margin-bottom: 20px;
+}
+
+.custom-select:focus {
+  border-color: #845f5f; /* Highlight border on focus */
+  box-shadow: none;
+}
+
+/* Game cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px; 
+  object-fit: contain;
+}
+
 .btn-black {
   background-color: #4C2527 !important; 
   border-radius: 15px;
