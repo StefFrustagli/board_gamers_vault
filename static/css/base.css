@@ -199,7 +199,7 @@ button, optgroup, select, textarea {
   text-align: center;
 }
 .image-container img {
-  width: 40%;
+  width: 55%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
   display: inline-block;
@@ -523,6 +523,13 @@ input[name='q']::placeholder {
   .container {
     max-width: 80%;
   }
+
+  .image-container img {
+    width: 30%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the container */
+    display: inline-block;
+}
 }
 
 /* fixed top navbar only on medium and up */
