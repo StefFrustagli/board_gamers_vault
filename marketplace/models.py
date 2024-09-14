@@ -65,10 +65,10 @@ class Game(models.Model):
         seller_comment (TextField): Additional comments from the seller.
     """
     CONDITION_CHOICES = [
-        ("as_new", "As new"),
-        ("great", "Great"),
-        ("good", "Good"),
-        ("fair", "Fair"),
+        ("as_new", "Condition as new"),
+        ("great", "Great condition"),
+        ("good", "Good condition"),
+        ("fair", "Fair condition"),
         ("signs_of_time", "Signs of time"),
         ("heavily_used", "Heavily used"),
     ]

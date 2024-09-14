@@ -75,11 +75,11 @@
                     <div class="card h-100 border-0">
                         {% if game.image %}
                         <a href="{% url 'game_detail' game.id %}">
-                            <img class="card-img-top img-fluid game-img-hover" src="{{ game.image.url }}" alt="{{ game.title }}">
+                            <img class="card-img-top img-fluid game-img-hover mt-2" src="{{ game.image.url }}" alt="{{ game.title }}">
                         </a>
                         {% else %}
                         <a href="{% url 'game_detail' game.id %}">
-                            <img class="card-img-top img-fluid game-img-hover" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
+                            <img class="card-img-top img-fluid game-img-hover mt-2" src="/media/no-image-placeholder.png" alt="{{ game.title }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
@@ -94,25 +94,27 @@
                                     <!-- Check availability -->
                                     <p class="{% if game.is_available %}text-success{% else %}text-danger{% endif %}">
                                     {{ game.availability_status }}
-                                    </p>
-                                    {% if game.is_available %}
-                                                
-                                    <span class="badge badge-pill badge-info">{{ game.get_condition_display }}</span>
+                                    </p> 
+                                    <!-- Seller Information -->
+                                    <div class="mb-1 text-left">Seller: <strong>{{ game.seller }}</strong></div>
+                                    
+                                    {% if game.is_available %}   
+
+                                    <span class="badge badge-pill badge-info mb-1">{{ game.get_condition_display }}</span>
                                     {% if game.category %}
                                         <span class="badge badge-pill badge-secondary">{{ game.category }}</span>
                                     {% endif %}
 
-                                    <a href="{% url 'game_detail' game.id %}" class="btn btn-outline-dark btn-sm w-100 mt-2">View Details</a>
+                                    <a href="{% url 'game_detail' game.id %}" class="btn btn-outline-dark btn-sm w-100 mt-2 mb-2">View Details</a>
                                     {% else %}
                                     <button disabled>Not Available</button>
                                     {% endif %}
                                           
-                                    <p class="mb-0 text-left">Seller: {{ game.seller }}</p>
                                     <!-- Edit and delete functionality -->
                                     {% if game.seller == request.user %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_game' game.id %}">Edit</a> |
-                                        <a class="text-danger" href="{% url 'delete_game' game.id %}">Delete</a>
+                                    <small class="ml-2">
+                                        <a href="{% url 'edit_game' game.id %} class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>Edit</a> |
+                                        <a href="{% url 'delete_game' game.id %}" class="btn btn-danger btn-sm ml-2" onclick="return confirm('Are you sure you want to delete this game?');"><i class="fas fa-trash-alt"></i> Delete</a>
                                     </small>
                                     {% endif %}
                                 </div>
