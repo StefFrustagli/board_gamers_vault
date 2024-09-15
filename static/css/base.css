@@ -261,6 +261,37 @@ button, optgroup, select, textarea {
   object-fit: contain;
 }
 
+/* Game details cards */
+/* Custom static-card with no hover effect */
+/* Static card styles */
+.static-card {
+    background-color: #fff; /* Same as Bootstrap card */
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Default Bootstrap border */
+    border-radius: 0.25rem; /* Rounded corners like Bootstrap */
+    box-shadow: none; /* No shadow to avoid hover effects */
+    transition: none; /* Disable hover transitions */
+    padding: 1.25rem; /* Padding for card content */
+    margin-bottom: 1.5rem; /* Space between cards */
+}
+
+/* Prevent hover effects */
+.static-card:hover {
+    box-shadow: none;
+    cursor: default; /* Avoid pointer cursor */
+}
+
+/* Static card body */
+.static-card-body {
+    padding: 1.25rem;
+}
+
+/* Static card footer */
+.static-card-footer {
+    background-color: #f8f9fa; /* Similar to Bootstrap card footer */
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 0.75rem 1.25rem;
+}
+
 .btn-black {
   background-color: #4C2527 !important; 
   border-radius: 15px;
@@ -549,12 +580,17 @@ input[name='q']::placeholder {
     max-width: 80%;
   }
 
+  .image-container {
+    text-align: end;
+    padding-right: 3rem;
+  }
+
   .image-container img {
-    width: 30%;
+    width: 35%;
     height: auto;
     object-fit: cover; /* Ensure the image covers the container */
     display: inline-block;
-}
+  }
 }
 
 /* fixed top navbar only on medium and up */

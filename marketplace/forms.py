@@ -41,9 +41,9 @@ class GameForm(forms.ModelForm):
         self.fields["price"].label = "Price (£)"
         self.fields["description"].label = "Description:"
         self.fields["seller_comment"].label = "Add your comment:"
-        self.fields["is_available"].label = "Available for Sale"
+        self.fields["is_available"].label = "Available"
         self.fields["is_available"].help_text = (
-            "Check this box to mark the game as available for sale."
+            "Check this box to mark the game as available for sale"
         )
 
         # Add CSS classes to form fields for styling

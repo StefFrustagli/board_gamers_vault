@@ -180,6 +180,20 @@ button, optgroup, select, textarea {
   width: 21.5625rem;
 }
 
+/* Game details cards */
+/* Custom static-card with no hover effect */
+.static-card {
+    transition: none !important; 
+    box-shadow: none !important; 
+    cursor: default !important;  
+}
+
+/* Ensure hover doesn't apply any effects */
+.static-card:hover {
+    box-shadow: none !important; /* No shadow on hover */
+    background-color: inherit !important; /* Prevent background color change */
+}
+
 /* from Bulma - framework similar to bootstrap */
 /* to ensure font awesome icons stay centred and have consistent size */
 .icon {

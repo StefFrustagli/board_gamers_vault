@@ -43,9 +43,9 @@
                     {{ form.price }}
                 </div>
                 <div class="form-group">
+                    <small class="form-text text-muted">{{ form.is_available.help_text }}</small>
                     {{ form.is_available.label_tag }}
                     {{ form.is_available }}
-                    <small class="form-text text-muted">{{ form.is_available.help_text }}</small>
                 </div>
                 
                 <div class="form-group">
