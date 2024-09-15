@@ -292,6 +292,27 @@ button, optgroup, select, textarea {
     padding: 0.75rem 1.25rem;
 }
 
+/* Fieldset in My profile */
+fieldset {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Order history table */
+.order-history table {
+    border: 1px solid #ddd;
+}
+
+.order-history tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-history td, .order-history th {
+    padding: 12px;
+}
+
+
 .btn-black {
   background-color: #4C2527 !important; 
   border-radius: 15px;

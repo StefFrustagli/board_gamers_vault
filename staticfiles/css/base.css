@@ -18,6 +18,11 @@ body {
 }
 /* Footer  */
 footer {
+    /* try to fix ipad issue   */
+    width: 100vw;
+    box-sizing: border-box;
+
+
     background-color: #4C2527;
     color: #fff;
     margin-top: auto;
@@ -40,9 +45,29 @@ footer .fab {
     font-size: 1.5rem;
 }
 
+/* Search field + button */
+.input-group-field {
+    flex: 1; /* Make the input field take up remaining space */
+    border: 1px solid #000; 
+    border-radius: 0; 
+}
+
+.input-group-append {
+  margin-left: 0.7rem;
+}
+
 /* margins for input buttons, etc. */
 button, optgroup, select, textarea {
     margin: 0.2rem !important;
+}
+
+/* Button "Select image" */
+#btn-select-image {
+  background-color: #785555 !important;
+}
+
+.textinput {
+  margin-bottom: 0.4rem;
 }
 
 #shop-button {
@@ -74,13 +99,18 @@ button, optgroup, select, textarea {
 }
 
 .success-message {
-  margin-top: 8rem;
+  margin-top: 1rem;
   padding-left:0 !important;
   padding-bottom: 0 !important;
 }
 
 .order-confirmation {
   padding: 1rem;
+}
+
+#order-confirmation-header {
+  margin-top: 4rem;
+
 }
 
 #about-page {
@@ -122,7 +152,7 @@ button, optgroup, select, textarea {
 }
 
 #mc_embed_signup .button {
-  color: #4C2527 !important;
+  background: #4C2527 !important;
   border-radius: 10px !important;
 }
 
@@ -139,7 +169,7 @@ button, optgroup, select, textarea {
 .header-title {
   margin-top: 20rem !important; /* push the header down */
   margin-bottom: 15rem;
-}
+}                      
 
 .homepage-display-title {
   padding-top: 1.5rem;
@@ -168,9 +198,8 @@ button, optgroup, select, textarea {
   align-items: center;
   text-align: center;
 }
-
 .image-container img {
-  width: 40%;
+  width: 55%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
   display: inline-block;
@@ -178,20 +207,6 @@ button, optgroup, select, textarea {
 
 .product-details-container {
   width: 21.5625rem;
-}
-
-/* Game details cards */
-/* Custom static-card with no hover effect */
-.static-card {
-    transition: none !important; 
-    box-shadow: none !important; 
-    cursor: default !important;  
-}
-
-/* Ensure hover doesn't apply any effects */
-.static-card:hover {
-    box-shadow: none !important; /* No shadow on hover */
-    background-color: inherit !important; /* Prevent background color change */
 }
 
 /* from Bulma - framework similar to bootstrap */
@@ -206,7 +221,6 @@ button, optgroup, select, textarea {
 
 .logo-font {
   text-transform: uppercase;
-  padding: 1.3rem;
 }
 
 /* logo only takes up as much space as the text requires */
@@ -221,6 +235,83 @@ button, optgroup, select, textarea {
   margin-bottom: 0.6rem;
   border-radius: 15px;
 }
+
+/* Sorting dropdown */
+.sort-select-wrapper {
+  margin-bottom: 20px;
+}
+
+.custom-select:focus {
+  border-color: #845f5f; /* Highlight border on focus */
+  box-shadow: none;
+}
+
+/* Game cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px; 
+  object-fit: contain;
+}
+
+/* Game details cards */
+/* Custom static-card with no hover effect */
+/* Static card styles */
+.static-card {
+    background-color: #fff; /* Same as Bootstrap card */
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Default Bootstrap border */
+    border-radius: 0.25rem; /* Rounded corners like Bootstrap */
+    box-shadow: none; /* No shadow to avoid hover effects */
+    transition: none; /* Disable hover transitions */
+    padding: 1.25rem; /* Padding for card content */
+    margin-bottom: 1.5rem; /* Space between cards */
+}
+
+/* Prevent hover effects */
+.static-card:hover {
+    box-shadow: none;
+    cursor: default; /* Avoid pointer cursor */
+}
+
+/* Static card body */
+.static-card-body {
+    padding: 1.25rem;
+}
+
+/* Static card footer */
+.static-card-footer {
+    background-color: #f8f9fa; /* Similar to Bootstrap card footer */
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 0.75rem 1.25rem;
+}
+
+/* Fieldset in My profile */
+fieldset {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Order history table */
+.order-history table {
+    border: 1px solid #ddd;
+}
+
+.order-history tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-history td, .order-history th {
+    padding: 12px;
+}
+
 
 .btn-black {
   background-color: #4C2527 !important; 
@@ -415,8 +506,9 @@ input[name='q']::placeholder {
 
 /* Allauth form formatting */
 .allauth-form-inner-content {
-    margin-top: 8rem;
-    margin-left: 4rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 5rem;
 }
 
@@ -443,7 +535,7 @@ input[name='q']::placeholder {
 	/* btn */
 	  display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -508,6 +600,18 @@ input[name='q']::placeholder {
   .container {
     max-width: 80%;
   }
+
+  .image-container {
+    text-align: end;
+    padding-right: 3rem;
+  }
+
+  .image-container img {
+    width: 35%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the container */
+    display: inline-block;
+  }
 }
 
 /* fixed top navbar only on medium and up */
@@ -534,7 +638,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 13rem;
+    padding-top: 15rem;
   }
   
   /* push body down to the bottom of the main page header */
@@ -546,6 +650,9 @@ input[name='q']::placeholder {
     padding: 0.3rem 1rem;
   }
 
+  .product-container {
+    margin-bottom: 3rem;
+  }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -557,7 +664,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 13rem;
+    padding-top: 10rem;
   }
 
   .header-container {
@@ -571,7 +678,6 @@ input[name='q']::placeholder {
   .success-message {
     margin-top: 3rem;
   }
-
 }
 
 /* CSS rules for screens between 1024px and 1366px */
@@ -586,4 +692,5 @@ input[name='q']::placeholder {
   margin-top: 10rem;
   padding: 0;
   } 
+
 }
