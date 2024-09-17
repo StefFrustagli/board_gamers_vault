@@ -5,8 +5,29 @@
 ## Validator Testing
 
 ### HTML
-All the HTML files were checked with [W3C Markup Validation Service](https://validator.w3.org/) and many of the errors identified appeared to be related to Django elements, so they were ignored.
-These errors were acknowledged but not modified as they are integral to the correct functionality of the website.
+All the HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/), which helps ensure that the pages adhere to web standards, improving accessibility, SEO, and cross-browser compatibility.
+
+The following pages were checked:
+- Home Page
+- Marketplace Page
+- About Page
+- Sell your Game Page
+- My Profile Page
+- Shopping Bag
+- Checkout Page
+- Register Page
+- Login Page
+- Logout Page
+- Order Page
+
+All identified errors were fixed, ensuring that each page conforms to HTML5 standards. 
+
+Some common errors were duplicated IDs and incorrect parent elements. These errors were all addressed. 
+
+Validation results can be seen below, showing successful validation:
+
+![Validation tools restults](https://i.ibb.co/2hMXNtT/my-screenshots-2024-09-16-at-20-50-09.png)
+
 
 ### CSS
 
