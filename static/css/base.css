@@ -45,6 +45,11 @@ footer .fab {
     font-size: 1.5rem;
 }
 
+ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 /* Search field + button */
 .input-group-field {
     flex: 1; /* Make the input field take up remaining space */

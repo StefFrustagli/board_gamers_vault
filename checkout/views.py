@@ -12,12 +12,14 @@ from marketplace.models import Game
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
+from django import template
 
 import stripe
 import json
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+register = template.Library()
 
 @login_required
 @require_POST
@@ -60,6 +62,27 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@register.filter(name="none_to_empty")
+def none_to_empty(value):
+    """
+    Converts None or empty values to a default string.
+
+    This utility function is used to handle cases where a field's value
+    might be None or an empty string. It ensures that instead of displaying
+    'None' or leaving a field blank, 
+    a default message ('Not provided') is returned.
+
+    Args:
+        value (str or None): The value to be checked.
+        It can be a string or None.
+
+    Returns:
+        str: The original value if it's not None or empty;
+        otherwise, the string 'Not provided'.
+    """
+    return value if value else "Not provided"
+
+
 @login_required
 def checkout(request):
     """
@@ -99,8 +122,8 @@ def checkout(request):
             "postcode": request.POST["postcode"],
             "town_or_city": request.POST["town_or_city"],
             "street_address1": request.POST["street_address1"],
-            "street_address2": request.POST["street_address2"],
-            "county": request.POST["county"],
+            "street_address2": none_to_empty(request.POST["street_address2"]),
+            "county": none_to_empty(request.POST["street_address2"]),
         }
 
         # Create an order form instance with the collected data

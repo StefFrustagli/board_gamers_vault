@@ -1,6 +1,14 @@
+from bs4 import BeautifulSoup
 from django.db import models
 
 # Create your models here.
+
+# Function to clean HTML content (for Summernote)
+def clean_html(content):
+    soup = BeautifulSoup(content, "html.parser")
+    for font_tag in soup.findAll("font"):
+        font_tag.unwrap()  # Removes <font> tags but keeps the text
+    return str(soup)
 
 
 class About(models.Model):
@@ -13,10 +21,14 @@ class About(models.Model):
         the About page was last updated.
         content (str): The content of the About page.
     """
-
     title = models.CharField(max_length=200)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
+
+    def save(self, *args, **kwargs):
+        # Clean the content field before saving
+        self.content = clean_html(self.content)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         """
@@ -38,7 +50,6 @@ class FeedbackRequest(models.Model):
         message (str): The text of the message.
         read (bool): A boolean indicating whether the message has been read.
     """
-
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
