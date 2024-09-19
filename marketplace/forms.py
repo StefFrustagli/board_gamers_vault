@@ -14,7 +14,9 @@ class GameForm(forms.ModelForm):
         exclude = ["seller"]
 
     image = forms.ImageField(
-        label="Image", required=False, widget=CustomClearableFileInput
+        label="Image",
+        required=False,
+        widget=CustomClearableFileInput(attrs={"id": "image-input"}),
     )
 
     def __init__(self, *args, **kwargs):

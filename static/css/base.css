@@ -45,6 +45,7 @@ footer .fab {
     font-size: 1.5rem;
 }
 
+/* Fix alignment icons in navbar */
 ul {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -118,19 +119,66 @@ button, optgroup, select, textarea {
 
 }
 
+/* About page */
+
 #about-page {
   color: #4C2527;
 }
 
+/* Feedback form styles */
 .feedback-form {
   margin-top: 3rem !important;
   color: #785555;
 }
 
+.brown-bold {
+    font-weight: bold;
+    color: #785555;
+}
+
 #about-textarea {
   margin-top: 15rem !important;
   /* to make sure ipad pro about is visible */
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  color: #000; /* Default text color */
 }
+
+#about-textarea h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem; /* Adjust for your design */
+}
+
+#about-textarea p {
+    font-family: "Lucida Grande", sans-serif; /* Custom font family */
+    font-size: 1rem; 
+    color: #000;
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+#about-textarea b {
+    font-weight: bold; 
+}
+
+#about-textarea a {
+    color: #785555; 
+    text-decoration: underline; 
+    font-weight: bold; 
+}
+
+#about-textarea a:hover {
+    color: #333; /* Darker color on hover */
+}
+
+.important-message {
+    font-style: italic;
+    background-color: #f8f9fa; /* Light background for emphasis */
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 
 #id_message {
   box-sizing: border-box !important;
