@@ -72,7 +72,9 @@
                     <small class="ml-3">
                         <a href="{% url 'edit_game' game.id %}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>Edit</a>
                         <a href="{% url 'delete_game' game.id %}" class="btn btn-danger btn-sm ml-2" onclick="return confirm('Are you sure you want to delete this game?');"><i class="fas fa-trash-alt"></i> Delete </a> 
-                        <a href="{% url 'add_game' %}" class="btn btn-success btn-sm ml-2" <i class="fas fa-plus">Sell another Game</a>
+                        <a href="{% url 'add_game' %}" class="btn btn-success btn-sm ml-2">
+                            <i class="fas fa-plus"></i> Sell another Game
+                        </a>
                     </small>
                     {% endif %}
 
@@ -95,7 +97,6 @@
                             </div>
                             <!-- Hidden input to store the current page URL for redirection after form submission -->
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        </div>
                     </form>
                 </div>
             </div>

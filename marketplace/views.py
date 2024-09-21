@@ -162,4 +162,4 @@ def delete_game(request, game_id):
 
     game.delete()
     messages.success(request, 'Game deleted!')
-    return redirect(reverse('games_list'))
+    return redirect(reverse('profile'))

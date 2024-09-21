@@ -116,11 +116,9 @@ button, optgroup, select, textarea {
 
 #order-confirmation-header {
   margin-top: 4rem;
-
 }
 
 /* About page */
-
 #about-page {
   color: #4C2527;
 }
@@ -619,6 +617,10 @@ input[name='q']::placeholder {
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.display-6-verify, .profile-title {
+  font-size: 1.5rem;
 }
 
 /* Hover effect */
