@@ -124,7 +124,7 @@ SITE_ID = 1
 
 # Console backend to print emails to the console for development purposes
 # Uncomment the following line in production to send real emails
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Authentication either using eusername or email
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
@@ -278,8 +278,8 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
 
-    # Debug: Print the email settings to confirm the values
-    print("Production Email Setup:")
-    print(f"EMAIL_HOST_USER: {EMAIL_HOST_USER}")
-    print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}") 
-    print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")
+    # # Debug: Print the email settings to confirm the values
+    # print("Production Email Setup:")
+    # print(f"EMAIL_HOST_USER: {EMAIL_HOST_USER}")
+    # print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}") 
+    # print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")
