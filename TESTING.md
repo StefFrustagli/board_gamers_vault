@@ -13,6 +13,7 @@ The following pages were checked:
 - About Page
 - Sell your Game Page
 - Edit your Game Page
+- Game details Page
 - My Profile Page
 - Shopping Bag
 - Checkout Page
@@ -23,7 +24,7 @@ The following pages were checked:
 
 Some common errors I encountered included duplicated IDs and incorrect parent elements. Additionally, I faced various validation issues caused by Summernote on the About page. I explored different approaches to resolve these problems, such as using the clean_html method. Ultimately, I chose to apply custom CSS to manage text formatting and layout, which effectively resolved the issues while maintaining a clean, valid HTML structure.
 
-All identified errors were fixed, ensuring that each page conforms to HTML5 standards. 
+Therefore, all identified errors were fixed, ensuring that each page conforms to HTML5 standards. 
 
 Validation results can be seen below, showing successful validation:
 
