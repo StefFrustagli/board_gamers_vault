@@ -179,7 +179,6 @@ button, optgroup, select, textarea {
     margin-top: 10px;
 }
 
-
 #id_message {
   box-sizing: border-box !important;
   width: 15rem;
@@ -190,10 +189,30 @@ button, optgroup, select, textarea {
 #shopping-bag {
   margin-top: 5rem;
   padding: 0;
+  font-size: 2rem;
 }
 
 #shopping-button {
   margin-bottom: 3rem;
+}
+
+/* Ensure text wraps on mobile */
+table, td, th {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* Limit the width of table cells */
+td, th {
+    max-width: 100px; /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." when the text is too long */
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Mailchimp */
@@ -481,10 +500,6 @@ input[name='q']::placeholder {
     height: 100px;
 }
 
-/* .management {
-  margin-top: 7rem;
-} */
-
 .logo-font-management {
   padding-left: 0rem !important;
 }
@@ -648,6 +663,62 @@ input[name='q']::placeholder {
 
 /* ------------ MEDIA QUERIES */
 
+/* Mobile screens */
+@media (max-width: 740px) {
+    
+    h4, p {
+        font-size: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .btn-lg {
+        font-size: 0.875rem;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Specific tweaks for Samsung Galaxy S8's resolution */
+@media only screen 
+  and (min-device-width: 360px) 
+  and (max-device-width: 360px) 
+  and (orientation: portrait) {
+    /* Adjust font sizes, padding, and margins for this resolution */
+    .container {
+        padding: 10px;
+    }
+
+    h2, p {
+        font-size: 90%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    h2, p {
+        font-size: 85%; /* Adjust as needed */
+    }
+    td, th {
+        font-size: 85%; /* Smaller text for table cells */
+    }
+
+    .breadcrumb {
+      font-size: small;
+    }
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
@@ -691,7 +762,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 15rem;
+    padding-top: 13rem;
   }
   
   /* push body down to the bottom of the main page header */
@@ -717,7 +788,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
 
   .header-container {

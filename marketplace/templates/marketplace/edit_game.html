@@ -2,9 +2,18 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
+<div id="breadcrumb-container" class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col d-flex justify-content-center">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'games_list' %}">Marketplace</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit your game</li>
+                </ol>
+            </nav>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -14,10 +23,10 @@
 <div class="container">
     <div class="row management">
         <div class="col-12 col-md-6">
-            <hr>
-            <h2 class="logo-font mb-4 logo-font-management">Boardgame Management</h2>
-            <h5 class="text-muted">Edit a Boardgame</h5>
-            <hr>
+            <h1 class="display-6 mb-4 logo-font-management">Edit your boardgame</h1>
+            <h5 class="lead text-muted mb-2">Edit your game's details</h5>
+            <p class="small text-muted mb-0">* Select a new image if you want to change it.</p>
+            <hr class="mb-4">
         </div>
     </div>
 
@@ -25,16 +34,57 @@
         <div class="col-12 col-md-6">
             <form method="POST" action="{% url 'edit_game' game.id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
+                <div class="form-group">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="form-group">
+                    {{ form.price.label_tag }}
+                    {{ form.price }}
+                </div>
+                <div class="form-group">
+                    <small class="form-text text-muted">{{ form.is_available.help_text }}</small>
+                    {{ form.is_available.label_tag }}
+                    {{ form.is_available }}
+                </div>
+                <div class="form-group">
+                    {{ form.condition.label_tag }}
+                    {{ form.condition }}
+                </div>
+                <div class="form-group">
+                    {{ form.category.label_tag }}
+                    {{ form.category }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label_tag }}
+                    <br>
+                    {{ form.description }}
+                </div>
+                <div class="form-group">
+                    {{ form.seller_comment | as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ form.image }}
+                </div>
+                <!-- To check for errors -->
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    {% for field in form %}
+                    {% if field.errors %}
+                    <div class="form-error">
+                        <strong>{{ field.label }}:</strong>
+                        {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
                     {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <div class="text-center mb-5">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'games_list' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update</button>
+                    <a class="btn btn-outline-black" href="{% url 'games_list' %}">Cancel</a>
+                    <button class="btn btn-black" type="submit">Update Game</button>
                 </div>
             </form>
         </div>

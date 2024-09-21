@@ -121,32 +121,25 @@ def add_game(request):
 @login_required
 def edit_game(request, game_id):
     """Edit a product"""
-
-    # Retrieve the game object
     game = get_object_or_404(Game, pk=game_id)
 
-    # Check if the logged-in user is the seller of the game
     if game.seller != request.user:
-        messages.error(request, "Sorry, only the seller edit this game.")
+        messages.error(request, "Sorry, only the seller can edit this game.")
         return redirect(reverse("home"))
 
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES, instance=game)
         if form.is_valid():
-            game = form.save()
+            form.save()
             messages.success(request, "Product successfully updated!")
             return redirect(reverse("game_detail", args=[game.id]))
-    # If form is invalid, continue to render the form with error messages
+        else:
+            messages.error(
+                request, "Failed to update game. Ensure the form is valid."
+            )
     else:
         form = GameForm(instance=game)
         messages.info(request, f"You are editing {game.title}")
-
-    # This else block ensures that when the form is invalid during editing,
-    # the error message is set correctly
-    if not form.is_valid() and request.method == "POST":
-        messages.error(
-            request, "Failed to update game. Please ensure the form is valid."
-        )
 
     template = "marketplace/edit_game.html"
     context = {

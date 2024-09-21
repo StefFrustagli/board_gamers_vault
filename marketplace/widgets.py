@@ -17,9 +17,17 @@ class CustomClearableFileInput(ClearableFileInput):
         template_name (str): Path to the custom template
         for rendering the widget.
     """
-    clear_checkbox_label = _("Remove")
-    initial_text = _("Current Image")
-    input_text = _("")
+    initial_text = _("Here's your current image")
+    input_text = _("Upload a new image:")
     template_name = (
         "marketplace/custom_widget_templates/custom_clearable_file_input.html"
     )
+
+    # Override the method to remove the clear checkbox rendering
+    def get_context(self, name, value, attrs):
+        context = super().get_context(name, value, attrs)
+        # Remove the 'clear' related context variables
+        context["widget"].pop("clear_checkbox_name", None)
+        context["widget"].pop("clear_checkbox_id", None)
+        context["widget"].pop("clear", None)
+        return context

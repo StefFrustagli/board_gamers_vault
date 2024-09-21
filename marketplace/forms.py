@@ -11,7 +11,7 @@ class GameForm(forms.ModelForm):
     class Meta:
         model = Game
         # fields = "__all__"  # Use all fields from the Game model
-        exclude = ["seller"]
+        exclude = ["seller", "sku", "image_url"]
 
     image = forms.ImageField(
         label="Image",
