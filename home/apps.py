@@ -11,6 +11,7 @@ class HomeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'home'
 
+
 class AboutPageConfig(AppConfig):
     """
     AppConfig for the 'about_page' Django application.

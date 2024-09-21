@@ -21,6 +21,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 register = template.Library()
 
+
 @login_required
 @require_POST
 def cache_checkout_data(request):
@@ -69,7 +70,7 @@ def none_to_empty(value):
 
     This utility function is used to handle cases where a field's value
     might be None or an empty string. It ensures that instead of displaying
-    'None' or leaving a field blank, 
+    'None' or leaving a field blank,
     a default message ('Not provided') is returned.
 
     Args:

@@ -26,7 +26,6 @@ class StripeWH_Handler:
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event.
-        
         Args:
             event (dict): The Stripe webhook event data.
         """
@@ -34,7 +33,7 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200
-        )    
+        )
 
     def _send_confirmation_email(self, order):
         """
@@ -74,7 +73,7 @@ class StripeWH_Handler:
         Notify the seller that their game has been sold and can be dispatched.
 
         Args:
-            order_line_item (OrderLineItem): 
+            order_line_item (OrderLineItem):
             The line item representing the sold game.
         """
         # Mark the game as unavailable after it has been sold.
@@ -82,7 +81,7 @@ class StripeWH_Handler:
         order_line_item.game.save()
 
         # Get the seller associated with the game.
-        seller = order_line_item.game.seller  
+        seller = order_line_item.game.seller
         seller_email = seller.email  # Retrieve the seller's email.
 
         # Render the email subject and body for notifying the seller.
@@ -100,7 +99,12 @@ class StripeWH_Handler:
 
         try:
             # Send the email notification to the seller.
-            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [seller_email])
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [seller_email]
+            )
         except Exception as e:
             # Log the error if sending the seller notification fails.
             print(f"Failed to notify seller: {e}")
@@ -109,9 +113,9 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe,
         each time a user completes the payment process.
-        This method processes successful payment intents, 
+        This method processes successful payment intents,
         checks for existing orders,
-        creates new orders if necessary, 
+        creates new orders if necessary,
         and sends emails to customers and sellers.
 
         Args:
@@ -157,8 +161,10 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_street_address1 = \
+                    shipping_details.address.line1
+                profile.default_street_address2 = \
+                    shipping_details.address.line2
                 profile.default_county = shipping_details.address.state
                 profile.save()  # Save the updated profile.
 
@@ -256,7 +262,10 @@ class StripeWH_Handler:
             # print statement for logging the error
             print(f"Error occurred: {e}")
             return HttpResponse(
-                content=(f'Webhook received: {event["type"]} | ' f"ERROR: {e}"),
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    f"ERROR: {e}"
+                ),
                 status=500,
             )
 

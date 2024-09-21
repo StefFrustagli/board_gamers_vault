@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 
+
 # Function to clean HTML content (for Summernote)
 def clean_html(content):
     soup = BeautifulSoup(content, "html.parser")

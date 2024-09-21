@@ -92,7 +92,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django.template.context_processors.debug",                
+                "django.template.context_processors.debug",
                 # required by allauth to access HTTP request object
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -281,5 +281,5 @@ else:
     # # Debug: Print the email settings to confirm the values
     # print("Production Email Setup:")
     # print(f"EMAIL_HOST_USER: {EMAIL_HOST_USER}")
-    # print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}") 
+    # print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}")
     # print(f"DEFAULT_FROM_EMAIL: {DEFAULT_FROM_EMAIL}")

@@ -36,7 +36,7 @@ def profile(request):
 
     template = "profiles/profile.html"
     context = {
-        "user": request.user,  # Provide user object for displaying user's name 
+        "user": request.user,  # Provide user object for displaying user's name
         "form": form,
         "orders": orders,
         "on_profile_page": True,
