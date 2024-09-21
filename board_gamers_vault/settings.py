@@ -123,7 +123,7 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 # Console backend to print emails to the console for development purposes
-# Uncomment the following line in production to send real emails
+# Comment out the following line in production to send real emails
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Authentication either using eusername or email
