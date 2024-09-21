@@ -33,3 +33,4 @@ stripe==9.10.0
 typing_extensions==4.12.2
 urllib3==2.2.1
 webencodings==0.5.1
+django-widget-tweaks
