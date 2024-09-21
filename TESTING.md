@@ -12,6 +12,7 @@ The following pages were checked:
 - Marketplace Page
 - About Page
 - Sell your Game Page
+- Edit your Game Page
 - My Profile Page
 - Shopping Bag
 - Checkout Page
