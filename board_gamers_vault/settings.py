@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = [
     "8000-steffrustag-boardgamers-wgstn1wvdge.ws-eu114.gitpod.io",
     "127.0.0.1",
@@ -124,7 +124,7 @@ SITE_ID = 1
 
 # Console backend to print emails to the console for development purposes
 # Comment out the following line in production to send real emails
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Authentication either using eusername or email
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"

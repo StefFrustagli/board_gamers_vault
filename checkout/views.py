@@ -124,7 +124,7 @@ def checkout(request):
             "town_or_city": request.POST["town_or_city"],
             "street_address1": request.POST["street_address1"],
             "street_address2": none_to_empty(request.POST["street_address2"]),
-            "county": none_to_empty(request.POST["street_address2"]),
+            "county": none_to_empty(request.POST["county"]),
         }
 
         # Create an order form instance with the collected data

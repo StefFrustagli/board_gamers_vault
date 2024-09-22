@@ -16,7 +16,7 @@ Shipping Address:
 {{ order.town_or_city }}, {{ order.postcode }}
 {{ order.country }}
 
-Buyer's Phone Number: {{ order.phone_number|none_to_empty }}
+Buyer's Phone Number: {{ order.phone_number }}
 
 Please ensure that the game is dispatched promptly. 
 
