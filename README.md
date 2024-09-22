@@ -251,7 +251,7 @@ The font used is called *Poppins* and it was imported using Google fonts.
 
 ### Data Model 
 
-The structure of our database was illustrated using an Entity-Relationship Diagram (ERD). This diagram shows how different entities within the system are related to each other and helps in understanding the data flow. 
+The structure of the database was illustrated using an Entity-Relationship Diagram (ERD). This diagram shows how different entities within the system are related to each other and helps in understanding the data flow. 
 
 **Entity-relationship diagrams (ERD)**
 
@@ -290,9 +290,137 @@ First draft (in the planning process):
      - Quantity
      - Total price (could be calculated based on the quantity and the game's price)
 
+#### Current Models Overview
 
+This project uses several Django models to manage orders, games, profiles, and feedback within the system. Below is an overview of the key models used in the application:
 
-Draft flowchart for apps organisation:
+#### `Order`
+
+The `Order` model represents an order placed by a user. It includes personal details, delivery address, and information about the order's total cost and payment details.
+
+- **Fields**:
+  - `order_number` (CharField): Unique order number generated using UUID.
+  - `user_profile` (ForeignKey): Reference to the user profile placing the order.
+  - `full_name` (CharField): Full name of the customer.
+  - `email` (EmailField): Email address of the customer.
+  - `phone_number` (CharField): Contact number for the order.
+  - `country`, `postcode`, `town_or_city`, `street_address1`, `street_address2`, `county` (Various): Delivery address fields.
+  - `date` (DateTimeField): Timestamp for when the order was created.
+  - `delivery_cost` (DecimalField): Delivery charge for the order.
+  - `order_total`, `grand_total` (DecimalField): The total cost of the order, including delivery.
+  - `original_bag` (TextField): Stores the original bag contents as JSON.
+  - `stripe_pid` (CharField): Stripe payment ID for the transaction.
+
+- **Methods**:
+  - `_generate_order_number()`: Generates a random, unique order number using UUID.
+  - `update_total()`: Recalculates the order total and grand total whenever a line item is added.
+  - `save()`: Custom save method to generate an order number if not already present.
+
+---
+
+#### `OrderLineItem`
+
+The `OrderLineItem` model represents an individual item within an order. It tracks the game ordered, its quantity, and the total price for the line item.
+
+- **Fields**:
+  - `order` (ForeignKey): The order to which this line item belongs.
+  - `game` (ForeignKey): The game associated with the line item.
+  - `quantity` (PositiveIntegerField): Quantity of the game ordered.
+  - `lineitem_total` (DecimalField): Total price for this line item, based on the game price and quantity.
+
+- **Methods**:
+  - `save()`: Calculates the total price for the line item and updates the order total.
+  - `__str__()`: Returns a string in the format "SKU {game.sku} on order {order.order_number}".
+
+---
+
+#### `Game`
+
+The `Game` model represents a game available in the marketplace, including details about its condition, price, category, and availability.
+
+- **Fields**:
+  - `sku` (CharField): Unique SKU for the game.
+  - `title` (CharField): Title of the game.
+  - `price` (DecimalField): Price of the game.
+  - `is_available` (BooleanField): Whether the game is available for purchase.
+  - `condition` (CharField): Condition of the game (e.g., "as new", "great", etc.).
+  - `category` (ForeignKey): Category of the game (e.g., strategy, role-playing).
+  - `image` (ImageField): Image of the game.
+  - `image_url` (URLField): Optional URL for the game image.
+  - `seller` (ForeignKey): The seller listing the game.
+  - `description`, `seller_comment` (TextField): Additional information provided by the seller.
+
+- **Methods**:
+  - `save()`: Generates a unique SKU if not provided, and saves the game to the database.
+  - `generate_sku()`: Generates a random SKU for the game.
+  - `availability_status`: Returns the availability status as "Available" or "Not Available".
+  - `mark_as_purchased()`: Marks the game as no longer available when purchased.
+
+---
+
+#### `Category`
+
+The `Category` model represents a game category, such as "Strategy", "Role-playing", etc.
+
+- **Fields**:
+  - `name` (CharField): The name of the category, chosen from predefined choices.
+  
+- **Meta**:
+  - `verbose_name_plural`: Plural form of "Categories" for display in the admin panel.
+
+---
+
+#### `SellerProfile`
+
+The `SellerProfile` model represents a seller's profile, capturing their delivery fees and associated user account.
+
+- **Fields**:
+  - `user` (OneToOneField): One-to-one relationship with the `User` model.
+  - `standard_delivery_fee` (DecimalField): Default delivery fee charged by the seller.
+  - `free_delivery_threshold` (DecimalField): Order amount threshold for free delivery.
+
+---
+
+#### `UserProfile`
+
+The `UserProfile` model is used to store additional information about a user, such as their avatar, bio, and games for sale.
+
+- **Fields**:
+  - `user` (OneToOneField): The user associated with this profile.
+  - `avatar` (ImageField): Profile picture of the user.
+  - `default_town_or_city` (CharField): Default location of the user.
+  - `bio` (TextField): Biography of the user.
+  - `games_for_sale` (ManyToManyField): Games listed for sale by the user.
+
+---
+
+#### `About`
+
+The `About` model stores information for the "About Us" page.
+
+- **Fields**:
+  - `title` (CharField): Title of the page.
+  - `updated_on` (DateTimeField): Last updated timestamp.
+  - `content` (TextField): HTML content for the About page.
+
+---
+
+#### `FeedbackRequest`
+
+The `FeedbackRequest` model stores feedback or collaboration requests submitted by users.
+
+- **Fields**:
+  - `name` (CharField): Name of the person submitting feedback.
+  - `email` (EmailField): Contact email.
+  - `message` (TextField): Message content.
+  - `read` (BooleanField): Indicates whether the feedback has been read.
+
+---
+
+Some models in this project may not currently be utilised at the current stage of the application. This is intentional, as the project is a work in progress. I have chosen to retain these models to facilitate future development and experimentation, as they may serve as a foundation for upcoming features or enhancements. 
+
+### Flowchart
+Draft **flowchart** for apps organisation:
 
 ![draft flowchart to organise apps](https://i.ibb.co/xY8bHPs/my-screenshots-2024-05-17-at-09-08-56.png)
 
@@ -496,7 +624,7 @@ Shipping costs are currently handled by sellers and are included in the product 
 
 #### Homepage
 
-![Homepage](https://i.ibb.co/BjKyxz6/my-screenshots-2024-07-02-at-08-28-52.png)
+![Homepage](https://i.ibb.co/fDsJS79/my-screenshots-2024-09-22-at-16-37-06.png)
 
 On the homepage, users can quickly understand the website's purpose. At the top, there is a navbar featuring the website name on the left, a search bar in the center, and two icons on the right: "My Account" and "Shopping Basket". Below there is a mini banner saying "Sell and buy pre-owned board games".  In the middle of the screen, there are two prominent buttons that allow users to access the main actions of the website. These buttons are designed to guide users towards the most important features or sections. At the bottom, the footer contains various information related to the website, including contact details, legal information, and links to social media. Additionally, there is a newsletter subscription form for users who want to stay updated with the latest news and updates.
 
@@ -514,7 +642,7 @@ The navbar features:
 
 - **Search bar**: positioned in the center of the navbar, the search bar enables users to quickly search for specific items, content, or information within the website. It enhances user experience by allowing for efficient navigation and discovery of desired content.
 
-- **My Account**: this icon functions as a dropdown menu. For users who are not logged in, it offers options to "Login" or "Register". Once logged in, users see additional options such as "Logout", "My Profile", and "Boardgame Management". "My Profile" allows users to view and update their personal information, while "Boardgame Management" provides tools to manage their boardgame collection or listings.
+- **My Account**: this icon functions as a dropdown menu. For users who are not logged in, it offers options to "Login" or "Register". Once logged in, users see additional options such as "Sell your game", "My Profile" and "Logout". "Sell your game" Allows users to list their board games for sale by filling out game details. "My Profile" allows users to view and update some personal information, see their Order History and manage their games to sell. "Logout" logs the user out of the system.
 
   The dropdown menu for not-logged-in users: 
 
@@ -522,8 +650,7 @@ The navbar features:
 
   The dropdown menu for logged-in users:
 
-  ![My account dropdown menu for logged-in users](https://i.ibb.co/QFwVw10/my-screenshots-2024-07-02-at-17-18-11.png)
-
+  ![My account dropdown menu for logged-in users](https://i.ibb.co/6wbGCK5/my-screenshots-2024-09-22-at-16-46-58.png)
 
 
 - **Shopping Basket**: this icon indicates the user's shopping basket, allowing them to view and manage items they have added for purchase.
@@ -564,16 +691,24 @@ The Privacy Policy is displayed within the footer on every page of the applicati
 
 [Privacy Policy](https://www.termsfeed.com/live/2cfed02a-973b-42ae-a51c-23056d8b23e8)
 
+##### Breadcrumbs
+
+Breadcrumb navigation is implemented across the main pages of the website to enhance user accessibility and experience. These breadcrumbs provide clear navigation paths, helping users understand their current location within the site and easily return to previous pages.
+
+![Breadcrumbs](https://i.ibb.co/jDNff1L/my-screenshots-2024-09-22-at-16-53-33.png)
+
 
 ### "Board games on sale" Page
 
-![Board games on sale Page](https://i.ibb.co/bRhdmYm/my-screenshots-2024-07-02-at-09-13-47.png)
+![Board games on sale Page - top](https://i.ibb.co/JHhj8Fp/my-screenshots-2024-09-22-at-17-03-08.png)
+
+![Board games on sale Page - bottom](https://i.ibb.co/kSfXj6s/my-screenshots-2024-09-22-at-17-03-24.png)
 
 It displays the list of available games with all the relevant infomation.
 
 Details diplayed with every game:
 
-![Details of game](https://i.ibb.co/T2ykmfY/my-screenshots-2024-07-02-at-13-21-44.png)
+![Details of game](https://i.ibb.co/T8L7nJv/my-screenshots-2024-09-22-at-17-05-53.png)
 
 Sellers can only edit and delete their own games. They will see the "Edit" and "Delete" options for their listed games.
 
@@ -584,9 +719,9 @@ Other elements in the page:
 - **Display of Games** and **"Sort by" Bar**: This section of the website displays a collection of games, likely in a grid or list format, showcasing various titles, images, and possibly brief descriptions. Alongside or above this display, the "Sort by" bar offers users options to organize and filter the displayed games according to preferences such as price, popularity, release date, or genre. It provides users with flexibility and control over how they explore and browse the available games, ensuring a tailored browsing experience.
 ![Display of Games and Sort by Bar](https://i.ibb.co/DGNd5HY/my-screenshots-2024-07-02-at-13-21-32.png)
 
-### "Boardgames Management" Page
+### "Add your Boardgame" Page
 
-The "Sell Your Game" button redirects users to the "Boardgames Management" page. This page is also accessible via the "My Account" dropdown menu. The "Boardgames Management" page allows users to list their board games for sale, which will then appear in the "Board Games on Sale" list. To add a game, users need to provide the following information:
+The "Sell Your Game" button redirects users to the "Add your Boardgame" page. This page is also accessible via the "My Account" dropdown menu. The page allows users to list their board games for sale, which will then appear in the "Board Games on Sale" list. To add a game, users need to provide the following information:
 
 - Title: the name of the board game.
 - Price: the selling price of the game.
@@ -595,12 +730,14 @@ The "Sell Your Game" button redirects users to the "Boardgames Management" page.
 - Category: game genre.
 - Description: a description of the game.
 
-![Sell your game Page - part 1](https://i.ibb.co/GtQgXGP/my-screenshots-2024-07-02-at-13-38-57.png)
+![Sell your game Page - part 1](https://i.ibb.co/1zgzwZm/my-screenshots-2024-09-22-at-17-08-51.png)
+![Sell your game Page - part 2](https://i.ibb.co/HtdD5Ss/my-screenshots-2024-09-22-at-17-09-01.png)
+
 
 - Seller's Message: An optional message from the seller, providing additional information or personal notes about the game.
 - Image.
 
-![Sell your game Page - part 2](https://i.ibb.co/r0MJM99/my-screenshots-2024-07-02-at-13-39-07.png)
+![Sell your game Page - detail](https://i.ibb.co/r0MJM99/my-screenshots-2024-07-02-at-13-39-07.png)
 
 This streamlined process ensures that sellers can easily and effectively manage their listings, making their games available to potential buyers on the platform.
 
@@ -608,7 +745,7 @@ This streamlined process ensures that sellers can easily and effectively manage 
 
 On the "About" page, users can find information about the website and the team. The page includes a welcome message and a feedback form for users to easily leave their feedback.
 
-![Welcome message](https://i.ibb.co/cwcj7J3/my-screenshots-2024-07-02-at-10-39-30.png)
+![Welcome message]()
 
 ![Feedback Form](https://i.ibb.co/m9n22cQ/my-screenshots-2024-07-02-at-10-39-43.png)
 
@@ -631,10 +768,10 @@ When a game has been purchased, it will disappear from the "Board Games on Sale"
 
 ### "My profile" Page
 
-![My profile page](https://i.ibb.co/kXz9KRg/my-screenshots-2024-07-02-at-15-22-13.png)
+![My profile page]()
 
 
-In "My Profile," users can access and customize some of their personal information (this feature will be improved in the future), as well as view their order history.
+In "My Profile," users can access and customize some of their personal information (this feature will be improved in the future), as well as view their order history. User can view the games they have added for sale and edit or delete them.
 
 #### Authentication and notification messages
 
