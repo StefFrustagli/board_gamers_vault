@@ -140,16 +140,16 @@ button, optgroup, select, textarea {
   background-color: #fff; 
   padding: 20px;
   border-radius: 20px; /* Rounded corners */
-  color: #000; /* Default text color */
+  color: #000;
 }
 
 #about-textarea h1 {
     font-family: "Poppins", sans-serif;
-    font-size: 2rem; /* Adjust for your design */
+    font-size: 2rem;
 }
 
 #about-textarea p {
-    font-family: "Lucida Grande", sans-serif; /* Custom font family */
+    font-family: "Lucida Grande", sans-serif;
     font-size: 1rem; 
     color: #000;
     margin-bottom: 20px; /* Space between paragraphs */
@@ -430,7 +430,6 @@ fieldset {
 }
 
 .bg-black {
-  /* background: rgb(0, 0, 0) !important; */
   background-color: #4C2527;
 }
 
@@ -483,12 +482,10 @@ input[name='q']::placeholder {
 
 /* Gamelist container */
 #gamelist-container {
-  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
 #gamelist-detail {
-  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -609,7 +606,7 @@ input[name='q']::placeholder {
     -ms-user-select: none;
     user-select: none;
     background-color: #000;
-    border: 1px solid #000;
+    border: 1px solid;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -693,8 +690,8 @@ input[name='q']::placeholder {
 
 /* Specific tweaks for Samsung Galaxy S8's resolution */
 @media only screen 
-  and (min-device-width: 360px) 
-  and (max-device-width: 360px) 
+  and (min-width: 360px) 
+  and (max-width: 360px) 
   and (orientation: portrait) {
     /* Adjust font sizes, padding, and margins for this resolution */
     .container {

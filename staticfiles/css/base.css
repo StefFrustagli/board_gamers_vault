@@ -6,7 +6,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: url('/media/background-image-betterquality.webp') no-repeat center center fixed;
+  background: url('/media/boardgameshelf-betterquality-cut.jpeg') no-repeat center center fixed;
   background-size: cover;
   /* height: calc(100vh - 164px); */
   color: #555;
@@ -43,6 +43,12 @@ footer a:hover {
 
 footer .fab {
     font-size: 1.5rem;
+}
+
+/* Fix alignment icons in navbar */
+ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Search field + button */
@@ -95,7 +101,7 @@ button, optgroup, select, textarea {
 }
 
 .checkout {
-  margin-top: 5rem !important;
+  margin-top: 3rem !important;
 }
 
 .success-message {
@@ -110,21 +116,65 @@ button, optgroup, select, textarea {
 
 #order-confirmation-header {
   margin-top: 4rem;
-
 }
 
+/* About page */
 #about-page {
   color: #4C2527;
 }
 
+/* Feedback form styles */
 .feedback-form {
   margin-top: 3rem !important;
   color: #785555;
 }
 
+.brown-bold {
+    font-weight: bold;
+    color: #785555;
+}
+
 #about-textarea {
   margin-top: 15rem !important;
   /* to make sure ipad pro about is visible */
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  color: #000;
+}
+
+#about-textarea h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+}
+
+#about-textarea p {
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 1rem; 
+    color: #000;
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+#about-textarea b {
+    font-weight: bold; 
+}
+
+#about-textarea a {
+    color: #785555; 
+    text-decoration: underline; 
+    font-weight: bold; 
+}
+
+#about-textarea a:hover {
+    color: #333; /* Darker color on hover */
+}
+
+.important-message {
+    font-style: italic;
+    background-color: #f8f9fa; /* Light background for emphasis */
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 #id_message {
@@ -137,10 +187,30 @@ button, optgroup, select, textarea {
 #shopping-bag {
   margin-top: 5rem;
   padding: 0;
+  font-size: 2rem;
 }
 
 #shopping-button {
   margin-bottom: 3rem;
+}
+
+/* Ensure text wraps on mobile */
+table, td, th {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* Limit the width of table cells */
+td, th {
+    max-width: 100px; /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." when the text is too long */
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Mailchimp */
@@ -360,7 +430,6 @@ fieldset {
 }
 
 .bg-black {
-  /* background: rgb(0, 0, 0) !important; */
   background-color: #4C2527;
 }
 
@@ -413,12 +482,10 @@ input[name='q']::placeholder {
 
 /* Gamelist container */
 #gamelist-container {
-  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
 #gamelist-detail {
-  /* margin-top: 2rem;  Override existing margin-top */
   color: rgb(74, 79, 79);
 }
 
@@ -427,10 +494,6 @@ input[name='q']::placeholder {
     width: 300px;
     height: 100px;
 }
-
-/* .management {
-  margin-top: 7rem;
-} */
 
 .logo-font-management {
   padding-left: 0rem !important;
@@ -543,7 +606,7 @@ input[name='q']::placeholder {
     -ms-user-select: none;
     user-select: none;
     background-color: #000;
-    border: 1px solid #000;
+    border: 1px solid;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -551,6 +614,10 @@ input[name='q']::placeholder {
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.display-6-verify, .profile-title {
+  font-size: 1.5rem;
 }
 
 /* Hover effect */
@@ -595,6 +662,62 @@ input[name='q']::placeholder {
 
 /* ------------ MEDIA QUERIES */
 
+/* Mobile screens */
+@media (max-width: 740px) {
+    
+    h4, p {
+        font-size: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .btn-lg {
+        font-size: 0.875rem;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Specific tweaks for Samsung Galaxy S8's resolution */
+@media only screen 
+  and (min-width: 360px) 
+  and (max-width: 360px) 
+  and (orientation: portrait) {
+    /* Adjust font sizes, padding, and margins for this resolution */
+    .container {
+        padding: 10px;
+    }
+
+    h2, p {
+        font-size: 90%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    h2, p {
+        font-size: 85%; /* Adjust as needed */
+    }
+    td, th {
+        font-size: 85%; /* Smaller text for table cells */
+    }
+
+    .breadcrumb {
+      font-size: small;
+    }
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
@@ -638,7 +761,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 15rem;
+    padding-top: 13rem;
   }
   
   /* push body down to the bottom of the main page header */
@@ -664,7 +787,7 @@ input[name='q']::placeholder {
   }
 
   #breadcrumb-container {
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
 
   .header-container {

@@ -5,7 +5,7 @@
 ## Validator Testing
 
 ### HTML
-All the HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/), which helps ensure that the pages adhere to web standards, improving accessibility, SEO, and cross-browser compatibility.
+All the HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/), to ensure that the pages adhere to web standards.
 
 The following pages were checked:
 - Home Page

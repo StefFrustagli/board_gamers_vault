@@ -130,7 +130,7 @@ def edit_game(request, game_id):
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES, instance=game)
         if form.is_valid():
-            game=form.save()
+            game = form.save()
             messages.success(request, "Product successfully updated!")
             return redirect(reverse("game_detail", args=[game.id]))
         else:
