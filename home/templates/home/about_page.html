@@ -56,8 +56,8 @@
                 </header>
                 <div class="text-center">
                     <form method="post">
-                        {{ feedback_request | crispy }}
                         {% csrf_token %}
+                        {{ feedback_request | crispy }}
                         <button class="btn btn-form btn-outline-black" type="submit">Submit</button>
                     </form>
                 </div>
