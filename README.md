@@ -745,13 +745,13 @@ This streamlined process ensures that sellers can easily and effectively manage 
 
 On the "About" page, users can find information about the website and the team. The page includes a welcome message and a feedback form for users to easily leave their feedback.
 
-![Welcome message]()
+![Welcome message](https://i.ibb.co/kJ6W6wS/my-screenshots-2024-09-23-at-13-39-11.png)
 
 ![Feedback Form](https://i.ibb.co/m9n22cQ/my-screenshots-2024-07-02-at-10-39-43.png)
 
 ### "Shopping Bag" Page
 
-![Shopping bag page](https://i.ibb.co/4T4L3Hs/my-screenshots-2024-07-02-at-15-12-30.png)
+![Shopping bag page](https://i.ibb.co/F4X8qjG/my-screenshots-2024-09-23-at-13-42-36.png)
 
 In the shopping bag, buyers can view the products they intend to purchase along with all the relevant information.
 The product can be removed from the basket by clicking on "Remove". Clicking on Secure checkout, they can proceed with the purchase.
@@ -768,10 +768,11 @@ When a game has been purchased, it will disappear from the "Board Games on Sale"
 
 ### "My profile" Page
 
-![My profile page]()
+![My profile page - top](https://i.ibb.co/Y36CgRC/my-screenshots-2024-09-23-at-13-30-28.png)
 
+![My profile page - bottom](https://i.ibb.co/mJSQT3K/my-screenshots-2024-09-23-at-13-32-14.png)
 
-In "My Profile," users can access and customize some of their personal information (this feature will be improved in the future), as well as view their order history. User can view the games they have added for sale and edit or delete them.
+In "My Profile," users can access and customize some of their personal information (this feature will be improved in the future), as well as view their order history. In "My games to sell", user can view the games they have added for sale and edit or delete them.
 
 #### Authentication and notification messages
 
@@ -786,25 +787,26 @@ Examples of messages:
 #### Registration page
 The Registration page, which is visible to non-logged-in users, presents a registration form. The mandatory fields are 'Username' and 'Password' (to be entered twice), while the optional field is 'Email' address.
 
-![Register page](https://i.ibb.co/j44QBXm/my-screenshots-2024-07-02-at-15-27-42.png)
+![Register page](https://i.ibb.co/8D6tsDL/my-screenshots-2024-09-23-at-13-47-56.png)
 
 In addition, it contains a link that leads to the Login page, if the user has already created an account.  
 
 #### Sign in page
 The Sign in page allows registered users to sign into their account by entering their username and password. It also contains a link to the Register page, if the user hasn't created an account yet.
 
-![Sign-in form](https://i.ibb.co/0q7YCH3/my-screenshots-2024-07-02-at-15-27-51.png)
+![Sign-in form](https://i.ibb.co/zHcYMLq/my-screenshots-2024-09-23-at-13-47-35.png)
 
 Also, users have the option of having their login information remembered, so they don't have to re-enter their login details each time they visit the website.
 
 #### Logout page
 The logout page allows users to log out of their accounts. The user must confirm their choice. They  can also cancel the action and return to the homepage.
 
-![Log out form](https://i.ibb.co/7JkySHr/my-screenshots-2024-07-02-at-17-54-27.png)
+![Log out form](https://i.ibb.co/hM4j5s5/my-screenshots-2024-09-23-at-13-47-17.png)
 
 #### Password Reset
+The Password Reset page enables users to securely reset their password by following a link sent to their email.
 
-![Password reset](https://i.ibb.co/FhLjP47/my-screenshots-2024-07-02-at-15-27-59.png)
+![Password reset](https://i.ibb.co/PtnqvRX/my-screenshots-2024-09-23-at-13-47-44.png)
 
 
 #### Django admin board
