@@ -41,6 +41,15 @@ JS files were checked with [JSHint](https://jshint.com/) with no errors.
 ### Python 
 [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code. All the errors highlighted were fixed. 
 
+To ensure the code follows proper Python style guidelines (PEP8) and maintain code quality, `flake8` was also used to check the code in the Gitpod work environment terminal.
+
+##### Running `flake8`
+
+You can run the following command in the Gitpod terminal to check the code for any linting issues:
+
+`python3 -m flake8`
+
+
 ## Lighthouse Testing
 I performed Lighthouse tests using Chrome Dev tools in an incognito window.
 

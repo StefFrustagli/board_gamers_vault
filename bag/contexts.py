@@ -1,4 +1,3 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from marketplace.models import Game, SellerProfile
@@ -59,7 +58,9 @@ def bag_contents(request):
         seller = game.seller
 
         # Ensure the seller has a SellerProfile, creating one if necessary
-        seller_profile, created = SellerProfile.objects.get_or_create(user=seller)
+        seller_profile, created = SellerProfile.objects.get_or_create(
+            user=seller
+        )
 
         # Add the item details to the bag_items list
         bag_items.append(

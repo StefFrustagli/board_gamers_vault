@@ -39,7 +39,7 @@ const card = elements.create('card', { style });
 // Mount the Card Element to the card-element container in the template
 card.mount('#card-element');
 
-// Handle realitime validation errors on the card element
+// Handle real-time validation errors on the card element
 card.addEventListener("change", function (event) {
   const errorDiv = document.getElementById("card-errors");
   if (event.error) {
