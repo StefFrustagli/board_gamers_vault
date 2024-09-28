@@ -10,7 +10,6 @@ from profiles.models import UserProfile
 
 import stripe
 import json
-import time
 
 
 class StripeWH_Handler:
@@ -64,7 +63,7 @@ class StripeWH_Handler:
 
             # Send the email using Django's send_mail function.
             send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
-        except Exception as e:
+        except Exception as e:  # noqa: F841
             # Log the error for debugging if sending email fails.
             print(f"Failed to send confirmation email: {e}")
 
