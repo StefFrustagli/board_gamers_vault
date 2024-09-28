@@ -133,7 +133,7 @@ I performed Lighthouse tests using Chrome Dev tools in an incognito window.
 
     Results: 
 
-    ![Homepage Lighthouse testing - results](https://i.ibb.co/Q9KMqH1/my-screenshots-2024-07-02-at-20-43-30.png)
+    ![Homepage Lighthouse testing - results](https://i.ibb.co/3N3zFK0/my-screenshots-2024-09-28-at-16-42-56.png)
 
 
 - **Board games on sale page**:
@@ -146,10 +146,6 @@ I performed Lighthouse tests using Chrome Dev tools in an incognito window.
     Results: 
 
     ![About page Lighthouse testing - current results](https://i.ibb.co/1zCnc20/my-screenshots-2024-07-02-at-20-48-51.png)
-
-
-
-
 
 
 ## Manual testing
