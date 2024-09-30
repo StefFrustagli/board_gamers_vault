@@ -11,13 +11,13 @@
                     <p class="my-0">Search</p>
                 </div>
             </a>
-            <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-                <form class="form" method="GET" action="{% url 'games_list' %}">
+            <div id="mobile-search-dropdown" class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                <form class="form" role="search" method="GET" action="{% url 'games_list' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder=" Search for games">
                         <div class="input-group-append">
-                            <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit" aria-label="Search">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>

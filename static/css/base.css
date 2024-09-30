@@ -135,7 +135,7 @@ button, optgroup, select, textarea {
 }
 
 #about-textarea {
-  margin-top: 15rem !important;
+  margin-top: 10rem !important;
   /* to make sure ipad pro about is visible */
   background-color: #fff; 
   padding: 20px;
