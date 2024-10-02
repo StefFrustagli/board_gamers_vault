@@ -9,16 +9,12 @@ from marketplace.models import Game
 class UserProfile(models.Model):
     """
     A user profile model for maintaining public information
-    like games for sale, games owned, bio, avatar and city,
-    as well as private information like order history.
+    like short bio and city, as well as some private information.
 
     Attributes:
         user (User): One-to-one relationship with the User model.
-        avatar (ImageField): Profile picture of the user.
         default_town_or_city (CharField): Default city or town of the user.
         bio (TextField): Biography or about me section of the user.
-        games_for_sale (ManyToManyField): Games listed for sale by the user.
-        games_owned (ManyToManyField): Games owned by the user.
 
     Methods:
         __str__: Returns the username of the associated User instance.
@@ -28,22 +24,12 @@ class UserProfile(models.Model):
         User,
         on_delete=models.CASCADE,
     )
-    avatar = models.ImageField(upload_to="avatars/", null=True, blank=True)
     default_town_or_city = models.CharField(
         max_length=25,
         null=True,
         blank=True
     )
     bio = models.TextField(null=True, blank=True)
-    games_for_sale = models.ManyToManyField(
-        Game, related_name="games_for_sale_by_user", blank=True
-    )
-    games_owned = models.ManyToManyField(
-        Game, related_name="games_owned_by_user", blank=True
-    )
-    # orders = models.ManyToManyField(
-    #     "checkout.Order", related_name="user_orders", blank=True
-    # )
 
     def __str__(self):
         return self.user.username

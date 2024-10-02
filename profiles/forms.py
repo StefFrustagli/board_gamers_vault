@@ -26,11 +26,8 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             "user": "User",
-            "avatar": "Avatar",
             "default_town_or_city": "Town or city",
-            "bio": " Favourite games",
-            "games_for_sale": "Board Games I want to sell",
-            "games_owned": "My collection",
+            "bio": " Favourite games"
         }
 
         self.fields["default_town_or_city"].widget.attrs["autofocus"] = True
