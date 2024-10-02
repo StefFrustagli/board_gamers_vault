@@ -387,10 +387,8 @@ The `UserProfile` model is used to store additional information about a user, su
 
 - **Fields**:
   - `user` (OneToOneField): The user associated with this profile.
-  - `avatar` (ImageField): Profile picture of the user.
   - `default_town_or_city` (CharField): Default location of the user.
   - `bio` (TextField): Biography of the user.
-  - `games_for_sale` (ManyToManyField): Games listed for sale by the user.
 
 ---
 
@@ -417,7 +415,7 @@ The `FeedbackRequest` model stores feedback or collaboration requests submitted 
 
 ---
 
-Some models in this project may not currently be utilised at the current stage of the application. This is intentional, as the project is a work in progress. I have chosen to retain these models to facilitate future development and experimentation, as they may serve as a foundation for upcoming features or enhancements. 
+Unused data models have been removed from the project. However, some models have been intentionally retained, as I plan to utilize them in future development. These models will serve as a foundation for upcoming features and enhancements as the project evolves.
 
 ### Flowchart
 Draft **flowchart** for apps organisation:
