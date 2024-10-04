@@ -415,7 +415,7 @@ The `FeedbackRequest` model stores feedback or collaboration requests submitted 
 
 ---
 
-Unused data models have been removed from the project. However, some models have been intentionally retained, as I plan to utilize them in future development. These models will serve as a foundation for upcoming features and enhancements as the project evolves.
+Unused data models have been removed from the project. However, some data models, such as those related to delivery fees, have been intentionally retained. After careful consideration, I decided to keep these models as implementing the delivery cost process is part of the next development phase.
 
 ### Flowchart
 Draft **flowchart** for apps organisation:
