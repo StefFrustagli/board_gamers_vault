@@ -23,7 +23,7 @@
                     {% if item.game.image %}
                     <img class="w-100" src="{{ item.game.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.game.title }}">
+                    <img class="w-100" src="{{ MEDIA_URL }}no-image-placeholder.png" alt="{{ item.game.title }}">
                     {% endif %}
                 </div>
                 <div class="col-9">
