@@ -618,6 +618,8 @@ Please note that this payment handling is a temporary solution. I am actively wo
 
 Shipping costs are currently handled by sellers and are included in the product price, so they are not calculated separately. At the moment, all transactions are conducted in British Pounds (GBP), as the market is primarily focused on the UK.
 
+Implementing a separate delivery cost calculation is planned for future development phases.
+
 ### Current Features
 
 #### Homepage
@@ -1111,4 +1113,4 @@ The code was mainly based on Code Institute's walkthrough.
 
 ### Acknowledgment
 
-I am grateful to my mentor Brian Macharia and to Code Institute tutors for their help with the debugging process. A special thanks goes to the amazing tool that ChatGPT is: it helped me whenever I got stuck.
+I am grateful to my mentor Brian Macharia and to some Code Institute tutors for their help with the debugging process. A special thanks goes to the amazing tool that ChatGPT is: it helped me whenever I got stuck.

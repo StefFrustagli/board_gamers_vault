@@ -269,7 +269,7 @@ thead th {
   text-align: center;
 }
 .image-container img {
-  width: 55%;
+  width: 65%;
   height: auto;
   object-fit: cover; /* Ensure the image covers the container */
   display: inline-block;
